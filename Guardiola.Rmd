@@ -2,5 +2,84 @@
 title: "The Mastermind of Pep Guardiola"
 Author: "Will Orser and Floyd Krom"
 output: html_notebook
-theme: journal
+  html_document:
+    keep_md: TRUE
+    toc: TRUE
+    toc_float: TRUE
+    theme: journal
+    df_print: paged
+    code_download: true
+---
+
+```{r libraries}
+library(tidyverse)     # for data cleaning and plotting
+library(googlesheets4) # for reading googlesheet data
+library(lubridate)     # for date manipulation
+library(openintro)     # for the abbr2state() function
+library(palmerpenguins)# for Palmer penguin data
+library(maps)          # for map data
+library(ggmap)         # for mapping points on maps
+library(gplots)        # for col2hex() function
+library(RColorBrewer)  # for color palettes
+library(sf)            # for working with spatial data
+library(leaflet)       # for highly customizable mapping
+library(ggthemes)      # for more themes (including theme_map())
+library(plotly)        # for the ggplotly() - basic interactivity
+library(gganimate)     # for adding animation layers to ggplots
+library(gifski)        # for creating the gif (don't need to load this library every time,but need it installed)
+library(transformr)    # for "tweening" (gganimate)
+library(shiny)         # for creating interactive apps
+library(patchwork)     # for nicely combining ggplot2 graphs  
+library(gt)            # for creating nice tables
+library(rvest)         # for scraping data
+library(robotstxt)     # for checking if you can scrape data
+gs4_deauth()           # To not have to authorize each time you knit.
+library(readr)
+theme_set(theme_minimal())
+```
+
+```{r}
+season_1314 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1314_csv.csv")
+season_1415 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1415_csv.csv")
+season_1516 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1516_csv.csv")
+season_1617 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1617_csv.csv")
+season_1718 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1718_csv.csv")
+season_1819 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1819_csv.csv")
+```
+
+
+**Introduction**
+
+**Pep Guardiola**
+Pep Guardiola is one of the greatest tactical masterminds of modern football. He is a coach who possesses all the skills and experience to transform any team into a dominating champion in any worldwide competition. As a manager, he holds the record for the most consecutive league games won in La Liga, the Bundesliga and the Premier League. 
+
+Guardiola spent the majority of his career as a defensive midfielder for Barcelona. Johan Cruyff transformed Barcelona with Guardiola in a central role into a celebrated champion as they won the club's first European Cup in 1992 and four La Liga titles from 1991 to 1994. He also captained Barcelona from 1997 until his departure from Bareclona in 2001. He played 47 caps for the Spanish national team, and was part of the team at the 1994 World Cup and Euro 2000. After his retirement as player, he became coach of Barcelona B and after being appointed as manager of Barcelona's first team in May 2008. Guardiola immediately transformed the Barcelona team by telling key players Ronaldinho, Deco, Samuel Eto'o, and others that they wouldn't be part of his plans. He then signed Dani Ales and Gerard Piqué, while he promoted Sergio Busquets and Pedro to his team. These players would later be key to the team that dominated modern football for years. In his first season at Barcelona, he guided the team to the treble of La Liga, La Copa del Rey, and the UEFA Champions League, making him the youngest manager to ever accomplish this. When he left the club, he had won 14 honours as manager of Barcelona, a historical club record. 
+
+*[Source: https://www.kicker.de/fc-bayern-muenchen/team-trainer/bundesliga/2013-14]*
+*[Source: https://www.nytimes.com/2018/04/06/sports/soccer/manchester-city-united-pep-guardiola.html]*
+*[Source: ]*
+
+After a short sabbatical and an intensive German language course, Guardiola was announced as the new manager of Bayern Munich in 2013. During his time at one of the greatest clubs in the history of football, Guardiola won the Bundesliga in three consecutive seasons, including two domestic doubles. 
+
+While Guardiola won a domestic double in his final year at Bayern Munich in 2016, Manchester City only managed to seal the fourth place in the English Premier League that season to qualify for a spot in next year's Champions League. In February of that year, Manchester City announced the appointment of Pep Guardiola for the upcoming season in England which many blame for their collapse in all four competitions. Before Pep's arrival was announced, Manchester City were only three points short on the first place in the Premier League. At the end of the season, they finished 15 points apart from champion Leicester City and only just qualified for the group stage of the Champions League. 
+
+*[Source: https://www.manchestereveningnews.co.uk/sport/football/football-news/man-city-pellegrini-guardiola-destabilising-11336011]*
+
+During Guardiola's first year as a Manchester City manager, he signed critical players, such as Oleksandr Zinchenko, Leroy Sané, İlkay Gündoğan, Claudio Bravo, and Gabriel Jesus. Guardiola is known for transforming the playing style of any new team he manages which requires critical signings that fit into his style of play. During a disappointing first year as a manager, Guardiola did not manage to win any trophies. During his second season, Guardiola had identified the weaknesses 
+
+Guardiola identified the defensive areas which required improvement for City to challenge for the league title, particularly in the goalkeeper and full back position. He made three major acquisitions in the summer transfer window in goalkeeper Ederson Moraes and wing-backs of Benjamin Mendy and Kyle Walker, while dispensing of all the current senior full backs at the club in Aleksandar Kolarov, Gael Clichy, Bacary Sagna and Pablo Zabaleta. Additionally, he also signed Bernardo Silva from Monaco and Danilo from Real Madrid.
+
+
+Not part of this section
+
+On 25 February, City beat Arsenal 0–3 to win the Carabao Cup, this was Guardiola's first trophy with City.[147] On 15 April, City were confirmed as Premier League champions following Manchester United's 0–1 defeat at home to West Bromwich Albion.[148] After finishing the season with a record-breaking 100 points, Guardiola signed a new contract with City until 2021.[149][150]
+
+
+He left the Bavarians for Manchester City in 2016, and guided them to a Premier League title in his second campaign in charge, breaking numerous domestic records as the team became the first to attain 100 league points. He won a second consecutive Premier League and EFL Cup the following season, as well as the FA Cup, becoming the first manager to win the domestic treble in English men's football.
+
+
+```{r}
+season_1617 %>%
+  filter(HomeTeam == "Man City")
+```
 
