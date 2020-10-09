@@ -1,0 +1,6 @@
+---
+title: "The Mastermind of Pep Guardiola"
+Author: "Will Orser and Floyd Krom"
+output: html_notebook
+theme: journal
+
