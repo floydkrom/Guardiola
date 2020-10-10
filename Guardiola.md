@@ -12,45 +12,11 @@ output:
 ---
 
 
-```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
-```
 
-```{r libraries, include=FALSE}
-library(tidyverse)     # for data cleaning and plotting
-library(googlesheets4) # for reading googlesheet data
-library(lubridate)     # for date manipulation
-library(openintro)     # for the abbr2state() function
-library(palmerpenguins)# for Palmer penguin data
-library(maps)          # for map data
-library(ggmap)         # for mapping points on maps
-library(gplots)        # for col2hex() function
-library(RColorBrewer)  # for color palettes
-library(sf)            # for working with spatial data
-library(leaflet)       # for highly customizable mapping
-library(ggthemes)      # for more themes (including theme_map())
-library(plotly)        # for the ggplotly() - basic interactivity
-library(gganimate)     # for adding animation layers to ggplots
-library(gifski)        # for creating the gif (don't need to load this library every time,but need it installed)
-library(transformr)    # for "tweening" (gganimate)
-library(shiny)         # for creating interactive apps
-library(patchwork)     # for nicely combining ggplot2 graphs  
-library(gt)            # for creating nice tables
-library(rvest)         # for scraping data
-library(robotstxt)     # for checking if you can scrape data
-gs4_deauth()           # To not have to authorize each time you knit.
-library(readr)
-theme_set(theme_minimal())
-```
 
-```{r, include=FALSE}
-season_1314 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1314_csv.csv")
-season_1415 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1415_csv.csv")
-season_1516 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1516_csv.csv")
-season_1617 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1617_csv.csv")
-season_1718 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1718_csv.csv")
-season_1819 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/english-premier-league_zip/data/season-1819_csv.csv")
-```
+
+
+
 
 
 **I. Introduction**
@@ -241,7 +207,8 @@ In order to examine how the style of play and performance of football club Manch
 In order to perform the ideal research on Guardiola's impact at Manchester City, we would have liked to perform a analysis on the following variables in addition to our Football Data data set: passes (total), passes per game, pass accuracy %, crosses, cross accuracy %, saves, tackles, tackle success %, blocked shots, interceptions, clearances, duels won, and errors leading to goal. This would allow us to perform a thorough analysis on Guardiola's change in style of play as well as performance during his time as a manager. 
 
 **V. Results**
-```{r, include=FALSE}
+
+```r
 season_1314 <- season_1314 %>%
   select(2:23)
 season_1415 <- season_1415 %>%
@@ -256,7 +223,8 @@ season_1819 <- season_1819 %>%
  select(2:23)
 ```
 
-```{r}
+
+```r
 season_1314 %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(HomePoints = case_when(FTR == "H" ~ 3,
@@ -271,6 +239,16 @@ season_1314 %>%
   summarize(TotalHomePoints = sum(HomePoints),
             TotalAwayPoints = sum(AwayPoints))
 ```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["HomeGame"],"name":[1],"type":["lgl"],"align":["right"]},{"label":["TotalHomePoints"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"FALSE","2":"19","3":"34"},{"1":"TRUE","2":"52","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 **VI. Conclusion**
 **VII. Bibliography**
