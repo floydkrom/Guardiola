@@ -313,7 +313,7 @@ all_seasons %>%
   group_by(season) %>%
   summarize(TotalHomePoints = sum(TotalHomePoints, na.rm = TRUE),
             TotalAwayPoints = sum(TotalAwayPoints, na.rm = TRUE),
-            TotalPoints = TotalHomePoints + TotalAwayPoints)
+            TotalPoints = TotalHomePoints + TotalAwayPoints) 
 ```
 
 **Total shots [total, home, away]**
@@ -361,6 +361,20 @@ all_seasons %>%
   mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) 
 ```
 
+**Goals against [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsAgainst) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
+  mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) 
+```
 
 <<<<<<< HEAD
 
