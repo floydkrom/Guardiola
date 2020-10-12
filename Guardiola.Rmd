@@ -269,12 +269,12 @@ Number of Wins, Losses, Draws [total, home, away] - All Seasons Combined + For E
 **DONE** Total shots [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 **DONE** Total shots on target [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 **DONE** Goals for [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**HALF-DONE** Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 
 To do list for secondary results:
 Comparison shots vs. shots on target (total, home, away)
@@ -374,6 +374,80 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
   mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) 
+```
+
+**Goals for at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
+  select(season, Game, GoalsForHalfTime) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
+  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
+```
+
+**Goals against at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
+  select(season, Game, GoalsAgainstHalfTime) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
+  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
+```
+
+**Goal difference [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsFor, GoalsAgainst) %>%
+  mutate(GoalDifference = GoalsFor - GoalsAgainst) 
+```
+
+**Red Cards [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
+  select(season, Game, RedCard) %>%
+  pivot_wider(names_from = Game,
+              values_from = RedCard, names_prefix = "RedCard") %>%
+  mutate(TotalRedCards = RedCardAway + RedCardHome) 
+```
+
+**Yellow Cards [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  group_by(season, Game) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
+  select(season, Game, YellowCard) %>%
+  pivot_wider(names_from = Game,
+              values_from = YellowCard, names_prefix = "YellowCard") %>%
+  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
 ```
 
 <<<<<<< HEAD
