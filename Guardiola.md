@@ -218,71 +218,49 @@ To do list for primary results:
 Show City’s table position in the seasons before Guardiola and the seasons after Guardiola took over
 Important stats (plot by season)
 Number of Wins, Losses, Draws [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Total points [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Total shots [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Total shots on target [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals for [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Total points [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Total shots [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Total shots on target [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals for [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 
 To do list for secondary results:
-Comparison shots vs. shots on target (total, home, away)
-Comparison total points against bottom-half of the table vs. top-half of the table
-Compare results against top 6 in different seasons
+Manchester City Shots, Shots on Target -> line graph, calculate accuracy to also show in a line graph or a scatterplot - color it by manager
 Compare PL title years vs. non-PL title years
 
 
 ```r
 all_seasons <- bind_rows(list(`season1314` = season_1314, `season1415` = season_1415, `season1516`= season_1516, `season1617` = season_1617, `season1718` = season_1718, `season1819`= season_1819), .id = "season")
+
+all_seasons <- all_seasons %>% 
+  mutate(season = recode(season, season1314 = "2013-14", season1415 = "2014-15", season1516 = "2015-16", season1617 = "2016-17", season1718 = "2017-18", season1819 = "2018-19"))
 ```
 
+**Useful code for each visualization**
 
 ```r
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+  mutate(GameLocation = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, GameLocation, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x)))
 ```
 
 ```
-## `summarise()` regrouping output by 'season' (override with `.groups` argument)
+## `summarise()` regrouping output by 'season', 'GameLocation' (override with `.groups` argument)
 ```
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Game"],"name":[2],"type":["chr"],"align":["left"]},{"label":["FTHG"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["FTAG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["HTHG"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["HTAG"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["HS"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AS"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["HST"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["AST"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["HF"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["AF"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["HC"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["AC"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["HY"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["AY"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["HR"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["AR"],"name":[18],"type":["dbl"],"align":["right"]}],"data":[{"1":"season1314","2":"Away","3":"24","4":"39","5":"7","6":"17","7":"191","8":"296","9":"66","10":"102","11":"162","12":"205","13":"76","14":"128","15":"25","16":"39","17":"2","18":"1"},{"1":"season1314","2":"Home","3":"63","4":"13","5":"29","6":"7","7":"377","8":"166","9":"136","10":"56","11":"189","12":"189","13":"155","14":"81","15":"33","16":"35","17":"0","18":"2"},{"1":"season1415","2":"Away","3":"24","4":"39","5":"12","6":"18","7":"220","8":"307","9":"77","10":"99","11":"168","12":"211","13":"82","14":"103","15":"22","16":"42","17":"0","18":"1"},{"1":"season1415","2":"Home","3":"44","4":"14","5":"19","6":"4","7":"361","8":"168","9":"129","10":"52","11":"234","12":"144","13":"170","14":"73","15":"35","16":"34","17":"1","18":"3"},{"1":"season1516","2":"Away","3":"20","4":"24","5":"12","6":"12","7":"172","8":"265","9":"59","10":"95","11":"198","12":"212","13":"93","14":"102","15":"30","16":"36","17":"1","18":"0"},{"1":"season1516","2":"Home","3":"47","4":"21","5":"20","6":"11","7":"347","8":"164","9":"115","10":"66","11":"197","12":"204","13":"155","14":"72","15":"25","16":"28","17":"0","18":"1"},{"1":"season1617","2":"Away","3":"22","4":"43","5":"14","6":"21","7":"175","8":"297","9":"62","10":"102","11":"224","12":"207","13":"66","14":"129","15":"43","16":"39","17":"0","18":"0"},{"1":"season1617","2":"Home","3":"37","4":"17","5":"15","6":"3","7":"336","8":"124","9":"115","10":"44","11":"188","12":"211","13":"151","14":"64","15":"32","16":"47","17":"4","18":"1"},{"1":"season1718","2":"Away","3":"13","4":"45","5":"7","6":"24","7":"132","8":"317","9":"47","10":"110","11":"186","12":"175","13":"56","14":"146","15":"36","16":"32","17":"1","18":"1"},{"1":"season1718","2":"Home","3":"61","4":"14","5":"21","6":"5","7":"347","8":"106","9":"151","10":"40","11":"169","12":"180","13":"138","14":"47","15":"26","16":"40","17":"1","18":"2"},{"1":"season1819","2":"Away","3":"11","4":"38","5":"4","6":"21","7":"123","8":"297","9":"43","10":"112","11":"165","12":"166","13":"43","14":"144","15":"24","16":"27","17":"1","18":"1"},{"1":"season1819","2":"Home","3":"57","4":"12","5":"28","6":"7","7":"386","8":"113","9":"148","10":"40","11":"162","12":"155","13":"143","14":"39","15":"17","16":"30","17":"0","18":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(Shots = ifelse(Game == "Home", HS, AS)) %>%
-  select(season, Game, Shots) %>%
-  pivot_wider(names_from = Game,
-              values_from = Shots, names_prefix = "Shots") %>%
-  mutate(TotalShots = ShotsAway + ShotsHome)
-```
-
-```
-## `summarise()` regrouping output by 'season' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"season1314","2":"296","3":"377","4":"673"},{"1":"season1415","2":"307","3":"361","4":"668"},{"1":"season1516","2":"265","3":"347","4":"612"},{"1":"season1617","2":"297","3":"336","4":"633"},{"1":"season1718","2":"317","3":"347","4":"664"},{"1":"season1819","2":"297","3":"386","4":"683"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["GameLocation"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[3],"type":["chr"],"align":["left"]},{"label":["FTHG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["FTAG"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["HTHG"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["HTAG"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["HS"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AS"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["HST"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["AST"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["HF"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["AF"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["HC"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["AC"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["HY"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["AY"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["HR"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["AR"],"name":[19],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Away","3":"Pellegrini","4":"24","5":"39","6":"7","7":"17","8":"191","9":"296","10":"66","11":"102","12":"162","13":"205","14":"76","15":"128","16":"25","17":"39","18":"2","19":"1"},{"1":"2013-14","2":"Home","3":"Pellegrini","4":"63","5":"13","6":"29","7":"7","8":"377","9":"166","10":"136","11":"56","12":"189","13":"189","14":"155","15":"81","16":"33","17":"35","18":"0","19":"2"},{"1":"2014-15","2":"Away","3":"Pellegrini","4":"24","5":"39","6":"12","7":"18","8":"220","9":"307","10":"77","11":"99","12":"168","13":"211","14":"82","15":"103","16":"22","17":"42","18":"0","19":"1"},{"1":"2014-15","2":"Home","3":"Pellegrini","4":"44","5":"14","6":"19","7":"4","8":"361","9":"168","10":"129","11":"52","12":"234","13":"144","14":"170","15":"73","16":"35","17":"34","18":"1","19":"3"},{"1":"2015-16","2":"Away","3":"Pellegrini","4":"20","5":"24","6":"12","7":"12","8":"172","9":"265","10":"59","11":"95","12":"198","13":"212","14":"93","15":"102","16":"30","17":"36","18":"1","19":"0"},{"1":"2015-16","2":"Home","3":"Pellegrini","4":"47","5":"21","6":"20","7":"11","8":"347","9":"164","10":"115","11":"66","12":"197","13":"204","14":"155","15":"72","16":"25","17":"28","18":"0","19":"1"},{"1":"2016-17","2":"Away","3":"Guardiola","4":"22","5":"43","6":"14","7":"21","8":"175","9":"297","10":"62","11":"102","12":"224","13":"207","14":"66","15":"129","16":"43","17":"39","18":"0","19":"0"},{"1":"2016-17","2":"Home","3":"Guardiola","4":"37","5":"17","6":"15","7":"3","8":"336","9":"124","10":"115","11":"44","12":"188","13":"211","14":"151","15":"64","16":"32","17":"47","18":"4","19":"1"},{"1":"2017-18","2":"Away","3":"Guardiola","4":"13","5":"45","6":"7","7":"24","8":"132","9":"317","10":"47","11":"110","12":"186","13":"175","14":"56","15":"146","16":"36","17":"32","18":"1","19":"1"},{"1":"2017-18","2":"Home","3":"Guardiola","4":"61","5":"14","6":"21","7":"5","8":"347","9":"106","10":"151","11":"40","12":"169","13":"180","14":"138","15":"47","16":"26","17":"40","18":"1","19":"2"},{"1":"2018-19","2":"Away","3":"Guardiola","4":"11","5":"38","6":"4","7":"21","8":"123","9":"297","10":"43","11":"112","12":"165","13":"166","14":"43","15":"144","16":"24","17":"27","18":"1","19":"1"},{"1":"2018-19","2":"Home","3":"Guardiola","4":"57","5":"12","6":"28","7":"7","8":"386","9":"113","10":"148","11":"40","12":"162","13":"155","14":"143","15":"39","16":"17","17":"30","18":"0","19":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
@@ -301,52 +279,399 @@ all_seasons %>%
                               HomeTeam != "Man City" ~ FALSE),
          TotalHomePoints = case_when(HomeGame == TRUE ~ HomePoints),
          TotalAwayPoints = case_when(HomeGame == FALSE ~ AwayPoints)) %>%
-  group_by(season) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Manager) %>%
   summarize(TotalHomePoints = sum(TotalHomePoints, na.rm = TRUE),
             TotalAwayPoints = sum(TotalAwayPoints, na.rm = TRUE),
-            TotalPoints = TotalHomePoints + TotalAwayPoints)
+            TotalPoints = TotalHomePoints + TotalAwayPoints) -> PointsTable
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
+## `summarise()` regrouping output by 'season' (override with `.groups` argument)
+```
+
+```r
+PointsTable
 ```
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"season1314","2":"52","3":"34","4":"86"},{"1":"season1415","2":"45","3":"34","4":"79"},{"1":"season1516","2":"38","3":"28","4":"66"},{"1":"season1617","2":"40","3":"38","4":"78"},{"1":"season1718","2":"50","3":"50","4":"100"},{"1":"season1819","2":"54","3":"44","4":"98"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
-**Number of Wins, Losses, Draws [Total, Home, Away]**
+**Total Points by Season**
+
+```r
+PointsTable %>%
+  ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
+  geom_col() +
+  labs(title = "Total Points", x = "Season", y = "") +
+  scale_fill_manual(values = c("skyblue", "navyblue"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+**Total Home and Away Points by Season**
+
+```r
+TotalPointsTable <- PointsTable %>% 
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  pivot_longer(cols = c(TotalHomePoints, TotalAwayPoints),
+               names_to = "Location",
+               values_to = "Points") %>% 
+  select(season, Location, Points, Manager)
+
+TotalPointsTable
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2013-14","2":"TotalHomePoints","3":"52","4":"Pellegrini"},{"1":"2013-14","2":"TotalAwayPoints","3":"34","4":"Pellegrini"},{"1":"2014-15","2":"TotalHomePoints","3":"45","4":"Pellegrini"},{"1":"2014-15","2":"TotalAwayPoints","3":"34","4":"Pellegrini"},{"1":"2015-16","2":"TotalHomePoints","3":"38","4":"Pellegrini"},{"1":"2015-16","2":"TotalAwayPoints","3":"28","4":"Pellegrini"},{"1":"2016-17","2":"TotalHomePoints","3":"40","4":"Guardiola"},{"1":"2016-17","2":"TotalAwayPoints","3":"38","4":"Guardiola"},{"1":"2017-18","2":"TotalHomePoints","3":"50","4":"Guardiola"},{"1":"2017-18","2":"TotalAwayPoints","3":"50","4":"Guardiola"},{"1":"2018-19","2":"TotalHomePoints","3":"54","4":"Guardiola"},{"1":"2018-19","2":"TotalAwayPoints","3":"44","4":"Guardiola"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+```r
+TotalPointsTable %>% 
+  ggplot(aes(x = season, y = Points, fill = Location)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  geom_text(aes(label = Points), position = position_dodge(width = 0.9), color = "White", vjust = -0.4) +
+  labs(title = "Total Points Earned at <span style='color:#B9D6F2'>Home</span> and <span style='color:#0353A4'>Away</span> by Season", 
+       x = "", y = "", 
+       fill = "Where were points earned?") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4"), labels = c("Total Home Points", "Total Away Points")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+*Calculate average points per season in Pellegrini + Guardiola era
+*Calculate average home + away points per season in Pellegrini + Guardiola era
+
+**Total shots [total, home, away]**
 
 ```r
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-
-
-  
-  
-  mutate(HomeWins = if_else(HomeTeam == "Man City" & FTR == "H", "HomeWin", "NotHomeWin")) %>%
-  group_by(season) %>%
-  select(HomeTeam, FTR, AwayTeam, HomeWins) %>%
-  count(HomeWins == "HomeWin") 
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(Shots = ifelse(Game == "Home", HS, AS)) %>%
+  select(season, Game, Shots, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = Shots, names_prefix = "Shots") %>%
+  mutate(TotalShots = ShotsAway + ShotsHome) -> TotalShotsTable
 ```
 
 ```
-## Adding missing grouping variables: `season`
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+```r
+TotalShotsTable
 ```
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["HomeWins == \"HomeWin\""],"name":[2],"type":["lgl"],"align":["right"]},{"label":["n"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"season1314","2":"FALSE","3":"21"},{"1":"season1314","2":"TRUE","3":"17"},{"1":"season1415","2":"FALSE","3":"24"},{"1":"season1415","2":"TRUE","3":"14"},{"1":"season1516","2":"FALSE","3":"26"},{"1":"season1516","2":"TRUE","3":"12"},{"1":"season1617","2":"FALSE","3":"27"},{"1":"season1617","2":"TRUE","3":"11"},{"1":"season1718","2":"FALSE","3":"22"},{"1":"season1718","2":"TRUE","3":"16"},{"1":"season1819","2":"FALSE","3":"20"},{"1":"season1819","2":"TRUE","3":"18"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
 
+```r
+TotalShotsTable %>% 
+  ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = TotalShots), color = "White", vjust = -0.4) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Shots by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = FALSE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+
+**Total shots on target[total, home, away]**
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(ShotsTarget = ifelse(Game == "Home", HST, AST)) %>%
+  select(season, Game, ShotsTarget, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = ShotsTarget, names_prefix = "ShotsTarget") %>%
+  mutate(TotalShotsTarget = ShotsTargetAway + ShotsTargetHome) -> TotalShotsTargetTable
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+```r
+TotalShotsTargetTable
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsTargetAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"102","4":"136","5":"238"},{"1":"2014-15","2":"Pellegrini","3":"99","4":"129","5":"228"},{"1":"2015-16","2":"Pellegrini","3":"95","4":"115","5":"210"},{"1":"2016-17","2":"Guardiola","3":"102","4":"115","5":"217"},{"1":"2017-18","2":"Guardiola","3":"110","4":"151","5":"261"},{"1":"2018-19","2":"Guardiola","3":"112","4":"148","5":"260"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+
+```r
+TotalShotsTargetTable %>% 
+  ggplot(aes(x = season, y = TotalShotsTarget, fill = Manager)) +
+  geom_col() +
+  labs(title = "Total Shots on Target", x = "Season", y = "")
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+
+**Goals for [total, home, away]**
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  select(season, Game, GoalsFor, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsFor, names_prefix = "GoalsFor") %>%
+  mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+```r
+GoalsForTable
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+```r
+GoalsForTable %>% 
+  ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
+  geom_col() +
+  labs(title = "Total Goals For", x = "Season", y = "")
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+*Calculate average goals for per season in Pellegrini + Guardiola era
+
+**Goals against [total, home, away]**
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsAgainst, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
+  mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) -> GoalsAgainstTable
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+```r
+GoalsAgainstTable
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+```r
+GoalsAgainstTable %>% 
+  ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
+  geom_col() +
+  labs(title = "Total Goals Against", x = "Season", y = "")
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+
+*Calculate average goals against points per season in Pellegrini + Guardiola era
+
+**Goals for at half-time [total, home, away]**
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
+  select(season, Game, GoalsForHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
+  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForHalfTimeAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHalfTimeHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsForHalfTime"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"17","4":"29","5":"46"},{"1":"2014-15","2":"Pellegrini","3":"18","4":"19","5":"37"},{"1":"2015-16","2":"Pellegrini","3":"12","4":"20","5":"32"},{"1":"2016-17","2":"Guardiola","3":"21","4":"15","5":"36"},{"1":"2017-18","2":"Guardiola","3":"24","4":"21","5":"45"},{"1":"2018-19","2":"Guardiola","3":"21","4":"28","5":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+**Goals against at half-time [total, home, away]**
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
+  select(season, Game, GoalsAgainstHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
+  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstHalfTimeAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHalfTimeHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainstHalfTime"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"7","4":"7","5":"14"},{"1":"2014-15","2":"Pellegrini","3":"12","4":"4","5":"16"},{"1":"2015-16","2":"Pellegrini","3":"12","4":"11","5":"23"},{"1":"2016-17","2":"Guardiola","3":"14","4":"3","5":"17"},{"1":"2017-18","2":"Guardiola","3":"7","4":"5","5":"12"},{"1":"2018-19","2":"Guardiola","3":"4","4":"7","5":"11"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+**DONE** Goal difference [total, home, away] 
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
+  mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
+  group_by(season) %>%
+  mutate(TotalGoalDifference = sum(GoalDifference))
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Game"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsFor"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainst"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[5],"type":["chr"],"align":["left"]},{"label":["GoalDifference"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["TotalGoalDifference"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"65"},{"1":"2013-14","2":"Home","3":"63","4":"13","5":"Pellegrini","6":"50","7":"65"},{"1":"2014-15","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"45"},{"1":"2014-15","2":"Home","3":"44","4":"14","5":"Pellegrini","6":"30","7":"45"},{"1":"2015-16","2":"Away","3":"24","4":"20","5":"Pellegrini","6":"4","7":"30"},{"1":"2015-16","2":"Home","3":"47","4":"21","5":"Pellegrini","6":"26","7":"30"},{"1":"2016-17","2":"Away","3":"43","4":"22","5":"Guardiola","6":"21","7":"41"},{"1":"2016-17","2":"Home","3":"37","4":"17","5":"Guardiola","6":"20","7":"41"},{"1":"2017-18","2":"Away","3":"45","4":"13","5":"Guardiola","6":"32","7":"79"},{"1":"2017-18","2":"Home","3":"61","4":"14","5":"Guardiola","6":"47","7":"79"},{"1":"2018-19","2":"Away","3":"38","4":"11","5":"Guardiola","6":"27","7":"72"},{"1":"2018-19","2":"Home","3":"57","4":"12","5":"Guardiola","6":"45","7":"72"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+**DONE** Yellow cards [total, home, away] 
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
+  select(season, Game, YellowCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = YellowCard, names_prefix = "YellowCard") %>%
+  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["YellowCardAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["YellowCardHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalYellowCards"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"33","5":"72"},{"1":"2014-15","2":"Pellegrini","3":"42","4":"35","5":"77"},{"1":"2015-16","2":"Pellegrini","3":"36","4":"25","5":"61"},{"1":"2016-17","2":"Guardiola","3":"39","4":"32","5":"71"},{"1":"2017-18","2":"Guardiola","3":"32","4":"26","5":"58"},{"1":"2018-19","2":"Guardiola","3":"27","4":"17","5":"44"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+
+
+```r
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
+  select(season, Game, RedCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = RedCard, names_prefix = "RedCard") %>%
+  mutate(TotalRedCards = RedCardAway + RedCardHome) 
+```
+
+```
+## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["RedCardAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["RedCardHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalRedCards"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"1","4":"0","5":"1"},{"1":"2014-15","2":"Pellegrini","3":"1","4":"1","5":"2"},{"1":"2015-16","2":"Pellegrini","3":"0","4":"0","5":"0"},{"1":"2016-17","2":"Guardiola","3":"0","4":"4","5":"4"},{"1":"2017-18","2":"Guardiola","3":"1","4":"1","5":"2"},{"1":"2018-19","2":"Guardiola","3":"1","4":"0","5":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
 <<<<<<< HEAD
-
-
-
 
 =======
 **VI. Conclusion**
