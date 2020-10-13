@@ -11,7 +11,6 @@ output:
     code_download: true
 ---
 
-
 ```{r setup, include=FALSE}
 #knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
 ```
@@ -553,7 +552,7 @@ all_seasons %>%
   mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
 ```
 
-**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Red cards [total, home, away]
 
 ```{r}
 all_seasons %>%
@@ -569,6 +568,29 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = RedCard, names_prefix = "RedCard") %>%
   mutate(TotalRedCards = RedCardAway + RedCardHome) 
+```
+
+**Stats from Premier League Website**
+```{r}
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
+```
+```{r}
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
+  geom_col() +
+  geom_line(aes(x = Season, y = Interceptions), size = 1.5, color = "red", group = 1) +
+  geom_text(aes(label = `Passes per match`), 
+            position = position_dodge(width = 0.9), 
+            color = "White", vjust = -0.4) +
+  labs(title = "", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4"), labels = c("Pellegrini", "Guardiola")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
 ```
 
 <<<<<<< HEAD
