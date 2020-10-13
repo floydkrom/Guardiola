@@ -330,8 +330,13 @@ PointsTable
 PointsTable %>%
   ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
   geom_col() +
-  labs(title = "Total Points", x = "Season", y = "") +
-  scale_fill_manual(values = c("skyblue", "navyblue"))
+  geom_text(aes(label = TotalPoints), position = position_dodge(width = 0.9), color = "White", vjust = -0.4) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Points Earned by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4"), labels = c("Pellegrini", "Guardiola")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
+  
 ```
 
 **Total Home and Away Points by Season**
