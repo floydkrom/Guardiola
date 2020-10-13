@@ -41,6 +41,8 @@ library(robotstxt)     # for checking if you can scrape data
 gs4_deauth()           # To not have to authorize each time you knit.
 library(readr)
 theme_set(theme_minimal())
+library(ggExtra)
+library(ggtext)
 ```
 
 ```{r, include=FALSE}
@@ -269,17 +271,15 @@ Number of Wins, Losses, Draws [total, home, away] - All Seasons Combined + For E
 **DONE** Total shots [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 **DONE** Total shots on target [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 **DONE** Goals for [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
 
 To do list for secondary results:
-Comparison shots vs. shots on target (total, home, away)
-Comparison total points against bottom-half of the table vs. top-half of the table
-Compare results against top 6 in different seasons
+Manchester City Shots, Shots on Target -> line graph, calculate accuracy to also show in a line graph or a scatterplot - color it by manager
 Compare PL title years vs. non-PL title years
 
 ```{r}
@@ -295,7 +295,9 @@ all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(GameLocation = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, GameLocation) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, GameLocation, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x)))
 ```
 
@@ -313,33 +315,53 @@ all_seasons %>%
                               HomeTeam != "Man City" ~ FALSE),
          TotalHomePoints = case_when(HomeGame == TRUE ~ HomePoints),
          TotalAwayPoints = case_when(HomeGame == FALSE ~ AwayPoints)) %>%
-  group_by(season) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Manager) %>%
   summarize(TotalHomePoints = sum(TotalHomePoints, na.rm = TRUE),
             TotalAwayPoints = sum(TotalAwayPoints, na.rm = TRUE),
-            TotalPoints = TotalHomePoints + TotalAwayPoints) -> TotalPointsTable
+            TotalPoints = TotalHomePoints + TotalAwayPoints) -> PointsTable
 
-TotalPointsTable
+PointsTable
 ```
 
+**Total Points by Season**
 ```{r}
-TotalPointsTable <- TotalPointsTable %>% 
+PointsTable %>%
+  ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
+  geom_col() +
+  labs(title = "Total Points", x = "Season", y = "") +
+  scale_fill_manual(values = c("skyblue", "navyblue"))
+```
+
+**Total Home and Away Points by Season**
+```{r}
+TotalPointsTable <- PointsTable %>% 
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
   pivot_longer(cols = c(TotalHomePoints, TotalAwayPoints),
                names_to = "Location",
                values_to = "Points") %>% 
-  select(season, Location, Points)
+  select(season, Location, Points, Manager)
 
 TotalPointsTable
 ```
-
 
 ```{r}
 TotalPointsTable %>% 
   ggplot(aes(x = season, y = Points, fill = Location)) +
-  geom_col() +
-  labs(title = "Total Points", x = "Season", y = "", fill = "Where were points earned?")
+  geom_col(position = "dodge") +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  geom_text(aes(label = Points), position = position_dodge(width = 0.9), color = "White", vjust = -0.4) +
+  labs(title = "Total Points Earned at <span style='color:#B9D6F2'>Home</span> and <span style='color:#0353A4'>Away</span> by Season", 
+       x = "", y = "", 
+       fill = "Where were points earned?") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4"), labels = c("Total Home Points", "Total Away Points")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
 ```
-
-
+*Calculate average points per season in Pellegrini + Guardiola era
+*Calculate average home + away points per season in Pellegrini + Guardiola era
 
 **Total shots [total, home, away]**
 ```{r}
@@ -347,10 +369,12 @@ all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x))) %>%
   mutate(Shots = ifelse(Game == "Home", HS, AS)) %>%
-  select(season, Game, Shots) %>%
+  select(season, Game, Shots, Manager) %>%
   pivot_wider(names_from = Game,
               values_from = Shots, names_prefix = "Shots") %>%
   mutate(TotalShots = ShotsAway + ShotsHome) -> TotalShotsTable
@@ -360,13 +384,16 @@ TotalShotsTable
 
 ```{r}
 TotalShotsTable %>% 
-  ggplot(aes(x = season, y = TotalShots)) +
+  ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
   geom_col() +
-  labs(title = "Total Shots", x = "Season", y = "")
+  geom_text(aes(label = TotalShots), color = "White", vjust = -0.4) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Shots by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = FALSE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
 
 ```
-
-
 
 **Total shots on target[total, home, away]**
 ```{r}
@@ -374,10 +401,12 @@ all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x))) %>%
   mutate(ShotsTarget = ifelse(Game == "Home", HST, AST)) %>%
-  select(season, Game, ShotsTarget) %>%
+  select(season, Game, ShotsTarget, Manager) %>%
   pivot_wider(names_from = Game,
               values_from = ShotsTarget, names_prefix = "ShotsTarget") %>%
   mutate(TotalShotsTarget = ShotsTargetAway + ShotsTargetHome) -> TotalShotsTargetTable
@@ -388,13 +417,10 @@ TotalShotsTargetTable
 
 ```{r}
 TotalShotsTargetTable %>% 
-  ggplot(aes(x = season, y = TotalShotsTarget)) +
+  ggplot(aes(x = season, y = TotalShotsTarget, fill = Manager)) +
   geom_col() +
   labs(title = "Total Shots on Target", x = "Season", y = "")
 ```
-
-
-
 
 **Goals for [total, home, away]**
 ```{r}
@@ -402,10 +428,12 @@ all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x))) %>%
   mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
-  select(season, Game, GoalsFor) %>%
+  select(season, Game, GoalsFor, Manager) %>%
   pivot_wider(names_from = Game,
               values_from = GoalsFor, names_prefix = "GoalsFor") %>%
   mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
@@ -415,13 +443,12 @@ GoalsForTable
 
 ```{r}
 GoalsForTable %>% 
-  ggplot(aes(x = season, y = TotalGoalsFor)) +
+  ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
   geom_col() +
   labs(title = "Total Goals For", x = "Season", y = "")
 
 ```
-
-
+*Calculate average goals for per season in Pellegrini + Guardiola era
 
 **Goals against [total, home, away]**
 ```{r}
@@ -429,10 +456,12 @@ all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
                               HomeTeam != "Man City" ~ "Away")) %>%
-  group_by(season, Game) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x))) %>%
   mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
-  select(season, Game, GoalsAgainst) %>%
+  select(season, Game, GoalsAgainst, Manager) %>%
   pivot_wider(names_from = Game,
               values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
   mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) -> GoalsAgainstTable
@@ -440,21 +469,104 @@ all_seasons %>%
 GoalsAgainstTable
 ```
 
-
 ```{r}
 GoalsAgainstTable %>% 
-  ggplot(aes(x = season, y = TotalGoalsAgainst)) +
+  ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
   geom_col() +
   labs(title = "Total Goals Against", x = "Season", y = "")
 
 ```
 
+*Calculate average goals against points per season in Pellegrini + Guardiola era
 
+**Goals for at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
+  select(season, Game, GoalsForHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
+  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
+```
+
+**Goals against at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
+  select(season, Game, GoalsAgainstHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
+  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
+```
+
+**DONE** Goal difference [total, home, away] 
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
+  mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
+  group_by(season) %>%
+  mutate(TotalGoalDifference = sum(GoalDifference))
+```
+
+**DONE** Yellow cards [total, home, away] 
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
+  select(season, Game, YellowCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = YellowCard, names_prefix = "YellowCard") %>%
+  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
+```
+
+**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
+  select(season, Game, RedCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = RedCard, names_prefix = "RedCard") %>%
+  mutate(TotalRedCards = RedCardAway + RedCardHome) 
+```
 
 <<<<<<< HEAD
-
-
-
 
 =======
 **VI. Conclusion**
