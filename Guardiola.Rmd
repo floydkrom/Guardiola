@@ -338,6 +338,28 @@ PointsTable %>%
   
 ```
 
+**Average Points Statistics**
+
+```{r}
+#Average Points Earned in a Season by Manager
+PointsTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerPoints = mean(TotalPoints))
+
+#Average Points per Game (PPG) by Season
+PointsTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonPPG = TotalPoints/38)
+
+#Average PPG by Manager
+PointsTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerPPG = sum(TotalPoints)/ (38*3))
+```
+
+
+
+
 **Total Home and Away Points by Season**
 ```{r}
 TotalPointsTable <- PointsTable %>% 
@@ -366,6 +388,47 @@ TotalPointsTable %>%
 ```
 *Calculate average points per season in Pellegrini + Guardiola era
 *Calculate average home + away points per season in Pellegrini + Guardiola era
+
+
+**Average Home/Away Points Statistics**
+
+```{r}
+#Average Points Earned at Home/Away by Manager
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerHomePoints = mean(Points))
+
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerAwayPoints = mean(Points))
+
+
+#Average Home/Away Points per Game (PPG) by Season
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonHomePPG = Points/19)
+
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(season, Manager) %>% 
+  mutate(AverageSeasonAwayPPG = Points/19)
+
+
+#Average Home/Away PPG by Manager
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerHomePPG = sum(Points)/(19 * 3))
+
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerAwayPPG = sum(Points)/(19 * 3))
+```
+
 
 **Total shots [total, home, away]**
 ```{r}
@@ -532,8 +595,19 @@ all_seasons %>%
   select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
   mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
   group_by(season) %>%
-  mutate(TotalGoalDifference = sum(GoalDifference))
+  mutate(TotalGoalDifference = sum(GoalDifference)) -> GoalDifferenceTable
+
+GoalDifferenceTable
 ```
+
+```{r}
+GoalDifferenceTable %>% 
+  ggplot(aes(x = season, y = TotalGoalDifference, fill = Manager)) +
+  geom_col() 
+```
+
+
+
 
 **DONE** Yellow cards [total, home, away] 
 ```{r}
