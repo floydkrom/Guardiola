@@ -449,6 +449,7 @@ all_seasons %>%
 TotalShotsTable
 ```
 
+
 ```{r}
 TotalShotsTable %>% 
   ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
@@ -459,7 +460,6 @@ TotalShotsTable %>%
   scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
   removeGrid(x = TRUE, y = FALSE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
-
 ```
 
 **Total shots on target[total, home, away]**
@@ -488,6 +488,47 @@ TotalShotsTargetTable %>%
   geom_col() +
   labs(title = "Total Shots on Target", x = "Season", y = "")
 ```
+
+
+**Average Shots on Target Statistics**
+
+```{r}
+TotalShotsTable %>% 
+  left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
+
+
+#Average Shots on Target Proportion by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots))
+
+#Average Shots on Target Proportion by Season 
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSOTSeason = TotalShotsTarget / TotalShots) 
+
+#Average Home/Away Shots on Target Proportion by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome))
+
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageAwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway))
+
+#Average Home/Away Shots on Target Proportion by Season
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageHomeSOTSeason = ShotsTargetHome / ShotsHome) 
+
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
+```
+
+
+
+
 
 **Goals for [total, home, away]**
 ```{r}
@@ -645,11 +686,48 @@ all_seasons %>%
 ```
 
 **Stats from Premier League Website**
+
 ```{r}
-Man_City_Stats_PL_Website %>%
+library(readxl)
+Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
+```
+
+
+```{r}
+Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
+
+Man_City_Stats_PL_Website
 ```
+
+**Average Passing Statistics**
+
+```{r}
+#Average Passes per Season under each Manager
+Man_City_Stats_PL_Website %>%
+  group_by(Manager) %>%
+  mutate(AverageSeasonPassesManager = mean(Passes))
+  
+#Average Passes per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGamePassesManager = mean(`Passes per match`))
+
+#Average Pass Accuracy under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AveragePassAccuracyManager = mean(`Pass accuracy (%)`))
+```
+
+
+
+
+
+
+
+
+
 ```{r}
 Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
