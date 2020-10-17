@@ -422,7 +422,6 @@ Man_City_Stats_PL_Website %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-
 **Average Passing Statistics**
 
 ```{r}
@@ -463,7 +462,7 @@ all_seasons %>%
 GoalsForTable
 ```
 
-```{r}
+```{r, include=ECHO}
 GoalsForTable %>% 
   ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
   geom_col() +
@@ -486,6 +485,7 @@ all_seasons %>%
   group_by(season, Game, Manager) %>%
   summarize(across(where(is.numeric),~sum(.x))) %>%
   mutate(Shots = ifelse(Game == "Home", HS, AS)) %>%
+  mutate(ShotsTarget = ifelse(Game == "Home", HST, AST)) %>%
   select(season, Game, Shots, Manager) %>%
   pivot_wider(names_from = Game,
               values_from = Shots, names_prefix = "Shots") %>%
@@ -494,19 +494,6 @@ all_seasons %>%
 TotalShotsTable
 ```
 
-
-```{r}
-TotalShotsTable %>% 
-  ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalShots), color = "White", vjust = -0.4) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Shots by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = FALSE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey")) 
-```
 
 **Total shots on target[total, home, away]**
 ```{r}
@@ -527,12 +514,33 @@ all_seasons %>%
 TotalShotsTargetTable
 ```
 
+```{r, include=FALSE}
+TotalShotsTable %>% 
+  left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
+```
 
-```{r}
-TotalShotsTargetTable %>% 
+```{r, include=ECHO}
+ShotAccuracyTable %>% 
+  ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = TotalShots), color = "White", vjust = -0.4) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Shots by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+```{r, include=ECHO}
+ShotAccuracyTable %>% 
   ggplot(aes(x = season, y = TotalShotsTarget, fill = Manager)) +
   geom_col() +
-  labs(title = "Total Shots on Target", x = "Season", y = "")
+  geom_text(aes(label = TotalShotsTarget), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Shots on Target by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
 **Average Shots on Target Statistics**
@@ -540,7 +548,6 @@ TotalShotsTargetTable %>%
 ```{r}
 TotalShotsTable %>% 
   left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
-
 
 #Average Shots on Target Proportion by Manager
 ShotAccuracyTable %>% 
@@ -573,7 +580,7 @@ ShotAccuracyTable %>%
 
 **Crosses by season [total]**
 
-```{r}
+```{r, include=ECHO}
 Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
@@ -610,7 +617,7 @@ all_seasons %>%
 GoalsAgainstTable
 ```
 
-```{r}
+```{r, include=ECHO}
 GoalsAgainstTable %>% 
   ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
   geom_col() +
@@ -627,7 +634,7 @@ library(readxl)
 Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
 ```
 
-```{r, include=FALSE}
+```{r}
 Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
@@ -635,7 +642,7 @@ Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
 Man_City_Stats_PL_Website
 ```
 
-```{r}
+```{r, include=ECHO}
 Man_City_Stats_PL_Website %>%
   mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
