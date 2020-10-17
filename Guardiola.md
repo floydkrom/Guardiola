@@ -1,5 +1,5 @@
 ---
-title: "Pep Guardiola's Tatical Mastermind"
+title: "The Tactical Mastermind of Pep Guardiola"
 author: "Will Orser & Floyd Krom"
 output: 
   html_document:
@@ -18,7 +18,6 @@ output:
 
 
 
-
 # I. Introduction
 
   Pep Guardiola is considered to be one of the greatest tactical masterminds in modern football. He is a coach who possesses all the skills and experience to transform any team into a dominant champion in any worldwide competition. As a manager, Guardiola holds the record for the most consecutive league games won in La Liga (Spain), the Bundesliga (Germany), and the English Premier League. Guardiola has managed to win a total of 30 trophies in his career as manager of Barcelona, Bayern Munich, and his current club, Manchester City. How did Guardiola change the style of play and influence the performance of English football club Manchester City after his appointment as manager in July 2016?  
@@ -26,14 +25,13 @@ output:
   The purpose of this study is to perform a comparative analysis of the style of play and performance of the football club Manchester City before and after the appointment of Pep Guardiola. We will evaluate data from the 2013-14 season through the 2018-19 season. During the first three seasons covered in our analysis (2013-14, 2014-15, 2015-16), Manuel Pellegrini was manager of Manchester City, leading them to one Premier League title in the 2013-14 season. Following the removal of Pelligrini in June 2016, Pep Guardiola was appointed manager and was expected to completely change Manchester City's style of play with his world famous Tika-Taka style.
 
   In order to answer our primary research question, we will explore the following secondary research questions:
+  
+· How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure?
 
 · How did Manchester City perform offensively over the seasons?
 
 · How did Manchester City perform defensively over the seasons?
 
-· How did Manchester City perform against teams in the bottom-half of the league table compared to teams in the top-half of the table over the seasons? 
-
-· How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure?
 
   As football players and fans, it is hard not to admire the characteristic style of play of Guardiola's teams and the way he is consistently able to build his teams into the dominant force in their respective leagues. In the documentary "All or Nothing: Manchester City", it is crystal clear that Guardiola has a remarkable obsession with the tactical side of soccer and the style of play of his side. Everything Guardiola does as a manager seems to stem from an almost pathological attention to detail. As any football player will tell you, small details, performed consistently over time, can make the difference needed to crown a team champion at the end of the season. We are motivated to achieve a better understanding of these details through this analysis. 
 
@@ -213,105 +211,58 @@ In order to perform the ideal analysis of Guardiola's impact at Manchester City,
 **V. Results**
 
 
-To do list for primary results:
-
-Show City’s table position in the seasons before Guardiola and the seasons after Guardiola took over
-Important stats (plot by season)
-Number of Wins, Losses, Draws [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Total points [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Total shots [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Total shots on target [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Goals for [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Goals against [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Goals for at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Goals against at half-time [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Goal difference [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-**DONE** Yellow cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
-
-To do list for secondary results:
-Manchester City Shots, Shots on Target -> line graph, calculate accuracy to also show in a line graph or a scatterplot - color it by manager
-Compare PL title years vs. non-PL title years
 
 
-```r
-all_seasons <- bind_rows(list(`season1314` = season_1314, `season1415` = season_1415, `season1516`= season_1516, `season1617` = season_1617, `season1718` = season_1718, `season1819`= season_1819), .id = "season")
 
-all_seasons <- all_seasons %>% 
-  mutate(season = recode(season, season1314 = "2013-14", season1415 = "2014-15", season1516 = "2015-16", season1617 = "2016-17", season1718 = "2017-18", season1819 = "2018-19"))
-```
-
-**Useful code for each visualization**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(GameLocation = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, GameLocation, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x)))
-```
-
-```
-## `summarise()` regrouping output by 'season', 'GameLocation' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["GameLocation"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[3],"type":["chr"],"align":["left"]},{"label":["FTHG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["FTAG"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["HTHG"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["HTAG"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["HS"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AS"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["HST"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["AST"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["HF"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["AF"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["HC"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["AC"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["HY"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["AY"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["HR"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["AR"],"name":[19],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Away","3":"Pellegrini","4":"24","5":"39","6":"7","7":"17","8":"191","9":"296","10":"66","11":"102","12":"162","13":"205","14":"76","15":"128","16":"25","17":"39","18":"2","19":"1"},{"1":"2013-14","2":"Home","3":"Pellegrini","4":"63","5":"13","6":"29","7":"7","8":"377","9":"166","10":"136","11":"56","12":"189","13":"189","14":"155","15":"81","16":"33","17":"35","18":"0","19":"2"},{"1":"2014-15","2":"Away","3":"Pellegrini","4":"24","5":"39","6":"12","7":"18","8":"220","9":"307","10":"77","11":"99","12":"168","13":"211","14":"82","15":"103","16":"22","17":"42","18":"0","19":"1"},{"1":"2014-15","2":"Home","3":"Pellegrini","4":"44","5":"14","6":"19","7":"4","8":"361","9":"168","10":"129","11":"52","12":"234","13":"144","14":"170","15":"73","16":"35","17":"34","18":"1","19":"3"},{"1":"2015-16","2":"Away","3":"Pellegrini","4":"20","5":"24","6":"12","7":"12","8":"172","9":"265","10":"59","11":"95","12":"198","13":"212","14":"93","15":"102","16":"30","17":"36","18":"1","19":"0"},{"1":"2015-16","2":"Home","3":"Pellegrini","4":"47","5":"21","6":"20","7":"11","8":"347","9":"164","10":"115","11":"66","12":"197","13":"204","14":"155","15":"72","16":"25","17":"28","18":"0","19":"1"},{"1":"2016-17","2":"Away","3":"Guardiola","4":"22","5":"43","6":"14","7":"21","8":"175","9":"297","10":"62","11":"102","12":"224","13":"207","14":"66","15":"129","16":"43","17":"39","18":"0","19":"0"},{"1":"2016-17","2":"Home","3":"Guardiola","4":"37","5":"17","6":"15","7":"3","8":"336","9":"124","10":"115","11":"44","12":"188","13":"211","14":"151","15":"64","16":"32","17":"47","18":"4","19":"1"},{"1":"2017-18","2":"Away","3":"Guardiola","4":"13","5":"45","6":"7","7":"24","8":"132","9":"317","10":"47","11":"110","12":"186","13":"175","14":"56","15":"146","16":"36","17":"32","18":"1","19":"1"},{"1":"2017-18","2":"Home","3":"Guardiola","4":"61","5":"14","6":"21","7":"5","8":"347","9":"106","10":"151","11":"40","12":"169","13":"180","14":"138","15":"47","16":"26","17":"40","18":"1","19":"2"},{"1":"2018-19","2":"Away","3":"Guardiola","4":"11","5":"38","6":"4","7":"21","8":"123","9":"297","10":"43","11":"112","12":"165","13":"166","14":"43","15":"144","16":"24","17":"27","18":"1","19":"1"},{"1":"2018-19","2":"Home","3":"Guardiola","4":"57","5":"12","6":"28","7":"7","8":"386","9":"113","10":"148","11":"40","12":"162","13":"155","14":"143","15":"39","16":"17","17":"30","18":"0","19":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 
 **Total points [total, home, away] - all seasons**
 
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(HomePoints = case_when(FTR == "H" ~ 3,
-                                FTR == "A" ~ 0,
-                                FTR == "D" ~ 1),
-         AwayPoints = case_when(FTR == "H" ~ 0,
-                                FTR == "A" ~ 3,
-                                FTR == "D" ~ 1),
-         HomeGame = case_when(HomeTeam == "Man City" ~ TRUE,
-                              HomeTeam != "Man City" ~ FALSE),
-         TotalHomePoints = case_when(HomeGame == TRUE ~ HomePoints),
-         TotalAwayPoints = case_when(HomeGame == FALSE ~ AwayPoints)) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Manager) %>%
-  summarize(TotalHomePoints = sum(TotalHomePoints, na.rm = TRUE),
-            TotalAwayPoints = sum(TotalAwayPoints, na.rm = TRUE),
-            TotalPoints = TotalHomePoints + TotalAwayPoints) -> PointsTable
-```
 
-```
-## `summarise()` regrouping output by 'season' (override with `.groups` argument)
-```
+**Total Points by Season**
+![](Guardiola_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+**Average Points Statistics**
+
 
 ```r
-PointsTable
+#Average Points Earned in a Season by Manager
+PointsTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerPoints = mean(TotalPoints))
 ```
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerPoints"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86","6":"77"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79","6":"77"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66","6":"77"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78","6":"92"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100","6":"92"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98","6":"92"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 
-**Total Points by Season**
-
 ```r
-PointsTable %>%
-  ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
-  geom_col() +
-  labs(title = "Total Points", x = "Season", y = "") +
-  scale_fill_manual(values = c("skyblue", "navyblue"))
+#Average Points per Game (PPG) by Season
+PointsTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonPPG = TotalPoints/38)
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonPPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86","6":"2.263158"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79","6":"2.078947"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66","6":"1.736842"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78","6":"2.052632"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100","6":"2.631579"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98","6":"2.578947"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average PPG by Manager
+PointsTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerPPG = sum(TotalPoints)/ (38*3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerPPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86","6":"2.026316"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79","6":"2.026316"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66","6":"2.026316"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78","6":"2.421053"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100","6":"2.421053"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98","6":"2.421053"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
 
 **Total Home and Away Points by Season**
 
@@ -343,14 +294,98 @@ TotalPointsTable %>%
   labs(title = "Total Points Earned at <span style='color:#B9D6F2'>Home</span> and <span style='color:#0353A4'>Away</span> by Season", 
        x = "", y = "", 
        fill = "Where were points earned?") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4"), labels = c("Total Home Points", "Total Away Points")) +
+  scale_fill_manual(values = c("#0353A4", "#B9D6F2"), labels = c("Total Away Points", "Total Home Points")) +
   removeGrid(x = TRUE, y = TRUE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 *Calculate average points per season in Pellegrini + Guardiola era
 *Calculate average home + away points per season in Pellegrini + Guardiola era
+
+**Average Home/Away Points Statistics**
+
+
+```r
+#Average Points Earned at Home/Away by Manager
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerHomePoints = mean(Points))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageManagerHomePoints"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalHomePoints","3":"52","4":"Pellegrini","5":"45"},{"1":"2014-15","2":"TotalHomePoints","3":"45","4":"Pellegrini","5":"45"},{"1":"2015-16","2":"TotalHomePoints","3":"38","4":"Pellegrini","5":"45"},{"1":"2016-17","2":"TotalHomePoints","3":"40","4":"Guardiola","5":"48"},{"1":"2017-18","2":"TotalHomePoints","3":"50","4":"Guardiola","5":"48"},{"1":"2018-19","2":"TotalHomePoints","3":"54","4":"Guardiola","5":"48"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerAwayPoints = mean(Points))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageManagerAwayPoints"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"32"},{"1":"2014-15","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"32"},{"1":"2015-16","2":"TotalAwayPoints","3":"28","4":"Pellegrini","5":"32"},{"1":"2016-17","2":"TotalAwayPoints","3":"38","4":"Guardiola","5":"44"},{"1":"2017-18","2":"TotalAwayPoints","3":"50","4":"Guardiola","5":"44"},{"1":"2018-19","2":"TotalAwayPoints","3":"44","4":"Guardiola","5":"44"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away Points per Game (PPG) by Season
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonHomePPG = Points/19)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageSeasonHomePPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalHomePoints","3":"52","4":"Pellegrini","5":"2.736842"},{"1":"2014-15","2":"TotalHomePoints","3":"45","4":"Pellegrini","5":"2.368421"},{"1":"2015-16","2":"TotalHomePoints","3":"38","4":"Pellegrini","5":"2.000000"},{"1":"2016-17","2":"TotalHomePoints","3":"40","4":"Guardiola","5":"2.105263"},{"1":"2017-18","2":"TotalHomePoints","3":"50","4":"Guardiola","5":"2.631579"},{"1":"2018-19","2":"TotalHomePoints","3":"54","4":"Guardiola","5":"2.842105"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(season, Manager) %>% 
+  mutate(AverageSeasonAwayPPG = Points/19)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageSeasonAwayPPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"1.789474"},{"1":"2014-15","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"1.789474"},{"1":"2015-16","2":"TotalAwayPoints","3":"28","4":"Pellegrini","5":"1.473684"},{"1":"2016-17","2":"TotalAwayPoints","3":"38","4":"Guardiola","5":"2.000000"},{"1":"2017-18","2":"TotalAwayPoints","3":"50","4":"Guardiola","5":"2.631579"},{"1":"2018-19","2":"TotalAwayPoints","3":"44","4":"Guardiola","5":"2.315789"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away PPG by Manager
+TotalPointsTable %>% 
+  filter(Location == "TotalHomePoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerHomePPG = sum(Points)/(19 * 3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageManagerHomePPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalHomePoints","3":"52","4":"Pellegrini","5":"2.368421"},{"1":"2014-15","2":"TotalHomePoints","3":"45","4":"Pellegrini","5":"2.368421"},{"1":"2015-16","2":"TotalHomePoints","3":"38","4":"Pellegrini","5":"2.368421"},{"1":"2016-17","2":"TotalHomePoints","3":"40","4":"Guardiola","5":"2.526316"},{"1":"2017-18","2":"TotalHomePoints","3":"50","4":"Guardiola","5":"2.526316"},{"1":"2018-19","2":"TotalHomePoints","3":"54","4":"Guardiola","5":"2.526316"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+TotalPointsTable %>% 
+  filter(Location == "TotalAwayPoints") %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerAwayPPG = sum(Points)/(19 * 3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]},{"label":["AverageManagerAwayPPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"1.684211"},{"1":"2014-15","2":"TotalAwayPoints","3":"34","4":"Pellegrini","5":"1.684211"},{"1":"2015-16","2":"TotalAwayPoints","3":"28","4":"Pellegrini","5":"1.684211"},{"1":"2016-17","2":"TotalAwayPoints","3":"38","4":"Guardiola","5":"2.315789"},{"1":"2017-18","2":"TotalAwayPoints","3":"50","4":"Guardiola","5":"2.315789"},{"1":"2018-19","2":"TotalAwayPoints","3":"44","4":"Guardiola","5":"2.315789"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 **Total shots [total, home, away]**
 
@@ -385,6 +420,7 @@ TotalShotsTable
 </div>
 
 
+
 ```r
 TotalShotsTable %>% 
   ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
@@ -397,7 +433,97 @@ TotalShotsTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+
+```r
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey")) 
+```
+
+```
+## List of 8
+##  $ axis.title.x.top   :List of 11
+##   ..$ family       : NULL
+##   ..$ face         : NULL
+##   ..$ colour       : chr "White"
+##   ..$ size         : NULL
+##   ..$ hjust        : NULL
+##   ..$ vjust        : NULL
+##   ..$ angle        : NULL
+##   ..$ lineheight   : NULL
+##   ..$ margin       : NULL
+##   ..$ debug        : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
+##  $ axis.text          :List of 11
+##   ..$ family       : NULL
+##   ..$ face         : NULL
+##   ..$ colour       : chr "White"
+##   ..$ size         : NULL
+##   ..$ hjust        : NULL
+##   ..$ vjust        : NULL
+##   ..$ angle        : NULL
+##   ..$ lineheight   : NULL
+##   ..$ margin       : NULL
+##   ..$ debug        : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
+##  $ legend.position    : chr "none"
+##  $ plot.background    :List of 5
+##   ..$ fill         : chr "#061A40"
+##   ..$ colour       : NULL
+##   ..$ size         : NULL
+##   ..$ linetype     : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, "class")= chr [1:2] "element_rect" "element"
+##  $ plot.title         :List of 22
+##   ..$ family        : NULL
+##   ..$ face          : chr "bold"
+##   ..$ size          : num 15
+##   ..$ colour        : chr "White"
+##   ..$ fill          : NULL
+##   ..$ box.colour    : NULL
+##   ..$ linetype      : NULL
+##   ..$ linewidth     : NULL
+##   ..$ hjust         : NULL
+##   ..$ vjust         : NULL
+##   ..$ halign        : NULL
+##   ..$ valign        : NULL
+##   ..$ angle         : NULL
+##   ..$ lineheight    : NULL
+##   ..$ margin        : NULL
+##   ..$ padding       : NULL
+##   ..$ r             : NULL
+##   ..$ align_widths  : NULL
+##   ..$ align_heights : NULL
+##   ..$ rotate_margins: NULL
+##   ..$ debug         : logi FALSE
+##   ..$ inherit.blank : logi FALSE
+##   ..- attr(*, "class")= chr [1:3] "element_markdown" "element_text" "element"
+##  $ plot.title.position: chr "plot"
+##  $ strip.background.x :List of 5
+##   ..$ fill         : chr "grey"
+##   ..$ colour       : NULL
+##   ..$ size         : NULL
+##   ..$ linetype     : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, "class")= chr [1:2] "element_rect" "element"
+##  $ strip.text         :List of 11
+##   ..$ family       : NULL
+##   ..$ face         : chr "italic"
+##   ..$ colour       : chr "White"
+##   ..$ size         : num 12
+##   ..$ hjust        : NULL
+##   ..$ vjust        : NULL
+##   ..$ angle        : NULL
+##   ..$ lineheight   : NULL
+##   ..$ margin       : NULL
+##   ..$ debug        : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
+##  - attr(*, "class")= chr [1:2] "theme" "gg"
+##  - attr(*, "complete")= logi FALSE
+##  - attr(*, "validate")= logi TRUE
+```
 
 **Total shots on target[total, home, away]**
 
@@ -440,7 +566,92 @@ TotalShotsTargetTable %>%
   labs(title = "Total Shots on Target", x = "Season", y = "")
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+
+
+**Average Shots on Target Statistics**
+
+
+```r
+TotalShotsTable %>% 
+  left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
+
+
+#Average Shots on Target Proportion by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3461342"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3461342"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3461342"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3727273"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3727273"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3727273"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Shots on Target Proportion by Season 
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSOTSeason = TotalShotsTarget / TotalShots) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3536404"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3413174"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3431373"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3428120"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3930723"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3806735"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away Shots on Target Proportion by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3502304"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3502304"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3502304"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3872778"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3872778"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3872778"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageAwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3410138"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3410138"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3410138"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3556531"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3556531"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3556531"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away Shots on Target Proportion by Season
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageHomeSOTSeason = ShotsTargetHome / ShotsHome) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3607427"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3573407"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3314121"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3422619"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.4351585"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3834197"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3445946"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3224756"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3584906"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3434343"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3470032"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3771044"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
 
 **Goals for [total, home, away]**
 
@@ -479,10 +690,15 @@ GoalsForTable
 GoalsForTable %>% 
   ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
   geom_col() +
-  labs(title = "Total Goals For", x = "Season", y = "")
+  geom_text(aes(label = TotalGoalsFor), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Goals For by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 *Calculate average goals for per season in Pellegrini + Guardiola era
 
 **Goals against [total, home, away]**
@@ -522,10 +738,15 @@ GoalsAgainstTable
 GoalsAgainstTable %>% 
   ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
   geom_col() +
-  labs(title = "Total Goals Against", x = "Season", y = "")
+  geom_text(aes(label = TotalGoalsAgainst), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Goals Against by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 *Calculate average goals against points per season in Pellegrini + Guardiola era
 
@@ -601,11 +822,15 @@ all_seasons %>%
   select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
   mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
   group_by(season) %>%
-  mutate(TotalGoalDifference = sum(GoalDifference))
+  mutate(TotalGoalDifference = sum(GoalDifference)) -> GoalDifferenceTable
 ```
 
 ```
 ## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
+```
+
+```r
+GoalDifferenceTable
 ```
 
 <div data-pagedtable="false">
@@ -613,6 +838,21 @@ all_seasons %>%
 {"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Game"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsFor"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainst"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[5],"type":["chr"],"align":["left"]},{"label":["GoalDifference"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["TotalGoalDifference"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"65"},{"1":"2013-14","2":"Home","3":"63","4":"13","5":"Pellegrini","6":"50","7":"65"},{"1":"2014-15","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"45"},{"1":"2014-15","2":"Home","3":"44","4":"14","5":"Pellegrini","6":"30","7":"45"},{"1":"2015-16","2":"Away","3":"24","4":"20","5":"Pellegrini","6":"4","7":"30"},{"1":"2015-16","2":"Home","3":"47","4":"21","5":"Pellegrini","6":"26","7":"30"},{"1":"2016-17","2":"Away","3":"43","4":"22","5":"Guardiola","6":"21","7":"41"},{"1":"2016-17","2":"Home","3":"37","4":"17","5":"Guardiola","6":"20","7":"41"},{"1":"2017-18","2":"Away","3":"45","4":"13","5":"Guardiola","6":"32","7":"79"},{"1":"2017-18","2":"Home","3":"61","4":"14","5":"Guardiola","6":"47","7":"79"},{"1":"2018-19","2":"Away","3":"38","4":"11","5":"Guardiola","6":"27","7":"72"},{"1":"2018-19","2":"Home","3":"57","4":"12","5":"Guardiola","6":"45","7":"72"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+
+
+```r
+GoalDifferenceTable %>% 
+  ggplot(aes(x = season, y = TotalGoalDifference, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = TotalGoalDifference), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Goal Difference by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 
 **DONE** Yellow cards [total, home, away] 
 
@@ -642,7 +882,7 @@ all_seasons %>%
   </script>
 </div>
 
-**DONE** Red cards [total, home, away] - All Seasons Combined + For Each Season 2013-2019
+**DONE** Red cards [total, home, away]
 
 
 ```r
@@ -671,9 +911,133 @@ all_seasons %>%
   </script>
 </div>
 
-<<<<<<< HEAD
+**Stats from Premier League Website**
 
-=======
+
+```r
+library(readxl)
+Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
+```
+
+
+
+```r
+Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
+
+Man_City_Stats_PL_Website
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+**Average Passing Statistics**
+
+
+```r
+#Average Passes per Season under each Manager
+Man_City_Stats_PL_Website %>%
+  group_by(Manager) %>%
+  mutate(AverageSeasonPassesManager = mean(Passes))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageSeasonPassesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"21118.67"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"21118.67"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"21118.67"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"25842.67"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"25842.67"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"25842.67"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Passes per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGamePassesManager = mean(`Passes per match`))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageGamePassesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"555.7233"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"555.7233"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"555.7233"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"680.0700"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"680.0700"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"680.0700"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Pass Accuracy under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AveragePassAccuracyManager = mean(`Pass accuracy (%)`))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AveragePassAccuracyManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"84.66667"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"84.66667"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"84.66667"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"88.00000"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"88.00000"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"88.00000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
+**Passes per match [total]**
+
+
+```r
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = `Passes per match`), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Passes per Match by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
+
+**Crosses by season [total]**
+
+
+```r
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Crosses, `Passes per match`, `Cross accuracy (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = Crosses, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = `Crosses`), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Crosses by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
+
+
+
+```r
+Man_City_Stats_PL_Website %>%
+  mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Tackles, Interceptions, `Passes per match`, `Tackle success (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = Tackles, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = Tackles), color = "White", vjust = -0.25) +
+  geom_line(aes(x = Season, y = Interceptions), size = 1.5, color="red", group = 1) +
+  labs(title = "Tackles and Interceptions by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+![](Guardiola_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
+
 **VI. Conclusion**
 **VII. Bibliography**
->>>>>>> 5a7b550609b48d5147b802b167539539dfa5d227
+

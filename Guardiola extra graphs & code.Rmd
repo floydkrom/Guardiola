@@ -1,0 +1,108 @@
+---
+title: "Guardiola extra graphs + code"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Goals for at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
+  select(season, Game, GoalsForHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
+  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
+```
+
+**Goals against at half-time [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
+  select(season, Game, GoalsAgainstHalfTime, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
+  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
+```
+
+**Goal difference [total, home, away]** 
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
+  select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
+  mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
+  group_by(season) %>%
+  mutate(TotalGoalDifference = sum(GoalDifference)) -> GoalDifferenceTable
+
+GoalDifferenceTable
+```
+
+```{r}
+GoalDifferenceTable %>% 
+  ggplot(aes(x = season, y = TotalGoalDifference, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = TotalGoalDifference), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Goal Difference by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+**Yellow cards [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
+  select(season, Game, YellowCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = YellowCard, names_prefix = "YellowCard") %>%
+  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
+```
+
+**Red cards [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
+  select(season, Game, RedCard, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = RedCard, names_prefix = "RedCard") %>%
+  mutate(TotalRedCards = RedCardAway + RedCardHome) 
+```

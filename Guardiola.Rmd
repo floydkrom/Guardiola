@@ -61,14 +61,13 @@ season_1819 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/engl
   The purpose of this study is to perform a comparative analysis of the style of play and performance of the football club Manchester City before and after the appointment of Pep Guardiola. We will evaluate data from the 2013-14 season through the 2018-19 season. During the first three seasons covered in our analysis (2013-14, 2014-15, 2015-16), Manuel Pellegrini was manager of Manchester City, leading them to one Premier League title in the 2013-14 season. Following the removal of Pelligrini in June 2016, Pep Guardiola was appointed manager and was expected to completely change Manchester City's style of play with his world famous Tika-Taka style.
 
   In order to answer our primary research question, we will explore the following secondary research questions:
+  
+· How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure?
 
 · How did Manchester City perform offensively over the seasons?
 
 · How did Manchester City perform defensively over the seasons?
 
-· How did Manchester City perform against teams in the bottom-half of the league table compared to teams in the top-half of the table over the seasons? 
-
-· How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure?
 
   As football players and fans, it is hard not to admire the characteristic style of play of Guardiola's teams and the way he is consistently able to build his teams into the dominant force in their respective leagues. In the documentary "All or Nothing: Manchester City", it is crystal clear that Guardiola has a remarkable obsession with the tactical side of soccer and the style of play of his side. Everything Guardiola does as a manager seems to stem from an almost pathological attention to detail. As any football player will tell you, small details, performed consistently over time, can make the difference needed to crown a team champion at the end of the season. We are motivated to achieve a better understanding of these details through this analysis. 
 
@@ -261,15 +260,18 @@ season_1819 <- season_1819 %>%
  select(2:23)
 ```
 
-```{r}
+```{r, include=FALSE}
 all_seasons <- bind_rows(list(`season1314` = season_1314, `season1415` = season_1415, `season1516`= season_1516, `season1617` = season_1617, `season1718` = season_1718, `season1819`= season_1819), .id = "season")
 
 all_seasons <- all_seasons %>% 
   mutate(season = recode(season, season1314 = "2013-14", season1415 = "2014-15", season1516 = "2015-16", season1617 = "2016-17", season1718 = "2017-18", season1819 = "2018-19"))
 ```
 
-**Useful code for each visualization**
-```{r}
+
+**Secondary Questions**
+**How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure? -> Will**
+
+```{r, include=FALSE}
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(GameLocation = case_when(HomeTeam == "Man City" ~ "Home",
@@ -305,7 +307,7 @@ PointsTable
 ```
 
 **Total Points by Season**
-```{r}
+```{r, echo=FALSE}
 PointsTable %>%
   ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
   geom_col() +
@@ -337,7 +339,6 @@ PointsTable %>%
   mutate(AverageManagerPPG = sum(TotalPoints)/ (38*3))
 ```
 
-
 **Total Home and Away Points by Season**
 ```{r}
 TotalPointsTable <- PointsTable %>% 
@@ -351,7 +352,7 @@ TotalPointsTable <- PointsTable %>%
 TotalPointsTable
 ```
 
-```{r}
+```{r, echo=FALSE}
 TotalPointsTable %>% 
   ggplot(aes(x = season, y = Points, fill = Location)) +
   geom_col(position = "dodge") +
@@ -364,8 +365,6 @@ TotalPointsTable %>%
   removeGrid(x = TRUE, y = TRUE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
 ```
-*Calculate average points per season in Pellegrini + Guardiola era
-*Calculate average home + away points per season in Pellegrini + Guardiola era
 
 **Average Home/Away Points Statistics**
 
@@ -404,6 +403,76 @@ TotalPointsTable %>%
   filter(Location == "TotalAwayPoints") %>% 
   group_by(Manager) %>% 
   mutate(AverageManagerAwayPPG = sum(Points)/(19 * 3))
+```
+
+**Passes per match [total]**
+
+```{r}
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = `Passes per match`), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Passes per Match by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+```
+
+
+**Average Passing Statistics**
+
+```{r}
+#Average Passes per Season under each Manager
+Man_City_Stats_PL_Website %>%
+  group_by(Manager) %>%
+  mutate(AverageSeasonPassesManager = mean(Passes))
+  
+#Average Passes per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGamePassesManager = mean(`Passes per match`))
+
+#Average Pass Accuracy under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AveragePassAccuracyManager = mean(`Pass accuracy (%)`))
+```
+
+**How did Manchester City perform offensively over the seasons? -> Floyd**
+
+**Goals for [total, home, away]**
+```{r}
+all_seasons %>%
+  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
+  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
+                              HomeTeam != "Man City" ~ "Away")) %>%
+  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  group_by(season, Game, Manager) %>%
+  summarize(across(where(is.numeric),~sum(.x))) %>%
+  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
+  select(season, Game, GoalsFor, Manager) %>%
+  pivot_wider(names_from = Game,
+              values_from = GoalsFor, names_prefix = "GoalsFor") %>%
+  mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
+
+GoalsForTable
+```
+
+```{r}
+GoalsForTable %>% 
+  ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
+  geom_col() +
+  geom_text(aes(label = TotalGoalsFor), color = "White", vjust = -0.25) +
+  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
+  labs(title = "Total Goals For by Season", x = "", y = "") +
+  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
+  removeGrid(x = TRUE, y = TRUE) +
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
 **Total shots [total, home, away]**
@@ -466,7 +535,6 @@ TotalShotsTargetTable %>%
   labs(title = "Total Shots on Target", x = "Season", y = "")
 ```
 
-
 **Average Shots on Target Statistics**
 
 ```{r}
@@ -503,38 +571,25 @@ ShotAccuracyTable %>%
   mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
 ```
 
-
-**Goals for [total, home, away]**
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
-  select(season, Game, GoalsFor, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsFor, names_prefix = "GoalsFor") %>%
-  mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
-
-GoalsForTable
-```
+**Crosses by season [total]**
 
 ```{r}
-GoalsForTable %>% 
-  ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
+Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
+  select(Season, Manager, Crosses, `Passes per match`, `Cross accuracy (%)`, Interceptions) %>%
+  ggplot(aes(x = Season, y = Crosses, fill = Manager)) +
   geom_col() +
-  geom_text(aes(label = TotalGoalsFor), color = "White", vjust = -0.25) +
+  geom_text(aes(label = `Crosses`), color = "White", vjust = -0.25) +
   facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goals For by Season", x = "", y = "") +
+  labs(title = "Crosses by Season", x = "", y = "") +
   scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
   removeGrid(x = TRUE, y = TRUE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
-*Calculate average goals for per season in Pellegrini + Guardiola era
+
+
+**How did Manchester City perform defensively over the seasons? - Floyd**
 
 **Goals against [total, home, away]**
 ```{r}
@@ -567,180 +622,18 @@ GoalsAgainstTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-*Calculate average goals against points per season in Pellegrini + Guardiola era
-
-**Goals for at half-time [total, home, away]**
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
-  select(season, Game, GoalsForHalfTime, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
-  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
-```
-
-**Goals against at half-time [total, home, away]**
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
-  select(season, Game, GoalsAgainstHalfTime, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
-  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
-```
-
-**DONE** Goal difference [total, home, away] 
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
-  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
-  select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
-  mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
-  group_by(season) %>%
-  mutate(TotalGoalDifference = sum(GoalDifference)) -> GoalDifferenceTable
-
-GoalDifferenceTable
-```
-
-```{r}
-GoalDifferenceTable %>% 
-  ggplot(aes(x = season, y = TotalGoalDifference, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalGoalDifference), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goal Difference by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
-**DONE** Yellow cards [total, home, away] 
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
-  select(season, Game, YellowCard, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = YellowCard, names_prefix = "YellowCard") %>%
-  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
-```
-
-**DONE** Red cards [total, home, away]
-
-```{r}
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
-  select(season, Game, RedCard, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = RedCard, names_prefix = "RedCard") %>%
-  mutate(TotalRedCards = RedCardAway + RedCardHome) 
-```
-
-**Stats from Premier League Website**
-
-```{r}
+```{r, include=FALSE}
 library(readxl)
 Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
 ```
 
-
-```{r}
+```{r, include=FALSE}
 Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
 
 Man_City_Stats_PL_Website
 ```
-
-
-**Average Passing Statistics**
-
-```{r}
-#Average Passes per Season under each Manager
-Man_City_Stats_PL_Website %>%
-  group_by(Manager) %>%
-  mutate(AverageSeasonPassesManager = mean(Passes))
-  
-#Average Passes per Game under each Manager
-Man_City_Stats_PL_Website %>% 
-  group_by(Manager) %>% 
-  mutate(AverageGamePassesManager = mean(`Passes per match`))
-
-#Average Pass Accuracy under each Manager
-Man_City_Stats_PL_Website %>% 
-  group_by(Manager) %>% 
-  mutate(AveragePassAccuracyManager = mean(`Pass accuracy (%)`))
-```
-
-
-**Passes per match [total]**
-
-```{r}
-Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
-  ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = `Passes per match`, color = "White", vjust = -0.25)) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Passes per Match by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
-**Crosses by season [total]**
-
-```{r}
-Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  select(Season, Manager, Crosses, `Passes per match`, `Cross accuracy (%)`, Interceptions) %>%
-  ggplot(aes(x = Season, y = Crosses, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = Crosses, color = "White", vjust = -0.25)) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Crosses by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
 
 ```{r}
 Man_City_Stats_PL_Website %>%
@@ -749,21 +642,13 @@ Man_City_Stats_PL_Website %>%
   select(Season, Manager, Tackles, Interceptions, `Passes per match`, `Tackle success (%)`, Interceptions) %>%
   ggplot(aes(x = Season, y = Tackles, fill = Manager)) +
   geom_col() +
-  geom_text(aes(label = Tackles, color = "White", vjust = -0.25)) +
+  geom_text(aes(label = Tackles), color = "White", vjust = -0.25) +
   geom_line(aes(x = Season, y = Interceptions), size = 1.5, color="red", group = 1) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Tackles and Interceptions by Season", x = "", y = "") +
+  labs(title = "Total Tackles and <span style='color:#A50104'>Interceptions</span> under <span style='color:#0353A4'>Pellegrini</span> and <span style='color:#B9D6F2'>Guardiola</span> by Season", x = "", y = "") +
   scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
   removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 14, face = "bold", color = "White"),legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
-
-
-
-
-
-
-
 
 **VI. Conclusion**
 **VII. Bibliography**
