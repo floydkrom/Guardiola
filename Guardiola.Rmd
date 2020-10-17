@@ -271,6 +271,10 @@ all_seasons <- all_seasons %>%
 **Secondary Questions**
 **How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure? -> Will**
 
+  To start our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will attempt to answer our secondary research questions. 
+  
+  First: How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure? We will use the total points earned by Manchester City in the Premier League in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. 
+
 ```{r, include=FALSE}
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
@@ -320,6 +324,8 @@ PointsTable %>%
   
 ```
 
+The bar chart above displays the total points earned by Manchester City in their final three years under Pelligrini and in their first three years under Guardiola. From a cursory look at the graph, it is clear that overall, Manchester City earned more points in their seasons under Guardiola than in their seasons under Pelligrini. The two highest point seasons for Manchester City come in 2017-18 and 2018-19, their second and third years under Guardiola, respectively.
+
 **Average Points Statistics**
 
 ```{r}
@@ -338,6 +344,16 @@ PointsTable %>%
   group_by(Manager) %>% 
   mutate(AverageManagerPPG = sum(TotalPoints)/ (38*3))
 ```
+
+To gain more insight into City's total points under the two managers, we calculated a few averages: the average points earned by each manager, Manchester City's average points per game (PPG) by season, and the average PPG for each manager.
+
+Under their final three seasons under Pelligrini, Manchester City earned an average of 77 points. In their first three seasons under Guardiola, the club earned an average of 92 points.
+
+In terms of PPG, Manchester City had their highest PPG in the 2017-18 season (2.63; Guardiola), their second highest PPG in the 2018-19 season (2.58; Guardiola), and their third highest PPG in the 2013-14 season (2.26; Pelligrini). It is interesting to note that in each of these three seasons, Manchester City finished as Premier League champions.
+
+Manchester City's average PPG under Pelligrini was 2.02, while under Guardiola, their average PPG was 2.42. 
+
+Next, we look at the points Manchester City earns in matches played at home and in matches played away from home. 
 
 **Total Home and Away Points by Season**
 ```{r}
@@ -365,6 +381,10 @@ TotalPointsTable %>%
   removeGrid(x = TRUE, y = TRUE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
 ```
+
+At first glance, it is not immediately clear whether there are trends in the graph above. However, if we focus only on points earned away from home (navy blue bars), it is clear that under Guardiola, fared much better than under Pellegrini. In each of the first three seasons with Guardiola as manager, City's points earned away exceeded their points earned away in all of their final three seasons under Pelligrini (including the 2013-14 season in which City earned 86 total points and finished as champions). 
+
+In terms of points earned at home, differences between the two managers are not so clear. But it is interesting to notice the trend within their three seasons under each each manager. In the final seasons under Pelligrini, Manchester City's points earned at home decrease steadily: from 52 to 45 and finally to 38. In their first three seasons under Guardiola, City's home points increase steadily: from 40 to 50 and then to 54.
 
 **Average Home/Away Points Statistics**
 
@@ -405,12 +425,32 @@ TotalPointsTable %>%
   mutate(AverageManagerAwayPPG = sum(Points)/(19 * 3))
 ```
 
+To compare City's points earned at home and away under each manager in more depth, we calculated a few averages: the average points earned at home/away by each manager, the average PPG by season, and the average home/away PPG by manager.
+
+Manchester City's average home points under Pelligrini was 45. Under Guardiola, it was 48. City's average away points under Pelligrini was 32. Under Guardiola, this number jumps to 44.
+
+Manchester City's highest average home PPG occurred in the 2018-19 season (2.84; Guardiola), the second highest average home PPG in 2013-14 (2.74; Pelligrini), and the third highest in 2017-18 (2.63; Guardiola). Manchester City's highest average away PPG occurred in the 2017-18 season (2.63; Guardiola), the second highest in 2018-19 (2.32; Guardiola), and the third highest in 2016-17 (2.00; Guardiola).
+
+Manchester City's average home PPG in their final three seasons under Pelligrini was 2.37. Their average home PPG in their first three seasons under Guardiola was a 2.53. City's average away PPG under Pelligrini was a mere 1.68, while under Guardiola it was 2.32.
+
+
 **Passes per match [total]**
+
+```{r, include=FALSE}
+library(readxl)
+Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
+```
+
+```{r}
+Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
+    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
+                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
+
+Man_City_Stats_PL_Website
+```
 
 ```{r}
 Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
   select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
   ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
   geom_col() +
@@ -629,19 +669,6 @@ GoalsAgainstTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-```{r, include=FALSE}
-library(readxl)
-Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
-```
-
-```{r}
-Man_City_Stats_PL_Website <- Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola"))
-
-Man_City_Stats_PL_Website
-```
-
 ```{r, include=ECHO}
 Man_City_Stats_PL_Website %>%
   mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
@@ -657,6 +684,7 @@ Man_City_Stats_PL_Website %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 14, face = "bold", color = "White"),legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-**VI. Conclusion**
-**VII. Bibliography**
+
+**VII. Conclusion**
+**VIII. Bibliography**
 
