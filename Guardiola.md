@@ -18,7 +18,7 @@ output:
 
 
 
-# I. Introduction
+### I. Introduction
 
   Pep Guardiola is considered to be one of the greatest tactical masterminds in modern football. He is a coach who possesses all the skills and experience to transform any team into a dominant champion in any worldwide competition. As a manager, Guardiola holds the record for the most consecutive league games won in La Liga (Spain), the Bundesliga (Germany), and the English Premier League. Guardiola has managed to win a total of 30 trophies in his career as manager of Barcelona, Bayern Munich, and his current club, Manchester City. How did Guardiola change the style of play and influence the performance of English football club Manchester City after his appointment as manager in July 2016?  
 
@@ -531,6 +531,8 @@ All in all, an analysis of Manchester City's passing statistics in the final thr
 
 **How did Manchester City perform offensively over the seasons? -> Floyd**
 
+In order to continue our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's performance offensively over the seasons. We will use the total goals scored by Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total shots and total shots on target to get a better understanding of Manchester City's performance in front of the goal of their opponents. Lastly, we will assess the total number of crosses over the season. This will allow us to gain a deeper understanding of the style of play of Manchester City over the seasons. 
+
 **Goals for [total, home, away]**
 
 ```r
@@ -565,6 +567,60 @@ GoalsForTable
 
 ![](Guardiola_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
 
+The bar chart above displays the total goals for by Manchester City in the 2013-14 season through the 2018-19 season. At first glance, the 2013-14 (Pellegrini) and the 2017-18 season (Guardiola) stand out because of the high number of goals scored in one season by Manchester City. Manchester Ciy with Pellegrini as manager managed to score 102 goals in the 2013-14 season, the second highest number of goals scored by a Premier League team in one season. Manchester City managed to break the historical record of most goals scored in one season during Guardiola's tenure as they socored 106 goals in the 2017-18 season. As displayed earlier, the high number of goals helped Manchester City to earn a total 100 points points and crowned them Premier League champions during the 2017-18 season. 
+
+**Average Goals Statistics**
+
+
+```r
+#Average Goals Scored in a Season by Manager
+GoalsForTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGoals = mean(TotalGoalsFor))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGoals"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"85.33333"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"85.33333"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"85.33333"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"93.66667"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"93.66667"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"93.66667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Goals Scored per Game (GPG) by Season
+GoalsForTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonGPG = TotalGoalsFor/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"2.684211"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"2.184211"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"1.868421"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"2.105263"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"2.789474"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"2.500000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average GPG by Manager
+GoalsForTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGPG = sum(TotalGoalsFor)/ (38*3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"2.245614"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"2.245614"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"2.245614"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"2.464912"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"2.464912"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"2.464912"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To gain more insight into Manchester City's total goals scored under Pellegrini and Guardiola, we calculated a few averages: the average goals scored by each manager, Manchester City's average goals scored per game (GPG) by season, and the average GPG for each manager. 
+
+In the final three seasons under Pelligrini's management, Manchester City scored an average of 85.3 goals. In the first three seasons under Guardiola's management, the club scored an average of 93.7 goals. 
+
+A further evaluation show that Manchester City had their highest GPG in the 2017-18 season (2.79; Guardiola), their second highest GPG in the 2013-14 season (2.68; Pellegrini), and their third highest GPG in the 2018-19 season (2.50; Guardiola). As discussed earlier, the club also had their highest PPG during these three seasons which crowned them Premier League champions in all three years. 
+
+Manchester City's average GPG under Pelligrini was 2.25, while under Guardiola, their average GPG was 2.46. 
+
+Next, we evaluate the total shots and total shots on target by Manchester City to further examine their performance offensively.
+
 **Total shots [total, home, away]**
 
 ```r
@@ -597,7 +653,6 @@ TotalShotsTable
 {"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-
 
 **Total shots on target[total, home, away]**
 
@@ -633,9 +688,13 @@ TotalShotsTargetTable
 
 
 
-![](Guardiola_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
-
 ![](Guardiola_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+
+At first glimpse, we see a clear pattern in the club's total shots under both Pellegirini's and Guardiola's management. With Pellegrini as manager, Manchester City's total shots gradually declined during the first two seasons, from 673 total shots in the 2013-14 season to 668 total shots in the 2014-15 season, with an even sharper decline in the 2015-16 season to a total of 612 shots. Under Guardiola's management, the club's total shots steadily increased from 663 in the 2016-17 season to a total of 683 shots in the 2018-19 season. To further examine the impact of the total shots under the different managers, it's important to evaluate the total shots on target. 
+
+![](Guardiola_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+
+In the total shots on target by season under the different managers, we see a similar pattern to the total shots by season. Under Pellegrini's management, the total shots on target gradually declined from 238 total shots on target in the 2013-14 season to 210 total shots on target in the 2015-16 season. During Guardiola's tenure, the club managed to significantly increase the total shots on target with 217 total shots on target in the 2016-17 season to 261 (2017-18 season) and 260 (2018-19 season) total shots on target in the following seasons. To further examine the impact of the total shots on target under the different managers during the different seasons, we will evaluate a few averages: shot accuracy per season by manager, shot accuracy by season, shot accuracy  at home/away per season by manager, and shot accuracy at home/away by season. 
 
 **Average Shots on Target Statistics**
 
@@ -644,7 +703,7 @@ TotalShotsTargetTable
 TotalShotsTable %>% 
   left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
 
-#Average Shots on Target Proportion by Manager
+#Average Shots Accuracy Percentage by Manager
 ShotAccuracyTable %>% 
   group_by(Manager) %>% 
   mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots))
@@ -657,7 +716,7 @@ ShotAccuracyTable %>%
 </div>
 
 ```r
-#Average Shots on Target Proportion by Season 
+#Average Shots Accuracy Percentage by Season 
 ShotAccuracyTable %>% 
   group_by(season) %>% 
   mutate(AverageSOTSeason = TotalShotsTarget / TotalShots) 
@@ -670,7 +729,7 @@ ShotAccuracyTable %>%
 </div>
 
 ```r
-#Average Home/Away Shots on Target Proportion by Manager
+#Average Home/Away Shots Accuracy Percentage by Manager
 ShotAccuracyTable %>% 
   group_by(Manager) %>% 
   mutate(AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome))
@@ -695,7 +754,7 @@ ShotAccuracyTable %>%
 </div>
 
 ```r
-#Average Home/Away Shots on Target Proportion by Season
+#Average Home/Away Shots Accuracy Percentage by Season
 ShotAccuracyTable %>% 
   group_by(season) %>% 
   mutate(AverageHomeSOTSeason = ShotsTargetHome / ShotsHome) 
@@ -719,12 +778,29 @@ ShotAccuracyTable %>%
   </script>
 </div>
 
+Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25) management. It is therefore important to recognize how small changes can increase a team's performance and dominance in a game. 
+
+A closer look at the average shot accuracy by season reveals that Manchester City had the highest average shot accuracy, 39.3%, during the 2017-18 record breaking season under Guardiola. Closely followed by the second highest average shot accuracy during the 2018-19 season with 38.1%. The third highest average shot accuracy of 35.4% was recorded during the 2013-14 season under Pelligrini. It is interesting to note that Manchester City scored 102 goals during the 2013-14 season and 95 goals during the 2018-19 season while the average shot accuracy was higher in the 2018-19 season (38.1%) under Guardiola than the 2013-14 season (35.4%) under Pellegrini. 
+
+In terms of Manchester City's average shot accuracy at home and away under the different managers, there is a noticeable difference in the average shot accuracy at home while there is only a slight difference in the average shot accuracy away. City's average shot accuracy at home was 35.0% under Pelligrini, while 38.7% under Guardiola, a difference of 3.7%. Manchester City recorded a lower shot accuracy away under Pelligrini with 34.1% and Guardiola with 35.6%, a moderate difference of 1.5%. 
+
+A closer analysis of the average home/away shot accuracy by season shows that City had a higher average shot accuracy at home than away during the 2013-14, 2014-15, 2017-18, and 2018-19 season. However, during the 2015-16 season under Pelligrini, Manchester City had an average shot accuracy of 33.1% at home while 35.8% away, a 2.7% difference. Furthermore, during the 2016-17 season under Guardiola, they managed an average shot accuracy of 34.2% at home while 34.3% away, a 0.1% difference. During Pelligrini's last year as a manager (2015-16), Manchester City earned a total of 66 points with only 38 points at home, the lowest number of points recorded under his management. This shows how the low average shot accuracy during the 2015-16 season (34.3%) and especially at home (33.1%) translated into the lowest number of points earned over the 6 years we evaluated Manchester City. Additionally, Pep Guardiola's team in the 2016-17 season earned a total of 78 points with only 40 points at home, the lowest number of points earned under his management. Similarly to the 2015-16 season, the second lowest average shot accuracy during the 2016-17 season (34.3%) and especially at home (34.2%) resulted in Guardiola's lowest number of points earned during his career as a manager of Barcelona, Bayern Munich, and Manchester City. 
+
+Next, we look at the total number of crosses by Manchester City by season to provide a closer examination of Manchester City's performance under the two managers.
+
 **Crosses by season [total]**
 
-![](Guardiola_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
+As discussed earlier, pushing the full-backs high into the attack to provide crosses is one of the five pillars that summarizes Guardiola's style of play. The bar chart above displays the total number of crosses by Manchester City from the 2013-14 season through the 2018-19 season. In the final seasons under Pelligrini, Manchester City's total crosses first declined before a significant increase: from 892 to 795 and then to 866. In their first three seasons under Guardiola, City shows a similar pattern to Pellegrini's in terms of crosses, it first declines before it shows a significant increase: from 801 to 691 and then to 783. 
+
+Comparing the number of crosses by each season under the different managers clearly shows that Manchester City had more crosses under Pellegrini than Guardiola. To some, this might seem to suggest that Manchester City was more dominant in attack under Pellegrini. However, it is important to put these numbers into perspective and evaluate the style of play under both managers. Under Pelligrini, Manchester City mainly played with taller strikers: Dzeko (6'4) and Negredo (6' 1). Both these players are known for their physical presence, strength, and aerial ability resulting in two strikers known to be dominant in the box of the opponent. This explains why City had a higher number of crosses under Pelligrini than under Guardiola as the type of strikers and style of play were completely different. Under Guardiola, there was still a considerably high number of crosses (801) in the 2016-17 season. This can be explained by the fact that Manchester City had not been able to completely adopt to Guardiola's style of play. However, during their record breaking 2017-18 season, Manchester City recorded the lowest number of crosses (691) during all six seasons studied. This seems to suggest that Manchester City had been able to completely adapt Guardiola's style of play giving them more options in attack. Under Pelligrini, Manchester City was able to cause danger with tall strikers and crosses from their wingers. However, Guardiola's team had more options in attack due to their style of play as well as the main strengths of the players in attack. Manchester City mostly formed an attack with shorter players, such as Agüero (5'8), Sterling (5'7), and Sane (6'0). Their build up play gave them therefore the option to build through the center with their striker or play the ball wide to the wingers who were given the option to either cross the ball in front of the goal or cut inside the box. The lower number of crosses under Guardiola can therefore be explained by his style of play and the different options provided to the wingers in attack. 
+
+To summarize, an analysis of Manchester City's performance offensively over all six seasons showed the expected results. City's higher average of goals scored under Guardiola compared to Pelligrini demonstrates how Guardiola was able to create a dominating squad. He managed to lead Manchester City to a high average of goals scored in both home and away games and a record-breaking number of goals in the 2017-18 season. This shows how Guardiola was able to transform his team to fit into his style of play and philosophy after some challenges during the 2016-17 season with only 80 goals, respectively to the total of 106 and 95 goals scored in the following two seasons. The number of goals scored is reflected in the difference in average shot accuracy under the two managers as Guardiola’s squad averaged 37.2% while Pellegrini managed an average of 34.6%. Furthermore, both coaches managed their squad to have a higher average shot accuracy at home than away under their management. Lastly, the lower number of crosses by Manchester City under Guardiola's management compared to Pellegrini's illustrates how Guardiola's style of play and football philosophy completed changed the way Manchester City played and dominated offensively as a team. 
 
 **How did Manchester City perform defensively over the seasons? - Floyd**
+
+In order to conclude our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's performance defensively over the seasons. We will use the total goals scored against Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total tackles and interceptions under the different managers to get a better understanding of Manchester City's performance in front of the goal own goal. 
 
 **Goals against [total, home, away]**
 
@@ -758,10 +834,124 @@ GoalsAgainstTable
   </script>
 </div>
 
-![](Guardiola_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
-
 ![](Guardiola_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
 
+The bar chart above displays the total goals against Manchester City throughout the six seasons included in this analysis. If we look at this graph over all six seasons, it is evident that Guardiola more successfully managed his defensive players than Pellegrini did. In the final seasons under Pelligrini, Manchester City's total goals against increased steadily: from 37 to 38 and finally to 41. In their first three seasons under Guardiola, City's total goals against decreased rapidly: from 39 to 27 and then to 23. We therefore observe the opposite trend in terms of goals scored against over their time as a manager. 
+
+
+```r
+#Average Goals Against in a Season by Manager
+GoalsAgainstTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGoalsAgainst = mean(TotalGoalsAgainst))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGoalsAgainst"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"38.66667"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"38.66667"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"38.66667"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"29.66667"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"29.66667"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"29.66667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Goals Against per Game (GAPG) by Season
+GoalsAgainstTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonGAPG = TotalGoalsAgainst/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGAPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"0.9736842"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"1.0000000"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"1.0789474"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"1.0263158"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"0.7105263"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"0.6052632"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average GAPG by Manager
+GoalsAgainstTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGAPG = sum(TotalGoalsAgainst)/ (38*3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGAPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"1.0175439"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"1.0175439"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"1.0175439"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"0.7807018"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"0.7807018"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"0.7807018"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, Manchester City's average goals against per game (GAPG) by season, and the average GAPG for each manager.
+
+In the final three seasons under Pelligrini's management, Manchester City's opponents scored an average of 38.7 goals. In the first three seasons under Guardiola's management, the club's opponents scored an average of 29.7 goals. The lower average of goals scored against with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organisation is the cornerstone of everything else I want to achieve in my football". 
+
+A further evaluation show that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of points earned during these three seasons. 
+
+Manchester City's average GAPG under Pelligrini was 1.02, while under Guardiola, their average GPG was 0.78. 
+
+Next, we will evaluate Manchester City's tackles and interceptions under the different managers to take a closer look at their performance defensively. 
+
+![](Guardiola_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
+
+The bar chart above displays the total number of tackles and interceptions by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the number of interceptions in a season. From a first look, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third year as a manager of Manchester City. On the other hand, Manchester City had a high number of tackles under Pelligrini's management but saw a gradual decrease over the first three seasons: from 756 to 751 and finally to 729. On the contrary, Pelligrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
+
+**Average Defensive Statistics**
+
+
+```r
+#Average Tackles per Season under each Manager
+Man_City_Stats_PL_Website %>%
+  group_by(Manager) %>%
+  mutate(AverageSeasonTacklesManager = mean(Tackles))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageSeasonTacklesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"745.3333"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"745.3333"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"745.3333"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"574.6667"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"574.6667"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"574.6667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Tackles per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGameTacklesManager = mean(Tackles)/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageGameTacklesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"19.61404"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"19.61404"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"19.61404"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"15.12281"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"15.12281"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"15.12281"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Interceptions under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageInterceptionsManager = mean(Interceptions))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageInterceptionsManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"565"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"565"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"565"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"404"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"404"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"404"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Interceptions per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGameInterceptionsManager = mean(Interceptions)/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageGameInterceptionsManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"14.86842"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"14.86842"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"14.86842"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"10.63158"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"10.63158"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"10.63158"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To compare Manchester City's tackles and interceptions under each manager in more depth, we have calculated a few averages: average tackles by each manager, average tackles per game by each manager, average interceptions by each manager, and the average interceptions per game by each manager. 
+
+All averages calculated indicate a lower number for Guardiola than Pelligrini. Manchester City's average number of tackles under Guardiola was 574.67, compared to Pelligrini's years with 745.33 tackles on average per season. Furthermore, City's average number of interceptions under Guardiola was 404 per season. Their average number of interceptions during Pellegrini's time was 565 per season. This clearly shows how Manchester City had a lower number of tackles and interceptions during Guardiola's tenure. Some might question why Manchester City had a lower average of tackles and interceptions per season while also a lower number of goals against by season. This can be explained by Guardiola's style of play as teams under his management are known to have a high percentage of possession, a high number of passes completed, and the ability to keep possession under high pressure. This automatically results in a lower percentage of possession for the opponent as well as the number of times the ball needs to be recovered by Manchester City. Thus, these numbers show that Guardiola was able to mold the team in accordance with his possession-oriented philosophy resulting in a low number of tackles and interceptions for City.
+
+Overall, an analysis of Manchester City's defensive performance clearly shows that Pep Guardiola was able to transform his team with dominating defensive play, one of the cornerstones of Guardiola's football philosophy. City's lower average number of goals scored against Guardiola (29.7) compared to Pelligrini (38.7) demonstrates how Guardiola was able to create a dominating squad on both the attacking end as well as on the defensive end. The dominating possession game played by Manchester City during Guardiola's tenure allowed opponents less time on the ball and lower chances to score a goal. This is again reflected by the average number of tackles and interceptions per season under each manager with Guardiola's average well below Pellegrini's. 
 
 **VII. Conclusion**
 **VIII. Bibliography**
