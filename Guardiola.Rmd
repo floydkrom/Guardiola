@@ -518,7 +518,7 @@ all_seasons %>%
 GoalsForTable
 ```
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 GoalsForTable %>% 
   ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
   geom_col() +
@@ -575,7 +575,7 @@ TotalShotsTable %>%
   left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
 ```
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 ShotAccuracyTable %>% 
   ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
   geom_col() +
@@ -587,7 +587,7 @@ ShotAccuracyTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 ShotAccuracyTable %>% 
   ggplot(aes(x = season, y = TotalShotsTarget, fill = Manager)) +
   geom_col() +
@@ -636,7 +636,7 @@ ShotAccuracyTable %>%
 
 **Crosses by season [total]**
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 Man_City_Stats_PL_Website %>%
     mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
@@ -673,7 +673,7 @@ all_seasons %>%
 GoalsAgainstTable
 ```
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 GoalsAgainstTable %>% 
   ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
   geom_col() +
@@ -685,7 +685,7 @@ GoalsAgainstTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-```{r, include=ECHO}
+```{r, echo=FALSE}
 Man_City_Stats_PL_Website %>%
   mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
                               Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
