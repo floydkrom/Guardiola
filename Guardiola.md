@@ -206,7 +206,7 @@ In order to examine how the style of play and performance of football club Manch
 
 · ABP = Away Team Bookings Points (10 = yellow, 25 = red)
 
-In order to perform the ideal analysis of Guardiola's impact at Manchester City, we would have liked to perform an analysis of the following variables in addition to those in our Football Data data set: passes (total), passes per game, pass accuracy %, crosses, cross accuracy %, saves, tackles, tackle success %, blocked shots, interceptions, clearances, duels won, and errors leading to goal. This would have allowed us to perform a more thorough analysis of Guardiola's change to City's style of play as well as the team's performance during his time as manager. 
+In order to perform a more thorough analysis of Guardiola's impact at Manchester City, data from the 2013-14 through the 2018-19 season has been drawn from the official Premier League website. The statistics page on the Premier League website provides data on any season as well as individual football club. For our analysis, we will be using the following variables: passes (total), passes per match, pass accuracy %, crosses, cross accuracy %, tackles, and interceptions. The Premier League website does not provide any data sets in Excel and CSV format, and we have therefore transformed the information into a data set in Excel format for our analysis. 
 
 ### V. Results
 
@@ -218,6 +218,8 @@ In order to perform the ideal analysis of Guardiola's impact at Manchester City,
   First: How did Manchester City perform during Guardiola's tenure as manager compared to during Pelligrini's tenure? We will use the total points earned by Manchester City in the Premier League in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. 
 
 
+
+**Total Points Earned by Season**
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
@@ -491,7 +493,7 @@ Under Pelligrini, Manchester City maintained an average pass accuracy of 84.67%.
 
 All in all, an analysis of Manchester City's passing statistics in the final three years of Pelligrini's tenure and the first three years of Guardiola's tenure yielded the results we were expecting. City's significantly higher average passes per match and their higher passing accuracy percentage under Guardiola illustrates how Guardiola was able to mold the team in accordance with his possession-oriented philosophy. Guardiola transformed Manchester City into a club that dominated possession, relied on short, accurate passes to move the ball around the field and maintain possession, and pressed relentlessly to win the ball back when they turned it over.  
 
-**How did Manchester City perform offensively over the seasons? -> Floyd**
+**How did Manchester City perform offensively over the seasons?**
 
 In order to continue our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's offensive performance over the seasons. We will use the total goals scored by Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total shots and total shots on target to get a better understanding of Manchester City's performance in front of the opponent's goal. Lastly, we will assess the total number of crosses over the season. This will allow us to gain a deeper understanding of the style of play by Manchester City in offensive over the seasons. 
 
