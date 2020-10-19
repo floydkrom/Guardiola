@@ -349,7 +349,7 @@ To gain more insight into City's total points under the two managers, we calcula
 
 Under their final three seasons under Pelligrini, Manchester City earned an average of 77 points. In their first three seasons under Guardiola, the club earned an average of 92 points.
 
-In terms of PPG, Manchester City had their highest PPG in the 2017-18 season (2.63; Guardiola), their second highest PPG in the 2018-19 season (2.58; Guardiola), and their third highest PPG in the 2013-14 season (2.26; Pelligrini). It is interesting to note that in each of these three seasons, Manchester City finished as Premier League champions.
+In terms of Points Per Game (PPG), Manchester City had their highest PPG in the 2017-18 season (2.63; Guardiola), their second highest PPG in the 2018-19 season (2.58; Guardiola), and their third highest PPG in the 2013-14 season (2.26; Pelligrini). It is interesting to note that in each of these three seasons, Manchester City finished as Premier League champions.
 
 Manchester City's average PPG under Pelligrini was 2.02, while under Guardiola, their average PPG was 2.42. 
 
