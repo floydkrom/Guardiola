@@ -12,7 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
 ```
 
 ```{r libraries, include=FALSE}
@@ -74,7 +74,7 @@ season_1819 <- read_csv("~/Desktop/Intro to Data Science/Guardiola/Datasets/engl
   This study is divided into six sections. The following section includes a biography of Pep Guardiola, including his time as a professional football player and as a coach. Next, we will then present the style of play Guardiola has implemented at Manchester City and how it has changed over the seasons. We will then introduce our data before analyzing the results of various statistical transformations and visualizations. In the fifth section, we will summarize our findings and provide limitations and future research possibilities as an extension to this study. 
 
 
-**II. Pep Guardiola**
+### II. Pep Guardiola
 
   Guardiola spent the majority of his playing career as a defensive midfielder for Spanish club Barcelona. Johan Cruyff, one of football's most legendary players, as manager of Barcelona, transformed the club into a celebrated champion, with Guardiola playing a central role, as they won the club's first ever European Cup in 1992 and four La Liga titles from 1991 to 1994. Guardiola also captained Barcelona from 1997 until his departure from the club in 2001. He earned 47 caps (appearances) for the Spanish national team, and was part of the team at the 1994 World Cup and Euro 2000. After his retirement as a player, Guardiola became the coach of Barcelona B. After being appointed as manager of Barcelona's first team in May 2008, Guardiola immediately made his mark by telling key players like Ronaldinho, Deco, and Samuel Eto'o that they were not part of his plans. Guardiola then went on to sign defenders Dani Alves and Gerard Piqué, and promoted youth players Sergio Busquets and Pedro to the first team. All three of these players would go on to be key figures in Barcelona's era of dominance in modern football. In his first season at Barcelona, Guardiola guided his side to the treble: winning La Liga, La Copa del Rey, and the UEFA Champions League. This feat made him the youngest ever manager to accomplish this. When Guardiola left the club in 2012, he had won 14 trophies as manager of Barcelona, a historical club record. 
 
@@ -95,9 +95,9 @@ In the weeks leading up to the final part of the 2017-18 season, Guardiola had m
 During Guardiola's third season in charge, he signed attacking midfielder Riyad Mahrez from Leicester City for a fee of £60 million. Manchester City had fully adapted Guardiola's style of play and dominated the Premier League in the previous season. They immediately started their 2018-19 season with a trophy, the 2018 FA Community Shield, with a victory over Chelsea. In the 2018-19 season, Guardiola faced one of his biggest challenges as the manager of Manchester City. In order to win the title, Manchester City had to win 14 games in a row. Guardiola called it one of the toughest challenges in all his career. However, after all 38 games were played, Manchester City was once again on top of the league with 98 points, one point above Liverpool. City finished the 2018-19 season with 32 wins and an impressive 95 goals scored. Besides the FA Community Shield and Premier League title, Manchester City also managed to win the FA Cup and became one of the first ever men's teams in England to win the domestic treble. 
 
 
-**III. Guardiola's Style of Play**
+### III. Guardiola's Style of Play
 
-*General*
+**General**
 
 The style of play characteristic of teams coached by Pep Guardiola can be summarized by five pillars:
 
@@ -111,11 +111,11 @@ The style of play characteristic of teams coached by Pep Guardiola can be summar
 
 5. Pressing and winning the ball back quickly once they lose possession. 
 
-*Guardiola's Style of Play over The Years*
+**Guardiola's Style of Play over The Years**
 
 Below, we will identify key elements of Manchester City's team and how their style of play changed over the different seasons with Guardiola as manager.
   
-*2016-2017 Season*
+**2016-2017 Season**
 
 · Pep struggled to find his best XI during the 2016-17 season and experimented with eight different formations in 38 Premier League matches. 
 
@@ -133,7 +133,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 
 · Ultimately, Manchester City lost in the fourth round of the Carabao Cup, the semi-finalls of the FA Cup, and the Round of 16 of the Champions League. On top of all of this, they were only able to secure third place in the Premier League, finishing 15 points behind Premier League champion Chelsea. 
 
-*2017-2018 Season*
+**2017-2018 Season**
 
 · With the signings of full-backs Danilo, Benjamin Mendy, and Kyle Walker, Pep Guardiola changed to a 5-3-2 formation. He was able to change from a 4-3-3 formation to a 5-3-2 formation because his full-backs were able to dominate the entire flank and therefore fit better into Guardiola's desired style of play.
 
@@ -161,7 +161,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
   
 · Manchester City and Pep Guardiola also managed to win the EFL cup during this season, but were knocked out of the Champions League quarterfinal by Premier League opponent, Liverpool.
 
-*2018-2019 Season*
+**2018-2019 Season**
 
 · For this season, Guardiola only signed attacking midfielder Mahrez and kept a very similar first team squad compared to the previous season.
 
@@ -174,7 +174,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 *[Source: https://www.youtube.com/watch?v=1gHq-yspmso]*
 
 
-**IV. Data**
+### IV. Data
 
 In order to examine how the style of play and performance of football club Manchester City changed after the appointment of their current manager, Pep Guardiola, data from the 2013-14 season through the 2018-19 season has been drawn from Football Data – a football portal providing historical data on any competition worldwide, that includes information on every Premier League game. Football Data provides all data sets in Excel and CSV format for quantitative analysis. The variables in this Premier League data set include:
 
@@ -244,7 +244,7 @@ In order to examine how the style of play and performance of football club Manch
 
 In order to perform the ideal analysis of Guardiola's impact at Manchester City, we would have liked to perform an analysis of the following variables in addition to those in our Football Data data set: passes (total), passes per game, pass accuracy %, crosses, cross accuracy %, saves, tackles, tackle success %, blocked shots, interceptions, clearances, duels won, and errors leading to goal. This would have allowed us to perform a more thorough analysis of Guardiola's change to City's style of play as well as the team's performance during his time as manager. 
 
-**V. Results**
+### V. Results
 ```{r, include=FALSE}
 season_1314 <- season_1314 %>%
   select(2:23)
@@ -267,10 +267,6 @@ all_seasons <- all_seasons %>%
   mutate(season = recode(season, season1314 = "2013-14", season1415 = "2014-15", season1516 = "2015-16", season1617 = "2016-17", season1718 = "2017-18", season1819 = "2018-19"))
 ```
 
-
-**Secondary Questions**
-**How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure? -> Will**
-
   To start our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will attempt to answer our secondary research questions. 
   
   First: How did Manchester City perform during Guardiola's tenure as manager compared to during Pelligrini's tenure? We will use the total points earned by Manchester City in the Premier League in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. 
@@ -286,8 +282,7 @@ all_seasons %>%
   summarize(across(where(is.numeric),~sum(.x)))
 ```
 
-**Total points [total, home, away] - all seasons**
-```{r}
+```{r, echo=FALSE}
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(HomePoints = case_when(FTR == "H" ~ 3,
@@ -309,8 +304,6 @@ all_seasons %>%
 
 PointsTable
 ```
-
-**Total Points by Season**
 ```{r, echo=FALSE}
 PointsTable %>%
   ggplot(aes(x = season, y = TotalPoints, fill = Manager)) +
@@ -496,13 +489,12 @@ Under Pelligrini, Manchester City maintained an average pass accuracy of 84.67%.
 
 All in all, an analysis of Manchester City's passing statistics in the final three years of Pelligrini's tenure and the first three years of Guardiola's tenure yielded the results we were expecting. City's significantly higher average passes per match and their higher passing accuracy percentage under Guardiola illustrates how Guardiola was able to mold the team in accordance with his possession-oriented philosophy. Guardiola transformed Manchester City into a club that dominated possession, relied on short, accurate passes to move the ball around the field and maintain possession, and pressed relentlessly to win the ball back when they turned it over.  
 
-
 **How did Manchester City perform offensively over the seasons? -> Floyd**
 
-In order to continue our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's performance offensively over the seasons. We will use the total goals scored by Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total shots and total shots on target to get a better understanding of Manchester City's performance in front of the goal of their opponents. Lastly, we will assess the total number of crosses over the season. This will allow us to gain a deeper understanding of the style of play of Manchester City over the seasons. 
+In order to continue our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's offensive performance over the seasons. We will use the total goals scored by Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total shots and total shots on target to get a better understanding of Manchester City's performance in front of the opponent's goal. Lastly, we will assess the total number of crosses over the season. This will allow us to gain a deeper understanding of the style of play by Manchester City in offensive over the seasons. 
 
 **Goals for [total, home, away]**
-```{r}
+```{r, echo=FALSE}
 all_seasons %>%
   filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
   mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
@@ -526,13 +518,13 @@ GoalsForTable %>%
   geom_col() +
   geom_text(aes(label = TotalGoalsFor), color = "White", vjust = -0.25) +
   facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goals For by Season", x = "", y = "") +
+  labs(title = "Total Goals Scored by Season", x = "", y = "") +
   scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
   removeGrid(x = TRUE, y = TRUE) +
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-The bar chart above displays the total goals for by Manchester City in the 2013-14 season through the 2018-19 season. At first glance, the 2013-14 (Pellegrini) and the 2017-18 season (Guardiola) stand out because of the high number of goals scored in one season by Manchester City. Manchester Ciy with Pellegrini as manager managed to score 102 goals in the 2013-14 season, the second highest number of goals scored by a Premier League team in one season. Manchester City managed to break the historical record of most goals scored in one season during Guardiola's tenure as they socored 106 goals in the 2017-18 season. As displayed earlier, the high number of goals helped Manchester City to earn a total 100 points points and crowned them Premier League champions during the 2017-18 season. 
+The bar chart above displays the total goals scored by Manchester City in the 2013-14 season through the 2018-19 season. At first glance, the 2013-14 under Pellegrini and the 2017-18 season under Guardiola stand out because of the high number of goals scored in both seasons by Manchester City. Manchester Ciy with Pellegrini as manager managed to score 102 goals in the 2013-14 season, the second highest number of goals scored by a Premier League team in one season. However, Manchester City managed to break the historical record of most goals scored in one season during Guardiola's tenure as they scored 106 goals in the 2017-18 season. As displayed earlier, the high number of goals helped Manchester City to earn a total of 100 points which crowned them Premier League champions during the 2017-18 season. 
 
 **Average Goals Statistics**
 
@@ -619,7 +611,7 @@ ShotAccuracyTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-At first glimpse, we see a clear pattern in the club's total shots under both Pellegirini's and Guardiola's management. With Pellegrini as manager, Manchester City's total shots gradually declined during the first two seasons, from 673 total shots in the 2013-14 season to 668 total shots in the 2014-15 season, with an even sharper decline in the 2015-16 season to a total of 612 shots. Under Guardiola's management, the club's total shots steadily increased from 663 in the 2016-17 season to a total of 683 shots in the 2018-19 season. To further examine the impact of the total shots under the different managers, it's important to evaluate the total shots on target. 
+At first glimpse, we see a clear pattern in the club's total shots under both Pellegirini's and Guardiola's management. With Pellegrini as manager, Manchester City's total shots gradually declined during his first two seasons, from 673 shots during the 2013-14 season to 668 shots during the 2014-15 season, with an even sharper decline in the 2015-16 season with a total of 612 shots. Under Guardiola's management, the club's total shots steadily increased from 663 in his first season to a total of 683 shots in his third season. To further examine the impact of the total shots under the different managers, it's important to evaluate the total shots on target. 
 
 ```{r, echo=FALSE}
 ShotAccuracyTable %>% 
@@ -633,7 +625,7 @@ ShotAccuracyTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-In the total shots on target by season under the different managers, we see a similar pattern to the total shots by season. Under Pellegrini's management, the total shots on target gradually declined from 238 total shots on target in the 2013-14 season to 210 total shots on target in the 2015-16 season. During Guardiola's tenure, the club managed to significantly increase the total shots on target with 217 total shots on target in the 2016-17 season to 261 (2017-18 season) and 260 (2018-19 season) total shots on target in the following seasons. To further examine the impact of the total shots on target under the different managers during the different seasons, we will evaluate a few averages: shot accuracy per season by manager, shot accuracy by season, shot accuracy  at home/away per season by manager, and shot accuracy at home/away by season. 
+The graph above displays the total shots on target by season under the different managers. In this graph, we see a similar pattern to the total shots by season. Under Pellegrini's management, the total shots on target gradually declined over this years: from 238 in the 2013-14 season to 210 total shots on target in the 2015-16 season. During Guardiola's tenure, the club managed to significantly increase the total shots on target in his first two season with a small decline in the 2018-19 season: from 217 to 261 and finally to 260. To further examine the impact of the total shots on target under the different managers during the different seasons, we will evaluate a few averages: shot accuracy per season by manager, shot accuracy by season, shot accuracy  at home/away per season by manager, and shot accuracy at home/away by season. 
 
 **Average Shots on Target Statistics**
 
@@ -670,13 +662,13 @@ ShotAccuracyTable %>%
   mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
 ```
 
-Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25) management. It is therefore important to recognize how small changes can increase a team's performance and dominance in a game. 
+Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25). It is therefore important to recognize how small changes can increase a team's performance and dominance in a game. 
 
 A closer look at the average shot accuracy by season reveals that Manchester City had the highest average shot accuracy, 39.3%, during the 2017-18 record breaking season under Guardiola. Closely followed by the second highest average shot accuracy during the 2018-19 season with 38.1%. The third highest average shot accuracy of 35.4% was recorded during the 2013-14 season under Pelligrini. It is interesting to note that Manchester City scored 102 goals during the 2013-14 season and 95 goals during the 2018-19 season while the average shot accuracy was higher in the 2018-19 season (38.1%) under Guardiola than the 2013-14 season (35.4%) under Pellegrini. 
 
 In terms of Manchester City's average shot accuracy at home and away under the different managers, there is a noticeable difference in the average shot accuracy at home while there is only a slight difference in the average shot accuracy away. City's average shot accuracy at home was 35.0% under Pelligrini, while 38.7% under Guardiola, a difference of 3.7%. Manchester City recorded a lower shot accuracy away under Pelligrini with 34.1% and Guardiola with 35.6%, a moderate difference of 1.5%. 
 
-A closer analysis of the average home/away shot accuracy by season shows that City had a higher average shot accuracy at home than away during the 2013-14, 2014-15, 2017-18, and 2018-19 season. However, during the 2015-16 season under Pelligrini, Manchester City had an average shot accuracy of 33.1% at home while 35.8% away, a 2.7% difference. Furthermore, during the 2016-17 season under Guardiola, they managed an average shot accuracy of 34.2% at home while 34.3% away, a 0.1% difference. During Pelligrini's last year as a manager (2015-16), Manchester City earned a total of 66 points with only 38 points at home, the lowest number of points recorded under his management. This shows how the low average shot accuracy during the 2015-16 season (34.3%) and especially at home (33.1%) translated into the lowest number of points earned over the 6 years we evaluated Manchester City. Additionally, Pep Guardiola's team in the 2016-17 season earned a total of 78 points with only 40 points at home, the lowest number of points earned under his management. Similarly to the 2015-16 season, the second lowest average shot accuracy during the 2016-17 season (34.3%) and especially at home (34.2%) resulted in Guardiola's lowest number of points earned during his career as a manager of Barcelona, Bayern Munich, and Manchester City. 
+A closer analysis of the average home/away shot accuracy by season shows that City had a higher average shot accuracy at home than away during the 2013-14, 2014-15, 2017-18, and 2018-19 season. However, during the 2015-16 season under Pelligrini, Manchester City had an average shot accuracy of 33.1% at home while 35.8% away, a 2.7% difference. Furthermore, during the 2016-17 season under Guardiola, they managed an average shot accuracy of 34.2% at home while 34.3% away, a 0.1% difference. During Pelligrini's last year as a manager (2015-16), Manchester City earned a total of 66 points with only 38 points at home, the lowest number of points recorded under his management. This shows how the low average shot accuracy during the 2015-16 season (34.3%) and especially at home (33.1%) translated into the lowest number of points earned over the 6 years we evaluated Manchester City. Additionally, Pep Guardiola's team in the 2016-17 season earned a total of 78 points with only 40 points at home, the lowest number of points earned under his management. Similarly to the 2015-16 season, the second lowest average shot accuracy during the 2016-17 season (34.3%) and especially at home (34.2%) resulted in Guardiola's lowest number of points earned in a season during his career as a manager of Barcelona, Bayern Munich, and Manchester City. 
 
 Next, we look at the total number of crosses by Manchester City by season to provide a closer examination of Manchester City's performance under the two managers.
 
@@ -699,13 +691,13 @@ Man_City_Stats_PL_Website %>%
 
 As discussed earlier, pushing the full-backs high into the attack to provide crosses is one of the five pillars that summarizes Guardiola's style of play. The bar chart above displays the total number of crosses by Manchester City from the 2013-14 season through the 2018-19 season. In the final seasons under Pelligrini, Manchester City's total crosses first declined before a significant increase: from 892 to 795 and then to 866. In their first three seasons under Guardiola, City shows a similar pattern to Pellegrini's in terms of crosses, it first declines before it shows a significant increase: from 801 to 691 and then to 783. 
 
-Comparing the number of crosses by each season under the different managers clearly shows that Manchester City had more crosses under Pellegrini than Guardiola. To some, this might seem to suggest that Manchester City was more dominant in attack under Pellegrini. However, it is important to put these numbers into perspective and evaluate the style of play under both managers. Under Pelligrini, Manchester City mainly played with taller strikers: Dzeko (6'4) and Negredo (6' 1). Both these players are known for their physical presence, strength, and aerial ability resulting in two strikers known to be dominant in the box of the opponent. This explains why City had a higher number of crosses under Pelligrini than under Guardiola as the type of strikers and style of play were completely different. Under Guardiola, there was still a considerably high number of crosses (801) in the 2016-17 season. This can be explained by the fact that Manchester City had not been able to completely adopt to Guardiola's style of play. However, during their record breaking 2017-18 season, Manchester City recorded the lowest number of crosses (691) during all six seasons studied. This seems to suggest that Manchester City had been able to completely adapt Guardiola's style of play giving them more options in attack. Under Pelligrini, Manchester City was able to cause danger with tall strikers and crosses from their wingers. However, Guardiola's team had more options in attack due to their style of play as well as the main strengths of the players in attack. Manchester City mostly formed an attack with shorter players, such as Agüero (5'8), Sterling (5'7), and Sane (6'0). Their build up play gave them therefore the option to build through the center with their striker or play the ball wide to the wingers who were given the option to either cross the ball in front of the goal or cut inside the box. The lower number of crosses under Guardiola can therefore be explained by his style of play and the different options provided to the wingers in attack. 
+Comparing the number of crosses by each season under the different managers clearly shows that Manchester City had more crosses under Pellegrini than Guardiola. To some, this might seem to suggest that Manchester City was more dominant in attack under Pellegrini. However, it is important to put these numbers into perspective and evaluate the style of play under both managers. Under Pelligrini, Manchester City mainly played with taller strikers: Dzeko (6'4) and Negredo (6' 1). Both these players are known for their physical presence, strength, and aerial ability resulting in two strikers dominant in the box of the opponent. This explains why City had a higher number of crosses under Pelligrini than under Guardiola as the type of strikers and style of play were completely different. Under Guardiola, there was still a considerably high number of crosses (801) in the 2016-17 season. This can be explained by the fact that Manchester City had not been able to completely adapt to Guardiola's style of play. However, during their record breaking 2017-18 season, Manchester City recorded the lowest number of crosses (691) during all six seasons studied. This seems to suggest that Manchester City had been able to completely adapt Guardiola's style of play giving them more options in attack. Under Pelligrini, Manchester City was able to cause danger with tall strikers and crosses from their wingers. However, Guardiola's team had more options in attack due to their style of play as well as the main strengths of their attacking players. Manchester City mostly formed an attack with shorter players, such as Agüero (5'8), Sterling (5'7), and Sane (6'0). Manchester City's build up play gave them the option to build through the center with their striker or play the ball wide to the wingers who had the option to either cross the ball in front of the goal or cut inside the box. The lower number of crosses under Guardiola can therefore be explained by his style of play and the different options provided to the wingers in attack. 
 
-To summarize, an analysis of Manchester City's performance offensively over all six seasons showed the expected results. City's higher average of goals scored under Guardiola compared to Pelligrini demonstrates how Guardiola was able to create a dominating squad. He managed to lead Manchester City to a high average of goals scored in both home and away games and a record-breaking number of goals in the 2017-18 season. This shows how Guardiola was able to transform his team to fit into his style of play and philosophy after some challenges during the 2016-17 season with only 80 goals, respectively to the total of 106 and 95 goals scored in the following two seasons. The number of goals scored is reflected in the difference in average shot accuracy under the two managers as Guardiola’s squad averaged 37.2% while Pellegrini managed an average of 34.6%. Furthermore, both coaches managed their squad to have a higher average shot accuracy at home than away under their management. Lastly, the lower number of crosses by Manchester City under Guardiola's management compared to Pellegrini's illustrates how Guardiola's style of play and football philosophy completed changed the way Manchester City played and dominated offensively as a team. 
+To summarize, an analysis of Manchester City's offensive performance over all six seasons showed the expected results. City's higher average of goals scored under Guardiola compared to Pelligrini demonstrates Guardiola's ability to create a dominating squad. He managed to lead Manchester City to a high average of goals scored in both home and away games and a record-breaking number of goals in the 2017-18 season. This shows how Guardiola was able to transform his team to fit into his style of play and philosophy after some challenges during the 2016-17 season with only 80 goals, respectively to the total of 106 and 95 goals scored in the following two seasons. The number of goals scored is reflected in the difference in average shot accuracy under the two managers as Guardiola’s squad averaged 37.2% while Pellegrini managed an average of 34.6%. Lastly, the lower number of crosses by Manchester City under Guardiola's management compared to Pellegrini's illustrates how Guardiola's style of play and football philosophy completly changed the way Manchester City played and dominated offensively as a team. 
 
 **How did Manchester City perform defensively over the seasons? - Floyd**
 
-In order to conclude our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's performance defensively over the seasons. We will use the total goals scored against Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total tackles and interceptions under the different managers to get a better understanding of Manchester City's performance in front of the goal own goal. 
+In order to conclude our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's defensive performance over the seasons. We will use the total goals scored against Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total tackles and interceptions under the different managers to get a better understanding of Manchester City's performance in front of the goal own goal. 
 
 **Goals against [total, home, away]**
 ```{r}
@@ -738,7 +730,7 @@ GoalsAgainstTable %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-The bar chart above displays the total goals against Manchester City throughout the six seasons included in this analysis. If we look at this graph over all six seasons, it is evident that Guardiola more successfully managed his defensive players than Pellegrini did. In the final seasons under Pelligrini, Manchester City's total goals against increased steadily: from 37 to 38 and finally to 41. In their first three seasons under Guardiola, City's total goals against decreased rapidly: from 39 to 27 and then to 23. We therefore observe the opposite trend in terms of goals scored against over their time as a manager. 
+The bar chart above displays the total goals against Manchester City throughout the six seasons included in this analysis. If we look at this graph over all six seasons, it is evident that Guardiola more successfully managed his defensive players than Pellegrini did. In the seasons under Pelligrini, Manchester City's total goals against increased steadily: from 37 to 38 and finally to 41. In their first three seasons under Guardiola, City's total goals against decreased rapidly: from 39 to 27 and then to 23. We therefore observe the opposite trend in terms of goals scored against over their time as managers.
 
 ```{r}
 #Average Goals Against in a Season by Manager
@@ -759,9 +751,9 @@ GoalsAgainstTable %>%
 
 To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, Manchester City's average goals against per game (GAPG) by season, and the average GAPG for each manager.
 
-In the final three seasons under Pelligrini's management, Manchester City's opponents scored an average of 38.7 goals. In the first three seasons under Guardiola's management, the club's opponents scored an average of 29.7 goals. The lower average of goals scored against with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organisation is the cornerstone of everything else I want to achieve in my football". 
+In the final three seasons under Pelligrini's management, Manchester City's opponents scored an average of 38.7 goals. In the first three seasons under Guardiola's management, the club's opponents scored an average of 29.7 goals. The lower average of goals scored against Manchester City with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organisation is the cornerstone of everything else I want to achieve in my football". 
 
-A further evaluation show that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of points earned during these three seasons. 
+A further evaluation shows that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of points earned during these three seasons. 
 
 Manchester City's average GAPG under Pelligrini was 1.02, while under Guardiola, their average GPG was 0.78. 
 
@@ -782,7 +774,7 @@ Man_City_Stats_PL_Website %>%
   theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 14, face = "bold", color = "White"),legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
 ```
 
-The bar chart above displays the total number of tackles and interceptions by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the number of interceptions in a season. From a first look, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third year as a manager of Manchester City. On the other hand, Manchester City had a high number of tackles under Pelligrini's management but saw a gradual decrease over the first three seasons: from 756 to 751 and finally to 729. On the contrary, Pelligrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
+The bar chart above displays the total number of tackles and interceptions by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the total number of interceptions in a season. From a first look, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third year as a manager of Manchester City. On the other hand, Manchester City had a high number of tackles under Pelligrini's management but saw a gradual decrease over the first three seasons: from 756 to 751 and finally to 729. On the contrary, Pelligrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
 
 **Average Defensive Statistics**
 
@@ -810,10 +802,10 @@ Man_City_Stats_PL_Website %>%
 
 To compare Manchester City's tackles and interceptions under each manager in more depth, we have calculated a few averages: average tackles by each manager, average tackles per game by each manager, average interceptions by each manager, and the average interceptions per game by each manager. 
 
-All averages calculated indicate a lower number for Guardiola than Pelligrini. Manchester City's average number of tackles under Guardiola was 574.67, compared to Pelligrini's years with 745.33 tackles on average per season. Furthermore, City's average number of interceptions under Guardiola was 404 per season. Their average number of interceptions during Pellegrini's time was 565 per season. This clearly shows how Manchester City had a lower number of tackles and interceptions during Guardiola's tenure. Some might question why Manchester City had a lower average of tackles and interceptions per season while also a lower number of goals against by season. This can be explained by Guardiola's style of play as teams under his management are known to have a high percentage of possession, a high number of passes completed, and the ability to keep possession under high pressure. This automatically results in a lower percentage of possession for the opponent as well as the number of times the ball needs to be recovered by Manchester City. Thus, these numbers show that Guardiola was able to mold the team in accordance with his possession-oriented philosophy resulting in a low number of tackles and interceptions for City.
+All averages calculated indicate a lower number for Guardiola than Pelligrini. Manchester City's average number of tackles per season under Guardiola was 574.67, compared to Pelligrini's years with 745.33 tackles on average per season. Furthermore, City's average number of interceptions under Guardiola was 404 per season. Their average number of interceptions during Pellegrini's time was 565 per season. This clearly shows how Manchester City had a lower average number of tackles and interceptions during Guardiola's tenure. Some might question why Manchester City had a lower average number of tackles and interceptions per season while also a lower average number of goals against by season. This can be explained by Guardiola's style of play as teams under his management are known to have a high percentage of possession, a high number of passes completed, and the ability to keep possession under high pressure. This automatically results in a lower percentage of possession for the opponent as well as the number of times the ball needs to be recovered by Manchester City. Thus, these numbers show that Guardiola was able to mold the team in accordance with his possession-oriented philosophy resulting in a low number of tackles and interceptions for City.
 
 Overall, an analysis of Manchester City's defensive performance clearly shows that Pep Guardiola was able to transform his team with dominating defensive play, one of the cornerstones of Guardiola's football philosophy. City's lower average number of goals scored against Guardiola (29.7) compared to Pelligrini (38.7) demonstrates how Guardiola was able to create a dominating squad on both the attacking end as well as on the defensive end. The dominating possession game played by Manchester City during Guardiola's tenure allowed opponents less time on the ball and lower chances to score a goal. This is again reflected by the average number of tackles and interceptions per season under each manager with Guardiola's average well below Pellegrini's. 
 
-**VII. Conclusion**
-**VIII. Bibliography**
+### VII. Conclusion
+
 

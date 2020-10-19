@@ -38,7 +38,7 @@ output:
   This study is divided into six sections. The following section includes a biography of Pep Guardiola, including his time as a professional football player and as a coach. Next, we will then present the style of play Guardiola has implemented at Manchester City and how it has changed over the seasons. We will then introduce our data before analyzing the results of various statistical transformations and visualizations. In the fifth section, we will summarize our findings and provide limitations and future research possibilities as an extension to this study. 
 
 
-**II. Pep Guardiola**
+### II. Pep Guardiola
 
   Guardiola spent the majority of his playing career as a defensive midfielder for Spanish club Barcelona. Johan Cruyff, one of football's most legendary players, as manager of Barcelona, transformed the club into a celebrated champion, with Guardiola playing a central role, as they won the club's first ever European Cup in 1992 and four La Liga titles from 1991 to 1994. Guardiola also captained Barcelona from 1997 until his departure from the club in 2001. He earned 47 caps (appearances) for the Spanish national team, and was part of the team at the 1994 World Cup and Euro 2000. After his retirement as a player, Guardiola became the coach of Barcelona B. After being appointed as manager of Barcelona's first team in May 2008, Guardiola immediately made his mark by telling key players like Ronaldinho, Deco, and Samuel Eto'o that they were not part of his plans. Guardiola then went on to sign defenders Dani Alves and Gerard Piqué, and promoted youth players Sergio Busquets and Pedro to the first team. All three of these players would go on to be key figures in Barcelona's era of dominance in modern football. In his first season at Barcelona, Guardiola guided his side to the treble: winning La Liga, La Copa del Rey, and the UEFA Champions League. This feat made him the youngest ever manager to accomplish this. When Guardiola left the club in 2012, he had won 14 trophies as manager of Barcelona, a historical club record. 
 
@@ -59,9 +59,9 @@ In the weeks leading up to the final part of the 2017-18 season, Guardiola had m
 During Guardiola's third season in charge, he signed attacking midfielder Riyad Mahrez from Leicester City for a fee of £60 million. Manchester City had fully adapted Guardiola's style of play and dominated the Premier League in the previous season. They immediately started their 2018-19 season with a trophy, the 2018 FA Community Shield, with a victory over Chelsea. In the 2018-19 season, Guardiola faced one of his biggest challenges as the manager of Manchester City. In order to win the title, Manchester City had to win 14 games in a row. Guardiola called it one of the toughest challenges in all his career. However, after all 38 games were played, Manchester City was once again on top of the league with 98 points, one point above Liverpool. City finished the 2018-19 season with 32 wins and an impressive 95 goals scored. Besides the FA Community Shield and Premier League title, Manchester City also managed to win the FA Cup and became one of the first ever men's teams in England to win the domestic treble. 
 
 
-**III. Guardiola's Style of Play**
+### III. Guardiola's Style of Play
 
-*General*
+**General**
 
 The style of play characteristic of teams coached by Pep Guardiola can be summarized by five pillars:
 
@@ -75,11 +75,11 @@ The style of play characteristic of teams coached by Pep Guardiola can be summar
 
 5. Pressing and winning the ball back quickly once they lose possession. 
 
-*Guardiola's Style of Play over The Years*
+**Guardiola's Style of Play over The Years**
 
 Below, we will identify key elements of Manchester City's team and how their style of play changed over the different seasons with Guardiola as manager.
   
-*2016-2017 Season*
+**2016-2017 Season**
 
 · Pep struggled to find his best XI during the 2016-17 season and experimented with eight different formations in 38 Premier League matches. 
 
@@ -97,7 +97,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 
 · Ultimately, Manchester City lost in the fourth round of the Carabao Cup, the semi-finalls of the FA Cup, and the Round of 16 of the Champions League. On top of all of this, they were only able to secure third place in the Premier League, finishing 15 points behind Premier League champion Chelsea. 
 
-*2017-2018 Season*
+**2017-2018 Season**
 
 · With the signings of full-backs Danilo, Benjamin Mendy, and Kyle Walker, Pep Guardiola changed to a 5-3-2 formation. He was able to change from a 4-3-3 formation to a 5-3-2 formation because his full-backs were able to dominate the entire flank and therefore fit better into Guardiola's desired style of play.
 
@@ -125,7 +125,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
   
 · Manchester City and Pep Guardiola also managed to win the EFL cup during this season, but were knocked out of the Champions League quarterfinal by Premier League opponent, Liverpool.
 
-*2018-2019 Season*
+**2018-2019 Season**
 
 · For this season, Guardiola only signed attacking midfielder Mahrez and kept a very similar first team squad compared to the previous season.
 
@@ -138,7 +138,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 *[Source: https://www.youtube.com/watch?v=1gHq-yspmso]*
 
 
-**IV. Data**
+### IV. Data
 
 In order to examine how the style of play and performance of football club Manchester City changed after the appointment of their current manager, Pep Guardiola, data from the 2013-14 season through the 2018-19 season has been drawn from Football Data – a football portal providing historical data on any competition worldwide, that includes information on every Premier League game. Football Data provides all data sets in Excel and CSV format for quantitative analysis. The variables in this Premier League data set include:
 
@@ -208,14 +208,10 @@ In order to examine how the style of play and performance of football club Manch
 
 In order to perform the ideal analysis of Guardiola's impact at Manchester City, we would have liked to perform an analysis of the following variables in addition to those in our Football Data data set: passes (total), passes per game, pass accuracy %, crosses, cross accuracy %, saves, tackles, tackle success %, blocked shots, interceptions, clearances, duels won, and errors leading to goal. This would have allowed us to perform a more thorough analysis of Guardiola's change to City's style of play as well as the team's performance during his time as manager. 
 
-**V. Results**
+### V. Results
 
 
 
-
-
-**Secondary Questions**
-**How did Manchester City perform during Pellegrini's tenure as manager compared to during Guardiola's tenure? -> Will**
 
   To start our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will attempt to answer our secondary research questions. 
   
@@ -223,44 +219,11 @@ In order to perform the ideal analysis of Guardiola's impact at Manchester City,
 
 
 
-**Total points [total, home, away] - all seasons**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(HomePoints = case_when(FTR == "H" ~ 3,
-                                FTR == "A" ~ 0,
-                                FTR == "D" ~ 1),
-         AwayPoints = case_when(FTR == "H" ~ 0,
-                                FTR == "A" ~ 3,
-                                FTR == "D" ~ 1),
-         HomeGame = case_when(HomeTeam == "Man City" ~ TRUE,
-                              HomeTeam != "Man City" ~ FALSE),
-         TotalHomePoints = case_when(HomeGame == TRUE ~ HomePoints),
-         TotalAwayPoints = case_when(HomeGame == FALSE ~ AwayPoints)) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Manager) %>%
-  summarize(TotalHomePoints = sum(TotalHomePoints, na.rm = TRUE),
-            TotalAwayPoints = sum(TotalAwayPoints, na.rm = TRUE),
-            TotalPoints = TotalHomePoints + TotalAwayPoints) -> PointsTable
-```
-
-```
-## `summarise()` regrouping output by 'season' (override with `.groups` argument)
-```
-
-```r
-PointsTable
-```
-
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["TotalHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["TotalAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalPoints"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"52","4":"34","5":"86"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"34","5":"79"},{"1":"2015-16","2":"Pellegrini","3":"38","4":"28","5":"66"},{"1":"2016-17","2":"Guardiola","3":"40","4":"38","5":"78"},{"1":"2017-18","2":"Guardiola","3":"50","4":"50","5":"100"},{"1":"2018-19","2":"Guardiola","3":"54","4":"44","5":"98"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-
-**Total Points by Season**
 ![](Guardiola_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 The bar chart above displays the total points earned by Manchester City in their final three seasons under Pelligrini and in their first three seasons under Guardiola. From a cursory look at the graph, it is clear that overall, Manchester City earned more points in their seasons under Guardiola than in their seasons under Pelligrini. The two highest total point seasons for Manchester City come in 2017-18 and 2018-19, their second and third years under Guardiola, respectively.
@@ -549,13 +512,7 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = GoalsFor, names_prefix = "GoalsFor") %>%
   mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
-```
 
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
 GoalsForTable
 ```
 
@@ -638,13 +595,7 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = Shots, names_prefix = "Shots") %>%
   mutate(TotalShots = ShotsAway + ShotsHome) -> TotalShotsTable
-```
 
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
 TotalShotsTable
 ```
 
@@ -670,13 +621,7 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = ShotsTarget, names_prefix = "ShotsTarget") %>%
   mutate(TotalShotsTarget = ShotsTargetAway + ShotsTargetHome) -> TotalShotsTargetTable
-```
 
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
 TotalShotsTargetTable
 ```
 
@@ -818,13 +763,7 @@ all_seasons %>%
   pivot_wider(names_from = Game,
               values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
   mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) -> GoalsAgainstTable
-```
 
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
 GoalsAgainstTable
 ```
 
