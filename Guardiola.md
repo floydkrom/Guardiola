@@ -18,7 +18,7 @@ output:
 
 
 
-# I. Introduction
+### I. Introduction
 
   Pep Guardiola is considered to be one of the greatest tactical masterminds in modern football. He is a coach who possesses all the skills and experience to transform any team into a dominant champion in any worldwide competition. As a manager, Guardiola holds the record for the most consecutive league games won in La Liga (Spain), the Bundesliga (Germany), and the English Premier League. Guardiola has managed to win a total of 30 trophies in his career as manager of Barcelona, Bayern Munich, and his current club, Manchester City. How did Guardiola change the style of play and influence the performance of English football club Manchester City after his appointment as manager in July 2016?  
 
@@ -38,7 +38,7 @@ output:
   This study is divided into six sections. The following section includes a biography of Pep Guardiola, including his time as a professional football player and as a coach. Next, we will then present the style of play Guardiola has implemented at Manchester City and how it has changed over the seasons. We will then introduce our data before analyzing the results of various statistical transformations and visualizations. In the fifth section, we will summarize our findings and provide limitations and future research possibilities as an extension to this study. 
 
 
-**II. Pep Guardiola**
+### II. Pep Guardiola
 
   Guardiola spent the majority of his playing career as a defensive midfielder for Spanish club Barcelona. Johan Cruyff, one of football's most legendary players, as manager of Barcelona, transformed the club into a celebrated champion, with Guardiola playing a central role, as they won the club's first ever European Cup in 1992 and four La Liga titles from 1991 to 1994. Guardiola also captained Barcelona from 1997 until his departure from the club in 2001. He earned 47 caps (appearances) for the Spanish national team, and was part of the team at the 1994 World Cup and Euro 2000. After his retirement as a player, Guardiola became the coach of Barcelona B. After being appointed as manager of Barcelona's first team in May 2008, Guardiola immediately made his mark by telling key players like Ronaldinho, Deco, and Samuel Eto'o that they were not part of his plans. Guardiola then went on to sign defenders Dani Alves and Gerard Piqué, and promoted youth players Sergio Busquets and Pedro to the first team. All three of these players would go on to be key figures in Barcelona's era of dominance in modern football. In his first season at Barcelona, Guardiola guided his side to the treble: winning La Liga, La Copa del Rey, and the UEFA Champions League. This feat made him the youngest ever manager to accomplish this. When Guardiola left the club in 2012, he had won 14 trophies as manager of Barcelona, a historical club record. 
 
@@ -59,9 +59,9 @@ In the weeks leading up to the final part of the 2017-18 season, Guardiola had m
 During Guardiola's third season in charge, he signed attacking midfielder Riyad Mahrez from Leicester City for a fee of £60 million. Manchester City had fully adapted Guardiola's style of play and dominated the Premier League in the previous season. They immediately started their 2018-19 season with a trophy, the 2018 FA Community Shield, with a victory over Chelsea. In the 2018-19 season, Guardiola faced one of his biggest challenges as the manager of Manchester City. In order to win the title, Manchester City had to win 14 games in a row. Guardiola called it one of the toughest challenges in all his career. However, after all 38 games were played, Manchester City was once again on top of the league with 98 points, one point above Liverpool. City finished the 2018-19 season with 32 wins and an impressive 95 goals scored. Besides the FA Community Shield and Premier League title, Manchester City also managed to win the FA Cup and became one of the first ever men's teams in England to win the domestic treble. 
 
 
-**III. Guardiola's Style of Play**
+### III. Guardiola's Style of Play
 
-*General*
+**General**
 
 The style of play characteristic of teams coached by Pep Guardiola can be summarized by five pillars:
 
@@ -75,11 +75,11 @@ The style of play characteristic of teams coached by Pep Guardiola can be summar
 
 5. Pressing and winning the ball back quickly once they lose possession. 
 
-*Guardiola's Style of Play over The Years*
+**Guardiola's Style of Play over The Years**
 
 Below, we will identify key elements of Manchester City's team and how their style of play changed over the different seasons with Guardiola as manager.
   
-*2016-2017 Season*
+**2016-2017 Season**
 
 · Pep struggled to find his best XI during the 2016-17 season and experimented with eight different formations in 38 Premier League matches. 
 
@@ -97,7 +97,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 
 · Ultimately, Manchester City lost in the fourth round of the Carabao Cup, the semi-finalls of the FA Cup, and the Round of 16 of the Champions League. On top of all of this, they were only able to secure third place in the Premier League, finishing 15 points behind Premier League champion Chelsea. 
 
-*2017-2018 Season*
+**2017-2018 Season**
 
 · With the signings of full-backs Danilo, Benjamin Mendy, and Kyle Walker, Pep Guardiola changed to a 5-3-2 formation. He was able to change from a 4-3-3 formation to a 5-3-2 formation because his full-backs were able to dominate the entire flank and therefore fit better into Guardiola's desired style of play.
 
@@ -125,7 +125,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
   
 · Manchester City and Pep Guardiola also managed to win the EFL cup during this season, but were knocked out of the Champions League quarterfinal by Premier League opponent, Liverpool.
 
-*2018-2019 Season*
+**2018-2019 Season**
 
 · For this season, Guardiola only signed attacking midfielder Mahrez and kept a very similar first team squad compared to the previous season.
 
@@ -138,7 +138,7 @@ Below, we will identify key elements of Manchester City's team and how their sty
 *[Source: https://www.youtube.com/watch?v=1gHq-yspmso]*
 
 
-**IV. Data**
+### IV. Data
 
 In order to examine how the style of play and performance of football club Manchester City changed after the appointment of their current manager, Pep Guardiola, data from the 2013-14 season through the 2018-19 season has been drawn from Football Data – a football portal providing historical data on any competition worldwide, that includes information on every Premier League game. Football Data provides all data sets in Excel and CSV format for quantitative analysis. The variables in this Premier League data set include:
 
@@ -206,22 +206,28 @@ In order to examine how the style of play and performance of football club Manch
 
 · ABP = Away Team Bookings Points (10 = yellow, 25 = red)
 
-In order to perform the ideal analysis of Guardiola's impact at Manchester City, we would have liked to perform an analysis of the following variables in addition to those in our Football Data data set: passes (total), passes per game, pass accuracy %, crosses, cross accuracy %, saves, tackles, tackle success %, blocked shots, interceptions, clearances, duels won, and errors leading to goal. This would have allowed us to perform a more thorough analysis of Guardiola's change to City's style of play as well as the team's performance during his time as manager. 
+In order to perform a more thorough analysis of Guardiola's impact at Manchester City, data from the 2013-14 through the 2018-19 season has been drawn from the official Premier League website. The statistics page on the Premier League website provides data on any season as well as individual football club. For our analysis, we will be using the following variables: passes (total), passes per match, pass accuracy %, crosses, cross accuracy %, tackles, and interceptions. The Premier League website does not provide any data sets in Excel and CSV format, and we have therefore transformed the information into a data set in Excel format for our analysis. 
 
-**V. Results**
+[Source: http://www.football-data.co.uk/data.php]
 
+[Source: https://www.premierleague.com/stats]
 
-
-
-
-
-**Total points [total, home, away] - all seasons**
+### V. Results
 
 
-**Total Points by Season**
+
+
+  To start our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will attempt to answer our secondary research questions. 
+  
+  First: How did Manchester City perform during Guardiola's tenure as manager compared to during Pelligrini's tenure? We will use the total points earned by Manchester City in the Premier League in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. 
+
+
+
+
+
 ![](Guardiola_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
-**Average Points Statistics**
+The bar chart above displays the total points earned by Manchester City in their final three seasons under Pelligrini and in their first three seasons under Guardiola. From a cursory look at the graph, it is clear that overall, Manchester City earned more points in their seasons under Guardiola than in their seasons under Pelligrini. The two highest total point seasons for Manchester City come in 2017-18 and 2018-19, their second and third years under Guardiola, respectively.
 
 
 ```r
@@ -263,47 +269,23 @@ PointsTable %>%
   </script>
 </div>
 
+To gain more insight into City's total points under the two managers, we calculated a few averages: the average points earned by each manager, Manchester City's average points per game (PPG) by season, and the average PPG for each manager.
 
-**Total Home and Away Points by Season**
+In their final three seasons under Pelligrini, Manchester City earned an average of 77 points. In their first three seasons under Guardiola, the club earned an average of 92 points.
 
-```r
-TotalPointsTable <- PointsTable %>% 
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  pivot_longer(cols = c(TotalHomePoints, TotalAwayPoints),
-               names_to = "Location",
-               values_to = "Points") %>% 
-  select(season, Location, Points, Manager)
+In terms of Points Per Game (PPG), Manchester City had their highest PPG in the 2017-18 season (2.63; Guardiola), their second highest PPG in the 2018-19 season (2.58; Guardiola), and their third highest PPG in the 2013-14 season (2.26; Pelligrini). It is interesting to note that in each of these three seasons, Manchester City finished as Premier League champions.
 
-TotalPointsTable
-```
+Manchester City's average PPG under Pelligrini was 2.02, while under Guardiola, their average PPG was 2.42. 
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Points"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2013-14","2":"TotalHomePoints","3":"52","4":"Pellegrini"},{"1":"2013-14","2":"TotalAwayPoints","3":"34","4":"Pellegrini"},{"1":"2014-15","2":"TotalHomePoints","3":"45","4":"Pellegrini"},{"1":"2014-15","2":"TotalAwayPoints","3":"34","4":"Pellegrini"},{"1":"2015-16","2":"TotalHomePoints","3":"38","4":"Pellegrini"},{"1":"2015-16","2":"TotalAwayPoints","3":"28","4":"Pellegrini"},{"1":"2016-17","2":"TotalHomePoints","3":"40","4":"Guardiola"},{"1":"2016-17","2":"TotalAwayPoints","3":"38","4":"Guardiola"},{"1":"2017-18","2":"TotalHomePoints","3":"50","4":"Guardiola"},{"1":"2017-18","2":"TotalAwayPoints","3":"50","4":"Guardiola"},{"1":"2018-19","2":"TotalHomePoints","3":"54","4":"Guardiola"},{"1":"2018-19","2":"TotalAwayPoints","3":"44","4":"Guardiola"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+Next, we look at the points Manchester City earns in matches played at home and in matches played away from home. 
 
 
-```r
-TotalPointsTable %>% 
-  ggplot(aes(x = season, y = Points, fill = Location)) +
-  geom_col(position = "dodge") +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  geom_text(aes(label = Points), position = position_dodge(width = 0.9), color = "White", vjust = -0.4) +
-  labs(title = "Total Points Earned at <span style='color:#B9D6F2'>Home</span> and <span style='color:#0353A4'>Away</span> by Season", 
-       x = "", y = "", 
-       fill = "Where were points earned?") +
-  scale_fill_manual(values = c("#0353A4", "#B9D6F2"), labels = c("Total Away Points", "Total Home Points")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "#061A40"), strip.background.x = element_rect(fill = "grey"))
-```
 
 ![](Guardiola_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
-*Calculate average points per season in Pellegrini + Guardiola era
-*Calculate average home + away points per season in Pellegrini + Guardiola era
 
-**Average Home/Away Points Statistics**
+At first glance, it is not immediately clear whether there are trends in the graph above. However, if we focus only on points earned away from home (navy blue bars), it is clear that under Guardiola, Manchester City fared much better than under Pellegrini. In each of the first three seasons with Guardiola as manager, City's points earned away exceeded their points earned away in all of their final three seasons under Pelligrini (including the 2013-14 season in which City earned 86 total points and finished as champions). 
+
+In terms of points earned at home, differences between the two managers are not so clear. But, it is interesting to notice the trend within City's three seasons under each each manager. In the final seasons under Pelligrini, Manchester City's points earned at home decrease steadily: from 52 to 45 and finally to 38. In their first three seasons under Guardiola, City's home points increase steadily: from 40 to 50 and then to 54.
 
 
 ```r
@@ -387,537 +369,16 @@ TotalPointsTable %>%
   </script>
 </div>
 
-**Total shots [total, home, away]**
+To compare City's points earned at home and away under each manager in more depth, we calculated a few averages: the average points earned at home/away by each manager, the average home/away PPG by season, and the average home/away PPG by manager.
 
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(Shots = ifelse(Game == "Home", HS, AS)) %>%
-  select(season, Game, Shots, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = Shots, names_prefix = "Shots") %>%
-  mutate(TotalShots = ShotsAway + ShotsHome) -> TotalShotsTable
-```
+Manchester City's average home points under Pelligrini was 45. Under Guardiola, it was 48. City's average away points under Pelligrini was 32. Under Guardiola, this number jumps to 44.
 
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
+Manchester City's highest average home PPG occurred in the 2018-19 season (2.84; Guardiola), the second highest average home PPG in 2013-14 (2.74; Pelligrini), and the third highest in 2017-18 (2.63; Guardiola). Manchester City's highest average away PPG occurred in the 2017-18 season (2.63; Guardiola), the second highest in 2018-19 (2.32; Guardiola), and the third highest in 2016-17 (2.00; Guardiola).
 
-```r
-TotalShotsTable
-```
+Manchester City's average home PPG in their final three seasons under Pelligrini was 2.37. Their average home PPG in their first three seasons under Guardiola was 2.53. City's average away PPG under Pelligrini was a mere 1.68, while under Guardiola it was 2.32.
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+Our second secondary research question regards the differences in Manchester City's passing statistics under Pelligrini and under Guardiola. Before performing any analysis of the data, we anticipated that passing statistics would be a point of major difference between the two managers. As we mentioned earlier, Guardiola's sides are notorious for maintaining a high percentage of ball possession in matches, completing a high number of passes in their matches (with a high passing percentage), and winning the ball back quickly once they lose it. Pelligrini's sides typically do not do these things to nearly the same extent.   
 
-
-
-```r
-TotalShotsTable %>% 
-  ggplot(aes(x = season, y = TotalShots, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalShots), color = "White", vjust = -0.4) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Shots by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = FALSE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White")) 
-```
-
-![](Guardiola_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
-
-```r
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey")) 
-```
-
-```
-## List of 8
-##  $ axis.title.x.top   :List of 11
-##   ..$ family       : NULL
-##   ..$ face         : NULL
-##   ..$ colour       : chr "White"
-##   ..$ size         : NULL
-##   ..$ hjust        : NULL
-##   ..$ vjust        : NULL
-##   ..$ angle        : NULL
-##   ..$ lineheight   : NULL
-##   ..$ margin       : NULL
-##   ..$ debug        : NULL
-##   ..$ inherit.blank: logi FALSE
-##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-##  $ axis.text          :List of 11
-##   ..$ family       : NULL
-##   ..$ face         : NULL
-##   ..$ colour       : chr "White"
-##   ..$ size         : NULL
-##   ..$ hjust        : NULL
-##   ..$ vjust        : NULL
-##   ..$ angle        : NULL
-##   ..$ lineheight   : NULL
-##   ..$ margin       : NULL
-##   ..$ debug        : NULL
-##   ..$ inherit.blank: logi FALSE
-##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-##  $ legend.position    : chr "none"
-##  $ plot.background    :List of 5
-##   ..$ fill         : chr "#061A40"
-##   ..$ colour       : NULL
-##   ..$ size         : NULL
-##   ..$ linetype     : NULL
-##   ..$ inherit.blank: logi FALSE
-##   ..- attr(*, "class")= chr [1:2] "element_rect" "element"
-##  $ plot.title         :List of 22
-##   ..$ family        : NULL
-##   ..$ face          : chr "bold"
-##   ..$ size          : num 15
-##   ..$ colour        : chr "White"
-##   ..$ fill          : NULL
-##   ..$ box.colour    : NULL
-##   ..$ linetype      : NULL
-##   ..$ linewidth     : NULL
-##   ..$ hjust         : NULL
-##   ..$ vjust         : NULL
-##   ..$ halign        : NULL
-##   ..$ valign        : NULL
-##   ..$ angle         : NULL
-##   ..$ lineheight    : NULL
-##   ..$ margin        : NULL
-##   ..$ padding       : NULL
-##   ..$ r             : NULL
-##   ..$ align_widths  : NULL
-##   ..$ align_heights : NULL
-##   ..$ rotate_margins: NULL
-##   ..$ debug         : logi FALSE
-##   ..$ inherit.blank : logi FALSE
-##   ..- attr(*, "class")= chr [1:3] "element_markdown" "element_text" "element"
-##  $ plot.title.position: chr "plot"
-##  $ strip.background.x :List of 5
-##   ..$ fill         : chr "grey"
-##   ..$ colour       : NULL
-##   ..$ size         : NULL
-##   ..$ linetype     : NULL
-##   ..$ inherit.blank: logi FALSE
-##   ..- attr(*, "class")= chr [1:2] "element_rect" "element"
-##  $ strip.text         :List of 11
-##   ..$ family       : NULL
-##   ..$ face         : chr "italic"
-##   ..$ colour       : chr "White"
-##   ..$ size         : num 12
-##   ..$ hjust        : NULL
-##   ..$ vjust        : NULL
-##   ..$ angle        : NULL
-##   ..$ lineheight   : NULL
-##   ..$ margin       : NULL
-##   ..$ debug        : NULL
-##   ..$ inherit.blank: logi FALSE
-##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-##  - attr(*, "class")= chr [1:2] "theme" "gg"
-##  - attr(*, "complete")= logi FALSE
-##  - attr(*, "validate")= logi TRUE
-```
-
-**Total shots on target[total, home, away]**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(ShotsTarget = ifelse(Game == "Home", HST, AST)) %>%
-  select(season, Game, ShotsTarget, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = ShotsTarget, names_prefix = "ShotsTarget") %>%
-  mutate(TotalShotsTarget = ShotsTargetAway + ShotsTargetHome) -> TotalShotsTargetTable
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
-TotalShotsTargetTable
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsTargetAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"102","4":"136","5":"238"},{"1":"2014-15","2":"Pellegrini","3":"99","4":"129","5":"228"},{"1":"2015-16","2":"Pellegrini","3":"95","4":"115","5":"210"},{"1":"2016-17","2":"Guardiola","3":"102","4":"115","5":"217"},{"1":"2017-18","2":"Guardiola","3":"110","4":"151","5":"261"},{"1":"2018-19","2":"Guardiola","3":"112","4":"148","5":"260"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-
-```r
-TotalShotsTargetTable %>% 
-  ggplot(aes(x = season, y = TotalShotsTarget, fill = Manager)) +
-  geom_col() +
-  labs(title = "Total Shots on Target", x = "Season", y = "")
-```
-
-![](Guardiola_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
-
-
-**Average Shots on Target Statistics**
-
-
-```r
-TotalShotsTable %>% 
-  left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
-
-
-#Average Shots on Target Proportion by Manager
-ShotAccuracyTable %>% 
-  group_by(Manager) %>% 
-  mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots))
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3461342"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3461342"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3461342"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3727273"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3727273"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3727273"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-```r
-#Average Shots on Target Proportion by Season 
-ShotAccuracyTable %>% 
-  group_by(season) %>% 
-  mutate(AverageSOTSeason = TotalShotsTarget / TotalShots) 
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3536404"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3413174"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3431373"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3428120"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3930723"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3806735"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-```r
-#Average Home/Away Shots on Target Proportion by Manager
-ShotAccuracyTable %>% 
-  group_by(Manager) %>% 
-  mutate(AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome))
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3502304"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3502304"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3502304"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3872778"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3872778"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3872778"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-```r
-ShotAccuracyTable %>% 
-  group_by(Manager) %>% 
-  mutate(AverageAwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway))
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3410138"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3410138"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3410138"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3556531"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3556531"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3556531"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-```r
-#Average Home/Away Shots on Target Proportion by Season
-ShotAccuracyTable %>% 
-  group_by(season) %>% 
-  mutate(AverageHomeSOTSeason = ShotsTargetHome / ShotsHome) 
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3607427"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3573407"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3314121"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3422619"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.4351585"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3834197"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-```r
-ShotAccuracyTable %>% 
-  group_by(season) %>% 
-  mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3445946"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3224756"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3584906"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3434343"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3470032"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3771044"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-**Goals for [total, home, away]**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
-  select(season, Game, GoalsFor, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsFor, names_prefix = "GoalsFor") %>%
-  mutate(TotalGoalsFor = GoalsForAway + GoalsForHome) -> GoalsForTable
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
-GoalsForTable
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-```r
-GoalsForTable %>% 
-  ggplot(aes(x = season, y = TotalGoalsFor, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalGoalsFor), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goals For by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
-![](Guardiola_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
-*Calculate average goals for per season in Pellegrini + Guardiola era
-
-**Goals against [total, home, away]**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
-  select(season, Game, GoalsAgainst, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsAgainst, names_prefix = "GoalsAgainst") %>%
-  mutate(TotalGoalsAgainst = GoalsAgainstAway + GoalsAgainstHome) -> GoalsAgainstTable
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
-GoalsAgainstTable
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-```r
-GoalsAgainstTable %>% 
-  ggplot(aes(x = season, y = TotalGoalsAgainst, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalGoalsAgainst), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goals Against by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
-![](Guardiola_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
-
-*Calculate average goals against points per season in Pellegrini + Guardiola era
-
-**Goals for at half-time [total, home, away]**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsForHalfTime = ifelse(Game == "Home", HTHG, HTAG)) %>%
-  select(season, Game, GoalsForHalfTime, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsForHalfTime, names_prefix = "GoalsForHalfTime") %>%
-  mutate(TotalGoalsForHalfTime = GoalsForHalfTimeAway + GoalsForHalfTimeHome) 
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForHalfTimeAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHalfTimeHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsForHalfTime"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"17","4":"29","5":"46"},{"1":"2014-15","2":"Pellegrini","3":"18","4":"19","5":"37"},{"1":"2015-16","2":"Pellegrini","3":"12","4":"20","5":"32"},{"1":"2016-17","2":"Guardiola","3":"21","4":"15","5":"36"},{"1":"2017-18","2":"Guardiola","3":"24","4":"21","5":"45"},{"1":"2018-19","2":"Guardiola","3":"21","4":"28","5":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-**Goals against at half-time [total, home, away]**
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsAgainstHalfTime = ifelse(Game == "Home", HTAG, HTHG)) %>%
-  select(season, Game, GoalsAgainstHalfTime, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = GoalsAgainstHalfTime, names_prefix = "GoalsAgainstHalfTime") %>%
-  mutate(TotalGoalsAgainstHalfTime = GoalsAgainstHalfTimeAway + GoalsAgainstHalfTimeHome) 
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstHalfTimeAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHalfTimeHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainstHalfTime"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"7","4":"7","5":"14"},{"1":"2014-15","2":"Pellegrini","3":"12","4":"4","5":"16"},{"1":"2015-16","2":"Pellegrini","3":"12","4":"11","5":"23"},{"1":"2016-17","2":"Guardiola","3":"14","4":"3","5":"17"},{"1":"2017-18","2":"Guardiola","3":"7","4":"5","5":"12"},{"1":"2018-19","2":"Guardiola","3":"4","4":"7","5":"11"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-**DONE** Goal difference [total, home, away] 
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(GoalsFor = ifelse(Game == "Home", FTHG, FTAG)) %>%
-  mutate(GoalsAgainst = ifelse(Game == "Home", FTAG, FTHG)) %>%
-  select(season, Game, GoalsFor, GoalsAgainst, Manager) %>%
-  mutate(GoalDifference = GoalsFor - GoalsAgainst) %>%
-  group_by(season) %>%
-  mutate(TotalGoalDifference = sum(GoalDifference)) -> GoalDifferenceTable
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-```r
-GoalDifferenceTable
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Game"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsFor"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainst"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[5],"type":["chr"],"align":["left"]},{"label":["GoalDifference"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["TotalGoalDifference"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"65"},{"1":"2013-14","2":"Home","3":"63","4":"13","5":"Pellegrini","6":"50","7":"65"},{"1":"2014-15","2":"Away","3":"39","4":"24","5":"Pellegrini","6":"15","7":"45"},{"1":"2014-15","2":"Home","3":"44","4":"14","5":"Pellegrini","6":"30","7":"45"},{"1":"2015-16","2":"Away","3":"24","4":"20","5":"Pellegrini","6":"4","7":"30"},{"1":"2015-16","2":"Home","3":"47","4":"21","5":"Pellegrini","6":"26","7":"30"},{"1":"2016-17","2":"Away","3":"43","4":"22","5":"Guardiola","6":"21","7":"41"},{"1":"2016-17","2":"Home","3":"37","4":"17","5":"Guardiola","6":"20","7":"41"},{"1":"2017-18","2":"Away","3":"45","4":"13","5":"Guardiola","6":"32","7":"79"},{"1":"2017-18","2":"Home","3":"61","4":"14","5":"Guardiola","6":"47","7":"79"},{"1":"2018-19","2":"Away","3":"38","4":"11","5":"Guardiola","6":"27","7":"72"},{"1":"2018-19","2":"Home","3":"57","4":"12","5":"Guardiola","6":"45","7":"72"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-
-```r
-GoalDifferenceTable %>% 
-  ggplot(aes(x = season, y = TotalGoalDifference, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = TotalGoalDifference), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Total Goal Difference by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
-
-![](Guardiola_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
-
-**DONE** Yellow cards [total, home, away] 
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(YellowCard = ifelse(Game == "Home", HY, AY)) %>%
-  select(season, Game, YellowCard, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = YellowCard, names_prefix = "YellowCard") %>%
-  mutate(TotalYellowCards = YellowCardAway + YellowCardHome) 
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["YellowCardAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["YellowCardHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalYellowCards"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"33","5":"72"},{"1":"2014-15","2":"Pellegrini","3":"42","4":"35","5":"77"},{"1":"2015-16","2":"Pellegrini","3":"36","4":"25","5":"61"},{"1":"2016-17","2":"Guardiola","3":"39","4":"32","5":"71"},{"1":"2017-18","2":"Guardiola","3":"32","4":"26","5":"58"},{"1":"2018-19","2":"Guardiola","3":"27","4":"17","5":"44"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-**DONE** Red cards [total, home, away]
-
-
-```r
-all_seasons %>%
-  filter(HomeTeam == "Man City" | AwayTeam == "Man City") %>%
-  mutate(Game = case_when(HomeTeam == "Man City" ~ "Home",
-                              HomeTeam != "Man City" ~ "Away")) %>%
-  mutate(Manager = case_when(season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  group_by(season, Game, Manager) %>%
-  summarize(across(where(is.numeric),~sum(.x))) %>%
-  mutate(RedCard = ifelse(Game == "Home", HR, AR)) %>%
-  select(season, Game, RedCard, Manager) %>%
-  pivot_wider(names_from = Game,
-              values_from = RedCard, names_prefix = "RedCard") %>%
-  mutate(TotalRedCards = RedCardAway + RedCardHome) 
-```
-
-```
-## `summarise()` regrouping output by 'season', 'Game' (override with `.groups` argument)
-```
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["RedCardAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["RedCardHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalRedCards"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"1","4":"0","5":"1"},{"1":"2014-15","2":"Pellegrini","3":"1","4":"1","5":"2"},{"1":"2015-16","2":"Pellegrini","3":"0","4":"0","5":"0"},{"1":"2016-17","2":"Guardiola","3":"0","4":"4","5":"4"},{"1":"2017-18","2":"Guardiola","3":"1","4":"1","5":"2"},{"1":"2018-19","2":"Guardiola","3":"1","4":"0","5":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-**Stats from Premier League Website**
-
-
-```r
-library(readxl)
-Man_City_Stats_PL_Website <- read_excel("Man City Stats PL Website.xlsx")
-```
 
 
 
@@ -935,8 +396,9 @@ Man_City_Stats_PL_Website
   </script>
 </div>
 
+![](Guardiola_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
-**Average Passing Statistics**
+The graph above utilizes data taken from the official Premier League website and illustrates Manchester City's average passes per match in each of their final three seasons under Pelligrini and each of their first three seasons under Guardiola. As you can see, our initial prediction regarding the differences in passing statistics between Pelligrini's and Guardiola's side proved to be correct. In Guardiola's first season in charge (2016-17), City's average passes per match was 597.53. This number is higher than in any of their final three seasons under Pelligrini, despite being by far the lowest average passes per match in any of Guardiola's first three seasons. After the 2016-17 season, City's average passes per match jumps up dramatically (by more than 100 passes per match) to 743.18 in 2017-18 and 699.5 in 2018-19. This considerable increase in average passes per match indicates Guardiola's success in adapting Manchester City's style of play to his possession-oriented style, after his first season where City played a style more similar to the one they had under Pelligrini. 
 
 
 ```r
@@ -978,66 +440,311 @@ Man_City_Stats_PL_Website %>%
   </script>
 </div>
 
+To examine the differences in Manchester City's passing statistics during Pelligrini's and Guardiola's tenures in more depth, we calculated three more average passing statistics: average passes per season under each manager, average passes per match under each manager, and average pass accuracy under each manager.
 
-**Passes per match [total]**
+In Pelligrini's final three seasons in charge, Manchester City averaged 21,118.67 passes per season. In Guardiola's first three seasons in charge, City averaged 25,842.67 passes per season, a difference of more than 4,500 passes.
+
+Under Pelligrini, Manchester City averaged 555.72 passes per match. Under Guardiola, this number jumps to 680.07, a difference of more than 120 passes per match.
+
+Under Pelligrini, Manchester City maintained an average pass accuracy of 84.67%. Under Guardiola, City's average pass accuracy was 88.00%, a difference of 3.33%. While this may seem like an inconsequential difference, it is important to remember that Guardiola's teams are completing on average more than 120 passes per match more than Pelligrini's teams, which makes their higher pass accuracy all the more impressive.
+
+All in all, an analysis of Manchester City's passing statistics in the final three years of Pelligrini's tenure and the first three years of Guardiola's tenure yielded the results we were expecting. City's significantly higher average passes per match and their higher passing accuracy percentage under Guardiola illustrates how Guardiola was able to mold the team in accordance with his possession-oriented philosophy. Guardiola transformed Manchester City into a club that dominated possession, relied on short, accurate passes to move the ball around the field and maintain possession, and pressed relentlessly to win the ball back when they turned it over.  
+
+**Manchester City's offensive performance**
+
+In order to continue our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's offensive performance over the seasons. We will use the total goals scored by Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total shots and total shots on target to get a better understanding of Manchester City's performance in front of the opponent's goal. Lastly, we will assess the total number of crosses over the season. This will allow us to gain a deeper understanding of the style of play by Manchester City in offensive over the seasons. 
 
 
-```r
-Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  select(Season, Manager, Passes, `Passes per match`, `Pass accuracy (%)`, Interceptions) %>%
-  ggplot(aes(x = Season, y = `Passes per match`, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = `Passes per match`), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Passes per Match by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
-```
 
-![](Guardiola_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
+![](Guardiola_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
 
-**Crosses by season [total]**
+The bar chart above displays the total goals scored by Manchester City in the 2013-14 season through the 2018-19 season. At first glance, the 2013-14 under Pellegrini and the 2017-18 season under Guardiola stand out because of the high number of goals scored in both seasons by Manchester City. Manchester Ciy with Pellegrini as manager managed to score 102 goals in the 2013-14 season, the second highest number of goals scored by a Premier League team in one season. However, Manchester City managed to break the historical record of most goals scored in one season during Guardiola's tenure as they scored 106 goals in the 2017-18 season. As displayed earlier, the high number of goals helped Manchester City to earn a total of 100 points which crowned them Premier League champions during the 2017-18 season. 
 
 
 ```r
-Man_City_Stats_PL_Website %>%
-    mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  select(Season, Manager, Crosses, `Passes per match`, `Cross accuracy (%)`, Interceptions) %>%
-  ggplot(aes(x = Season, y = Crosses, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = `Crosses`), color = "White", vjust = -0.25) +
-  facet_wrap(~fct_relevel(Manager, "Pellegrini"), scales = "free_x") +
-  labs(title = "Crosses by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+#Average Goals Scored in a Season by Manager
+GoalsForTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGoals = mean(TotalGoalsFor))
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGoals"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"85.33333"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"85.33333"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"85.33333"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"93.66667"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"93.66667"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"93.66667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
+```r
+#Average Goals Scored per Game (GPG) by Season
+GoalsForTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonGPG = TotalGoalsFor/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"2.684211"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"2.184211"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"1.868421"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"2.105263"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"2.789474"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"2.500000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average GPG by Manager
+GoalsForTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGPG = sum(TotalGoalsFor)/ (38*3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsForAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsForHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsFor"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"39","4":"63","5":"102","6":"2.245614"},{"1":"2014-15","2":"Pellegrini","3":"39","4":"44","5":"83","6":"2.245614"},{"1":"2015-16","2":"Pellegrini","3":"24","4":"47","5":"71","6":"2.245614"},{"1":"2016-17","2":"Guardiola","3":"43","4":"37","5":"80","6":"2.464912"},{"1":"2017-18","2":"Guardiola","3":"45","4":"61","5":"106","6":"2.464912"},{"1":"2018-19","2":"Guardiola","3":"38","4":"57","5":"95","6":"2.464912"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To gain more insight into Manchester City's total goals scored under Pellegrini and Guardiola, we calculated a few averages: the average goals scored by each manager, Manchester City's average goals scored per game (GPG) by season, and the average GPG for each manager. 
+
+In the final three seasons under Pelligrini's management, Manchester City scored an average of 85.3 goals. In the first three seasons under Guardiola's management, the club scored an average of 93.7 goals. 
+
+A further evaluation show that Manchester City had their highest GPG in the 2017-18 season (2.79; Guardiola), their second highest GPG in the 2013-14 season (2.68; Pellegrini), and their third highest GPG in the 2018-19 season (2.50; Guardiola). As discussed earlier, the club also had their highest PPG during these three seasons which crowned them Premier League champions in all three years. 
+
+Manchester City's average GPG under Pelligrini was 2.25, while under Guardiola, their average GPG was 2.46. 
+
+Next, we evaluate the total shots and total shots on target by Manchester City to further examine their performance offensively.
+
+
+
+
+
+
+
+![](Guardiola_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+
+At first glimpse, we see a clear pattern in the club's total shots under both Pellegirini's and Guardiola's management. With Pellegrini as manager, Manchester City's total shots gradually declined during his first two seasons, from 673 shots during the 2013-14 season to 668 shots during the 2014-15 season, with an even sharper decline in the 2015-16 season with a total of 612 shots. Under Guardiola's management, the club's total shots steadily increased from 663 in his first season to a total of 683 shots in his third season. To further examine the impact of the total shots under the different managers, it's important to evaluate the total shots on target. 
+
+![](Guardiola_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+
+The graph above displays the total shots on target by season under the different managers. In this graph, we see a similar pattern to the total shots by season. Under Pellegrini's management, the total shots on target gradually declined over this years: from 238 in the 2013-14 season to 210 total shots on target in the 2015-16 season. During Guardiola's tenure, the club managed to significantly increase the total shots on target in his first two season with a small decline in the 2018-19 season: from 217 to 261 and finally to 260. To further examine the impact of the total shots on target under the different managers during the different seasons, we will evaluate a few averages: shot accuracy per season by manager, shot accuracy by season, shot accuracy  at home/away per season by manager, and shot accuracy at home/away by season. 
 
 
 ```r
-Man_City_Stats_PL_Website %>%
-  mutate(Manager = case_when(Season %in% c("2013-14", "2014-15", "2015-16") ~ "Pellegrini",
-                              Season %in% c("2016-17", "2017-18", "2018-19") ~ "Guardiola")) %>%
-  select(Season, Manager, Tackles, Interceptions, `Passes per match`, `Tackle success (%)`, Interceptions) %>%
-  ggplot(aes(x = Season, y = Tackles, fill = Manager)) +
-  geom_col() +
-  geom_text(aes(label = Tackles), color = "White", vjust = -0.25) +
-  geom_line(aes(x = Season, y = Interceptions), size = 1.5, color="red", group = 1) +
-  labs(title = "Tackles and Interceptions by Season", x = "", y = "") +
-  scale_fill_manual(values = c("#B9D6F2", "#0353A4")) +
-  removeGrid(x = TRUE, y = TRUE) +
-  theme(plot.title.position = "plot", plot.background = element_rect(fill = "#061A40"), plot.title = element_markdown(size = 15, face = "bold", color = "White"), legend.position = "none", axis.text = element_text(color = "White"), axis.title.x.top = element_text(color = "White"), strip.text = element_text(size = 12, face = "italic", color = "White"), strip.background.x = element_rect(fill = "grey"))
+TotalShotsTable %>% 
+  left_join(TotalShotsTargetTable, by = c("season", "Manager")) -> ShotAccuracyTable
+
+#Average Shots Accuracy Percentage by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots))
 ```
 
-![](Guardiola_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3461342"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3461342"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3461342"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3727273"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3727273"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3727273"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
-**VI. Conclusion**
-**VII. Bibliography**
+```r
+#Average Shots Accuracy Percentage by Season 
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSOTSeason = TotalShotsTarget / TotalShots) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3536404"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3413174"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3431373"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3428120"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3930723"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3806735"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away Shots Accuracy Percentage by Manager
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3502304"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3502304"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3502304"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3872778"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3872778"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3872778"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+ShotAccuracyTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageAwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTManager"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3410138"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3410138"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3410138"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3556531"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3556531"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3556531"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Home/Away Shots Accuracy Percentage by Season
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageHomeSOTSeason = ShotsTargetHome / ShotsHome) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3607427"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3573407"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3314121"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3422619"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.4351585"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3834197"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+ShotAccuracyTable %>% 
+  group_by(season) %>% 
+  mutate(AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) 
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ShotsAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ShotsHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalShots"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetAway"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ShotsTargetHome"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalShotsTarget"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTSeason"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"296","4":"377","5":"673","6":"102","7":"136","8":"238","9":"0.3445946"},{"1":"2014-15","2":"Pellegrini","3":"307","4":"361","5":"668","6":"99","7":"129","8":"228","9":"0.3224756"},{"1":"2015-16","2":"Pellegrini","3":"265","4":"347","5":"612","6":"95","7":"115","8":"210","9":"0.3584906"},{"1":"2016-17","2":"Guardiola","3":"297","4":"336","5":"633","6":"102","7":"115","8":"217","9":"0.3434343"},{"1":"2017-18","2":"Guardiola","3":"317","4":"347","5":"664","6":"110","7":"151","8":"261","9":"0.3470032"},{"1":"2018-19","2":"Guardiola","3":"297","4":"386","5":"683","6":"112","7":"148","8":"260","9":"0.3771044"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25). It is therefore important to recognize how small changes can increase a team's performance and dominance in a game. 
+
+A closer look at the average shot accuracy by season reveals that Manchester City had the highest average shot accuracy, 39.3%, during the 2017-18 record breaking season under Guardiola. Closely followed by the second highest average shot accuracy during the 2018-19 season with 38.1%. The third highest average shot accuracy of 35.4% was recorded during the 2013-14 season under Pelligrini. It is interesting to note that Manchester City scored 102 goals during the 2013-14 season and 95 goals during the 2018-19 season while the average shot accuracy was higher in the 2018-19 season (38.1%) under Guardiola than the 2013-14 season (35.4%) under Pellegrini. 
+
+In terms of Manchester City's average shot accuracy at home and away under the different managers, there is a noticeable difference in the average shot accuracy at home while there is only a slight difference in the average shot accuracy away. City's average shot accuracy at home was 35.0% under Pelligrini, while 38.7% under Guardiola, a difference of 3.7%. Manchester City recorded a lower shot accuracy away under Pelligrini with 34.1% and Guardiola with 35.6%, a moderate difference of 1.5%. 
+
+A closer analysis of the average home/away shot accuracy by season shows that City had a higher average shot accuracy at home than away during the 2013-14, 2014-15, 2017-18, and 2018-19 season. However, during the 2015-16 season under Pelligrini, Manchester City had an average shot accuracy of 33.1% at home while 35.8% away, a 2.7% difference. Furthermore, during the 2016-17 season under Guardiola, they managed an average shot accuracy of 34.2% at home while 34.3% away, a 0.1% difference. During Pelligrini's last year as a manager (2015-16), Manchester City earned a total of 66 points with only 38 points at home, the lowest number of points recorded under his management. This shows how the low average shot accuracy during the 2015-16 season (34.3%) and especially at home (33.1%) translated into the lowest number of points earned over the 6 years we evaluated Manchester City. Additionally, Pep Guardiola's team in the 2016-17 season earned a total of 78 points with only 40 points at home, the lowest number of points earned under his management. Similarly to the 2015-16 season, the second lowest average shot accuracy during the 2016-17 season (34.3%) and especially at home (34.2%) resulted in Guardiola's lowest number of points earned in a season during his career as a manager of Barcelona, Bayern Munich, and Manchester City. 
+
+Next, we look at the total number of crosses by Manchester City by season to provide a closer examination of Manchester City's performance under the two managers.
+
+![](Guardiola_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+
+As discussed earlier, pushing the full-backs high into the attack to provide crosses is one of the five pillars that summarizes Guardiola's style of play. The bar chart above displays the total number of crosses by Manchester City from the 2013-14 season through the 2018-19 season. In the final seasons under Pelligrini, Manchester City's total crosses first declined before a significant increase: from 892 to 795 and then to 866. In their first three seasons under Guardiola, City shows a similar pattern to Pellegrini's in terms of crosses, it first declines before it shows a significant increase: from 801 to 691 and then to 783. 
+
+Comparing the number of crosses by each season under the different managers clearly shows that Manchester City had more crosses under Pellegrini than Guardiola. To some, this might seem to suggest that Manchester City was more dominant in attack under Pellegrini. However, it is important to put these numbers into perspective and evaluate the style of play under both managers. Under Pelligrini, Manchester City mainly played with taller strikers: Dzeko (6'4) and Negredo (6' 1). Both these players are known for their physical presence, strength, and aerial ability resulting in two strikers dominant in the box of the opponent. This explains why City had a higher number of crosses under Pelligrini than under Guardiola as the type of strikers and style of play were completely different. Under Guardiola, there was still a considerably high number of crosses (801) in the 2016-17 season. This can be explained by the fact that Manchester City had not been able to completely adapt to Guardiola's style of play. However, during their record breaking 2017-18 season, Manchester City recorded the lowest number of crosses (691) during all six seasons studied. This seems to suggest that Manchester City had been able to completely adapt Guardiola's style of play giving them more options in attack. Under Pelligrini, Manchester City was able to cause danger with tall strikers and crosses from their wingers. However, Guardiola's team had more options in attack due to their style of play as well as the main strengths of their attacking players. Manchester City mostly formed an attack with shorter players, such as Agüero (5'8), Sterling (5'7), and Sane (6'0). Manchester City's build up play gave them the option to build through the center with their striker or play the ball wide to the wingers who had the option to either cross the ball in front of the goal or cut inside the box. The lower number of crosses under Guardiola can therefore be explained by his style of play and the different options provided to the wingers in attack. 
+
+To summarize, an analysis of Manchester City's offensive performance over all six seasons showed the expected results. City's higher average of goals scored under Guardiola compared to Pelligrini demonstrates Guardiola's ability to create a dominating squad. He managed to lead Manchester City to a high average of goals scored in both home and away games and a record-breaking number of goals in the 2017-18 season. This shows how Guardiola was able to transform his team to fit into his style of play and philosophy after some challenges during the 2016-17 season with only 80 goals, respectively to the total of 106 and 95 goals scored in the following two seasons. The number of goals scored is reflected in the difference in average shot accuracy under the two managers as Guardiola’s squad averaged 37.2% while Pellegrini managed an average of 34.6%. Lastly, the lower number of crosses by Manchester City under Guardiola's management compared to Pellegrini's illustrates how Guardiola's style of play and football philosophy completly changed the way Manchester City played and dominated offensively as a team. 
+
+**Manchester City's defensive performance**
+
+In order to conclude our analysis of Pep Guardiola's impact on the style of play and performance of Manchester City after his appointment in 2016, we will evaluate Manchester City's defensive performance over the seasons. We will use the total goals scored against Manchester City in the final three seasons of Pellegrini's tenure (2013-14, 2014-15, 2015-16) and in the first three seasons of Guardiola's tenure (2016-17, 2017-18, 2018-19) as the primary comparison point. We will then closely examine the total tackles and interceptions under the different managers to get a better understanding of Manchester City's performance in front of the goal own goal. 
+
+
+
+![](Guardiola_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+
+The bar chart above displays the total goals against Manchester City throughout the six seasons included in this analysis. If we look at this graph over all six seasons, it is evident that Guardiola more successfully managed his defensive players than Pellegrini did. In the seasons under Pelligrini, Manchester City's total goals against increased steadily: from 37 to 38 and finally to 41. In their first three seasons under Guardiola, City's total goals against decreased rapidly: from 39 to 27 and then to 23. We therefore observe the opposite trend in terms of goals scored against over their time as managers.
+
+
+```r
+#Average Goals Against in a Season by Manager
+GoalsAgainstTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGoalsAgainst = mean(TotalGoalsAgainst))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGoalsAgainst"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"38.66667"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"38.66667"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"38.66667"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"29.66667"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"29.66667"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"29.66667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Goals Against per Game (GAPG) by Season
+GoalsAgainstTable %>% 
+  group_by(season) %>% 
+  mutate(AverageSeasonGAPG = TotalGoalsAgainst/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGAPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"0.9736842"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"1.0000000"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"1.0789474"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"1.0263158"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"0.7105263"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"0.6052632"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average GAPG by Manager
+GoalsAgainstTable %>% 
+  group_by(Manager) %>% 
+  mutate(AverageManagerGAPG = sum(TotalGoalsAgainst)/ (38*3))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["GoalsAgainstAway"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["GoalsAgainstHome"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["TotalGoalsAgainst"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGAPG"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"24","4":"13","5":"37","6":"1.0175439"},{"1":"2014-15","2":"Pellegrini","3":"24","4":"14","5":"38","6":"1.0175439"},{"1":"2015-16","2":"Pellegrini","3":"20","4":"21","5":"41","6":"1.0175439"},{"1":"2016-17","2":"Guardiola","3":"22","4":"17","5":"39","6":"0.7807018"},{"1":"2017-18","2":"Guardiola","3":"13","4":"14","5":"27","6":"0.7807018"},{"1":"2018-19","2":"Guardiola","3":"11","4":"12","5":"23","6":"0.7807018"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, Manchester City's average goals against per game (GAPG) by season, and the average GAPG for each manager.
+
+In the final three seasons under Pelligrini's management, Manchester City's opponents scored an average of 38.7 goals. In the first three seasons under Guardiola's management, the club's opponents scored an average of 29.7 goals. The lower average of goals scored against Manchester City with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organisation is the cornerstone of everything else I want to achieve in my football". 
+
+A further evaluation shows that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of points earned during these three seasons. 
+
+Manchester City's average GAPG under Pelligrini was 1.02, while under Guardiola, their average GPG was 0.78. 
+
+Next, we will evaluate Manchester City's tackles and interceptions under the different managers to take a closer look at their performance defensively. 
+
+![](Guardiola_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
+
+The bar chart above displays the total number of tackles and interceptions by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the total number of interceptions in a season. From a first look, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third year as a manager of Manchester City. On the other hand, Manchester City had a high number of tackles under Pelligrini's management but saw a gradual decrease over the first three seasons: from 756 to 751 and finally to 729. On the contrary, Pelligrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
+
+
+```r
+#Average Tackles per Season under each Manager
+Man_City_Stats_PL_Website %>%
+  group_by(Manager) %>%
+  mutate(AverageSeasonTacklesManager = mean(Tackles))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageSeasonTacklesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"745.3333"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"745.3333"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"745.3333"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"574.6667"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"574.6667"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"574.6667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Tackles per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGameTacklesManager = mean(Tackles)/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageGameTacklesManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"19.61404"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"19.61404"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"19.61404"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"15.12281"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"15.12281"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"15.12281"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Interceptions under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageInterceptionsManager = mean(Interceptions))
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageInterceptionsManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"565"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"565"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"565"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"404"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"404"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"404"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+```r
+#Average Interceptions per Game under each Manager
+Man_City_Stats_PL_Website %>% 
+  group_by(Manager) %>% 
+  mutate(AverageGameInterceptionsManager = mean(Interceptions)/38)
+```
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Passes"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Passes per match"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pass accuracy (%)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Crosses"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Cross accuracy (%)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Tackles"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Tackle success (%)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Interceptions"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Duels Won"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Manager"],"name":[11],"type":["chr"],"align":["left"]},{"label":["AverageGameInterceptionsManager"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"20761","3":"546.34","4":"86","5":"892","6":"25","7":"756","8":"77","9":"496","10":"2562","11":"Pellegrini","12":"14.86842"},{"1":"2014-15","2":"22107","3":"581.67","4":"85","5":"795","6":"23","7":"751","8":"75","9":"569","10":"2681","11":"Pellegrini","12":"14.86842"},{"1":"2015-16","2":"20488","3":"539.16","4":"83","5":"866","6":"24","7":"729","8":"73","9":"630","10":"2751","11":"Pellegrini","12":"14.86842"},{"1":"2016-17","2":"22706","3":"597.53","4":"86","5":"801","6":"24","7":"643","8":"71","9":"504","10":"2730","11":"Guardiola","12":"10.63158"},{"1":"2017-18","2":"28241","3":"743.18","4":"89","5":"691","6":"21","7":"563","8":"68","9":"346","10":"2460","11":"Guardiola","12":"10.63158"},{"1":"2018-19","2":"26581","3":"699.50","4":"89","5":"783","6":"20","7":"518","8":"63","9":"362","10":"2344","11":"Guardiola","12":"10.63158"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+To compare Manchester City's tackles and interceptions under each manager in more depth, we have calculated a few averages: average tackles by each manager, average tackles per game by each manager, average interceptions by each manager, and the average interceptions per game by each manager. 
+
+All averages calculated indicate a lower number for Guardiola than Pelligrini. Manchester City's average number of tackles per season under Guardiola was 574.67, compared to Pelligrini's years with 745.33 tackles on average per season. Furthermore, City's average number of interceptions under Guardiola was 404 per season. Their average number of interceptions during Pellegrini's time was 565 per season. This clearly shows how Manchester City had a lower average number of tackles and interceptions during Guardiola's tenure. Some might question why Manchester City had a lower average number of tackles and interceptions per season while also a lower average number of goals against by season. This can be explained by Guardiola's style of play as teams under his management are known to have a high percentage of possession, a high number of passes completed, and the ability to keep possession under high pressure. This automatically results in a lower percentage of possession for the opponent as well as the number of times the ball needs to be recovered by Manchester City. Thus, these numbers show that Guardiola was able to mold the team in accordance with his possession-oriented philosophy resulting in a low number of tackles and interceptions for City.
+
+Overall, an analysis of Manchester City's defensive performance clearly shows that Pep Guardiola was able to transform his team with dominating defensive play, one of the cornerstones of Guardiola's football philosophy. City's lower average number of goals scored against Guardiola (29.7) compared to Pelligrini (38.7) demonstrates how Guardiola was able to create a dominating squad on both the attacking end as well as on the defensive end. The dominating possession game played by Manchester City during Guardiola's tenure allowed opponents less time on the ball and lower chances to score a goal. This is again reflected by the average number of tackles and interceptions per season under each manager with Guardiola's average well below Pellegrini's. 
+
+### VII. Conclusion
+
 
