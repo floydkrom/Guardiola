@@ -751,11 +751,7 @@ Overall, an analysis of Manchester City's defensive performance clearly shows th
   
   We investigated City's defensive performance over the seasons through an analysis of the club's total and home/away goals against per season, total tackles made by season, and total interceptions made per season. We went further by calculating average goals against by manager/season and average GAPG by manager/season. From our defensive analysis of Manchester City, we were are able make the following takeaways: City conceded significantly fewer goals under Guardiola than they did under Pellegrini and City "played less defense" (i.e., had a lower numbers of tackles and interceptions) under Guardiola than they did under Pellegrini, another side effect of Guardiola's love for dominating ball possession. 
   
-  To even the casual soccer fan, it is plain to see that Manchester City has made tremendous strides in recent years in their performance and results. The club finished the decade with more domestic silverware than any other club in England, largely thanks to their extraordinary success in the last four years. Through his shaping of Manchester City into a possession-oriented, attacking team and his acquisition of international superstars to fit this system, Pep Guardiola has transformed the club. We believe it is clear from our analysis the absolutely pivotal role Guardiola has played in building Manchester City into a European power that will continue to dominate the pitch for years to come. 
-
-  
-
-**VIII. Bibliography**
+  To even the casual football fan, it is plain to see that Manchester City has made tremendous strides in recent years in their performance and results. The club finished the decade with more domestic silverware than any other club in England, largely thanks to their extraordinary success in the last four years. Through his shaping of Manchester City into a possession-oriented, attacking team and his acquisition of international superstars to fit this system, Pep Guardiola has transformed the club. We believe it is clear from our analysis the absolutely pivotal role Guardiola has played in building Manchester City into a European power that will continue to dominate the pitch for years to come. 
 
 
 
