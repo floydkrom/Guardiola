@@ -726,7 +726,10 @@ Man_City_Stats_PL_Website %>%
   mutate(AverageSeasonTacklesManager = mean(Tackles), AverageGameTacklesManager = mean(Tackles)/38, AverageSeasonInterceptionsManager = mean(Interceptions), AverageGameInterceptionsManager = mean(Interceptions)/38) %>% 
   select(Season, Manager, AverageSeasonTacklesManager, AverageGameTacklesManager, AverageSeasonInterceptionsManager, AverageGameInterceptionsManager) -> AverageDefenseTable
 
-AverageDefenseTable
+AverageDefenseTable %>%
+  gt(rowname_col = "Season") %>%
+  tab_stubhead("Season") %>%
+  tab_header(title = md("**Defensive Statistics**"))
 ```
 
 To compare Manchester City's tackles and interceptions under each manager in more depth, we have calculated a few averages: average tackles per season under each manager, average tackles per game under each manager, average interceptions per season under each manager, and the average interceptions per game under each manager. 
