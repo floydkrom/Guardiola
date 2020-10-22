@@ -705,7 +705,6 @@ GoalsAgainstTable %>%
   mutate(SeasonGAPG = TotalGoalsAgainst/38) %>% 
   select(season, Manager, ManagerGoalsAgainst, ManagerGAPG, SeasonGAPG) -> AverageGoalsAgainstTable
 
-s
 AverageGoalsAgainstTable %>%
   gt(rowname_col = "season",
      groupname_col = "Manager") %>%

@@ -229,11 +229,406 @@ The style of play characteristic of teams coached by Pep Guardiola can be summar
 
 The bar chart above displays the total points earned by Manchester City in their final three seasons under Pelligrini and in their first three seasons under Guardiola. From a cursory look at the graph, it is clear that overall, Manchester City earned more points in their seasons under Guardiola than in their seasons under Pelligrini. The two highest total point seasons for Manchester City come in 2017-18 and 2018-19, their second and third years under Guardiola, respectively.
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageManagerPoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageManagerPPG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonPPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"77","4":"2.026316","5":"2.263158"},{"1":"2014-15","2":"Pellegrini","3":"77","4":"2.026316","5":"2.078947"},{"1":"2015-16","2":"Pellegrini","3":"77","4":"2.026316","5":"1.736842"},{"1":"2016-17","2":"Guardiola","3":"92","4":"2.421053","5":"2.052632"},{"1":"2017-18","2":"Guardiola","3":"92","4":"2.421053","5":"2.631579"},{"1":"2018-19","2":"Guardiola","3":"92","4":"2.421053","5":"2.578947"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#dtocnrdfmq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dtocnrdfmq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dtocnrdfmq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dtocnrdfmq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dtocnrdfmq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dtocnrdfmq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dtocnrdfmq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dtocnrdfmq .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dtocnrdfmq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dtocnrdfmq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dtocnrdfmq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dtocnrdfmq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dtocnrdfmq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#dtocnrdfmq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dtocnrdfmq .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dtocnrdfmq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dtocnrdfmq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dtocnrdfmq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dtocnrdfmq .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dtocnrdfmq .gt_left {
+  text-align: left;
+}
+
+#dtocnrdfmq .gt_center {
+  text-align: center;
+}
+
+#dtocnrdfmq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dtocnrdfmq .gt_font_normal {
+  font-weight: normal;
+}
+
+#dtocnrdfmq .gt_font_bold {
+  font-weight: bold;
+}
+
+#dtocnrdfmq .gt_font_italic {
+  font-style: italic;
+}
+
+#dtocnrdfmq .gt_super {
+  font-size: 65%;
+}
+
+#dtocnrdfmq .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="dtocnrdfmq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Points Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerPoints</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerPPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonPPG</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">77</td>
+      <td class="gt_row gt_right">2.026316</td>
+      <td class="gt_row gt_right">2.263158</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">77</td>
+      <td class="gt_row gt_right">2.026316</td>
+      <td class="gt_row gt_right">2.078947</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">77</td>
+      <td class="gt_row gt_right">2.026316</td>
+      <td class="gt_row gt_right">1.736842</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">92</td>
+      <td class="gt_row gt_right">2.421053</td>
+      <td class="gt_row gt_right">2.052632</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">92</td>
+      <td class="gt_row gt_right">2.421053</td>
+      <td class="gt_row gt_right">2.631579</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">92</td>
+      <td class="gt_row gt_right">2.421053</td>
+      <td class="gt_row gt_right">2.578947</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
 
   To gain more insight into City's total points under the two managers, we calculated a few averages: the average points earned by each manager, Manchester City's average points per game (PPG) by season, and the average PPG for each manager.
 
@@ -253,11 +648,427 @@ The bar chart above displays the total points earned by Manchester City in their
 
   In terms of points earned at home, differences between the two managers are not so clear. But, it is interesting to notice the trend within City's three seasons under each each manager. In the final seasons under Pelligrini, Manchester City's points earned at home decrease steadily: from 52 to 45 and finally to 38. In their first three seasons under Guardiola, City's home points increase steadily: from 40 to 50 and then to 54.
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageManagerHomePoints"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageManagerAwayPoints"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonHomePPG"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonAwayPPG"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["AverageManagerHomePPG"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AverageManagerAwayPPG"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"45","4":"32","5":"2.736842","6":"1.789474","7":"2.368421","8":"1.684211"},{"1":"2014-15","2":"Pellegrini","3":"45","4":"32","5":"2.368421","6":"1.789474","7":"2.368421","8":"1.684211"},{"1":"2015-16","2":"Pellegrini","3":"45","4":"32","5":"2.000000","6":"1.473684","7":"2.368421","8":"1.684211"},{"1":"2016-17","2":"Guardiola","3":"48","4":"44","5":"2.105263","6":"2.000000","7":"2.526316","8":"2.315789"},{"1":"2017-18","2":"Guardiola","3":"48","4":"44","5":"2.631579","6":"2.631579","7":"2.526316","8":"2.315789"},{"1":"2018-19","2":"Guardiola","3":"48","4":"44","5":"2.842105","6":"2.315789","7":"2.526316","8":"2.315789"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ejndiqefwy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ejndiqefwy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ejndiqefwy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ejndiqefwy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ejndiqefwy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ejndiqefwy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ejndiqefwy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ejndiqefwy .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ejndiqefwy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ejndiqefwy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ejndiqefwy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ejndiqefwy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ejndiqefwy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ejndiqefwy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejndiqefwy .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejndiqefwy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ejndiqefwy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ejndiqefwy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ejndiqefwy .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ejndiqefwy .gt_left {
+  text-align: left;
+}
+
+#ejndiqefwy .gt_center {
+  text-align: center;
+}
+
+#ejndiqefwy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ejndiqefwy .gt_font_normal {
+  font-weight: normal;
+}
+
+#ejndiqefwy .gt_font_bold {
+  font-weight: bold;
+}
+
+#ejndiqefwy .gt_font_italic {
+  font-style: italic;
+}
+
+#ejndiqefwy .gt_super {
+  font-size: 65%;
+}
+
+#ejndiqefwy .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="ejndiqefwy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="7" class="gt_heading gt_title gt_font_normal" style><strong>Average Home/Away Points Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerHomePoints</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerAwayPoints</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonHomePPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonAwayPPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerHomePPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerAwayPPG</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="7" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">32</td>
+      <td class="gt_row gt_right">2.736842</td>
+      <td class="gt_row gt_right">1.789474</td>
+      <td class="gt_row gt_right">2.368421</td>
+      <td class="gt_row gt_right">1.684211</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">32</td>
+      <td class="gt_row gt_right">2.368421</td>
+      <td class="gt_row gt_right">1.789474</td>
+      <td class="gt_row gt_right">2.368421</td>
+      <td class="gt_row gt_right">1.684211</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">32</td>
+      <td class="gt_row gt_right">2.000000</td>
+      <td class="gt_row gt_right">1.473684</td>
+      <td class="gt_row gt_right">2.368421</td>
+      <td class="gt_row gt_right">1.684211</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="7" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">48</td>
+      <td class="gt_row gt_right">44</td>
+      <td class="gt_row gt_right">2.105263</td>
+      <td class="gt_row gt_right">2.000000</td>
+      <td class="gt_row gt_right">2.526316</td>
+      <td class="gt_row gt_right">2.315789</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">48</td>
+      <td class="gt_row gt_right">44</td>
+      <td class="gt_row gt_right">2.631579</td>
+      <td class="gt_row gt_right">2.631579</td>
+      <td class="gt_row gt_right">2.526316</td>
+      <td class="gt_row gt_right">2.315789</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">48</td>
+      <td class="gt_row gt_right">44</td>
+      <td class="gt_row gt_right">2.842105</td>
+      <td class="gt_row gt_right">2.315789</td>
+      <td class="gt_row gt_right">2.526316</td>
+      <td class="gt_row gt_right">2.315789</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
 
   To compare City's points earned at home and away under each manager in more depth, we calculated a few averages: the average points earned at home/away by each manager, the average home/away PPG by season, and the average home/away PPG by manager.
 
@@ -277,11 +1088,406 @@ The bar chart above displays the total points earned by Manchester City in their
 
   The graph above utilizes data taken from the official Premier League website and illustrates Manchester City's average passes per match in each of their final three seasons under Pelligrini and each of their first three seasons under Guardiola. As you can see, our initial prediction regarding the differences in passing statistics between Pelligrini's and Guardiola's side proved to be correct. In Guardiola's first season in charge (2016-17), City's average passes per match was 597.53. This number is higher than in any of their final three seasons under Pelligrini, despite being by far the lowest average passes per match in any of Guardiola's first three seasons. After the 2016-17 season, City's average passes per match jumps up dramatically (by more than 100 passes per match) to 743.18 in 2017-18 and 699.5 in 2018-19. This considerable increase in average passes per match indicates Guardiola's success in adapting Manchester City's style of play to his possession-oriented style, after his first season where City played a style more similar to the one they had under Pelligrini. 
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageSeasonPassesManager"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageMatchPassesManager"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AveragePassAccuracyManager"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"21118.67","4":"555.7233","5":"84.66667"},{"1":"2014-15","2":"Pellegrini","3":"21118.67","4":"555.7233","5":"84.66667"},{"1":"2015-16","2":"Pellegrini","3":"21118.67","4":"555.7233","5":"84.66667"},{"1":"2016-17","2":"Guardiola","3":"25842.67","4":"680.0700","5":"88.00000"},{"1":"2017-18","2":"Guardiola","3":"25842.67","4":"680.0700","5":"88.00000"},{"1":"2018-19","2":"Guardiola","3":"25842.67","4":"680.0700","5":"88.00000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#cymovulffk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cymovulffk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cymovulffk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cymovulffk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cymovulffk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cymovulffk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cymovulffk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cymovulffk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cymovulffk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cymovulffk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cymovulffk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cymovulffk .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cymovulffk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cymovulffk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cymovulffk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cymovulffk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cymovulffk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#cymovulffk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cymovulffk .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#cymovulffk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cymovulffk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cymovulffk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cymovulffk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cymovulffk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cymovulffk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#cymovulffk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cymovulffk .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#cymovulffk .gt_left {
+  text-align: left;
+}
+
+#cymovulffk .gt_center {
+  text-align: center;
+}
+
+#cymovulffk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cymovulffk .gt_font_normal {
+  font-weight: normal;
+}
+
+#cymovulffk .gt_font_bold {
+  font-weight: bold;
+}
+
+#cymovulffk .gt_font_italic {
+  font-style: italic;
+}
+
+#cymovulffk .gt_super {
+  font-size: 65%;
+}
+
+#cymovulffk .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="cymovulffk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Passing Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonPassesManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">MatchPassesManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">PassAccuracyManager</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">21118.67</td>
+      <td class="gt_row gt_right">555.7233</td>
+      <td class="gt_row gt_right">84.66667</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">21118.67</td>
+      <td class="gt_row gt_right">555.7233</td>
+      <td class="gt_row gt_right">84.66667</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">21118.67</td>
+      <td class="gt_row gt_right">555.7233</td>
+      <td class="gt_row gt_right">84.66667</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">25842.67</td>
+      <td class="gt_row gt_right">680.0700</td>
+      <td class="gt_row gt_right">88.00000</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">25842.67</td>
+      <td class="gt_row gt_right">680.0700</td>
+      <td class="gt_row gt_right">88.00000</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">25842.67</td>
+      <td class="gt_row gt_right">680.0700</td>
+      <td class="gt_row gt_right">88.00000</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
 
   To examine the differences in Manchester City's passing statistics during Pelligrini's and Guardiola's tenures in more depth, we calculated three more average passing statistics: average passes per season under each manager, average passes per match under each manager, and average pass accuracy under each manager.
 
@@ -303,11 +1509,406 @@ The bar chart above displays the total points earned by Manchester City in their
 
   The bar chart above displays the total goals scored by Manchester City in the 2013-14 season through the 2018-19 season. At first glance, the 2013-14 season under Pellegrini and the 2017-18 season under Guardiola stand out because of the high number of goals scored in both seasons. Manchester City, under Pelligrini, scored 102 goals in the 2013-14 season, the second highest number of goals scored by a Premier League team in a single season. However, Manchester City broke their own record in the 2017-18 season under Guardiola, scoring 106 goals. Manchester City's impressive goal tally helped them earn a total of 100 points, which was enough to crown them Premier League champions in the 2017-18 season. 
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageManagerGoals"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGPG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"85.33333","4":"2.245614","5":"2.684211"},{"1":"2014-15","2":"Pellegrini","3":"85.33333","4":"2.245614","5":"2.184211"},{"1":"2015-16","2":"Pellegrini","3":"85.33333","4":"2.245614","5":"1.868421"},{"1":"2016-17","2":"Guardiola","3":"93.66667","4":"2.464912","5":"2.105263"},{"1":"2017-18","2":"Guardiola","3":"93.66667","4":"2.464912","5":"2.789474"},{"1":"2018-19","2":"Guardiola","3":"93.66667","4":"2.464912","5":"2.500000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#xcoixmsool .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xcoixmsool .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xcoixmsool .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xcoixmsool .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xcoixmsool .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xcoixmsool .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xcoixmsool .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xcoixmsool .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xcoixmsool .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xcoixmsool .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xcoixmsool .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xcoixmsool .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xcoixmsool .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#xcoixmsool .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xcoixmsool .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xcoixmsool .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xcoixmsool .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#xcoixmsool .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xcoixmsool .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#xcoixmsool .gt_left {
+  text-align: left;
+}
+
+#xcoixmsool .gt_center {
+  text-align: center;
+}
+
+#xcoixmsool .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xcoixmsool .gt_font_normal {
+  font-weight: normal;
+}
+
+#xcoixmsool .gt_font_bold {
+  font-weight: bold;
+}
+
+#xcoixmsool .gt_font_italic {
+  font-style: italic;
+}
+
+#xcoixmsool .gt_super {
+  font-size: 65%;
+}
+
+#xcoixmsool .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="xcoixmsool" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Goals For Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">TotalGoals</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerGPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonGPG</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">85.33333</td>
+      <td class="gt_row gt_right">2.245614</td>
+      <td class="gt_row gt_right">2.684211</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">85.33333</td>
+      <td class="gt_row gt_right">2.245614</td>
+      <td class="gt_row gt_right">2.184211</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">85.33333</td>
+      <td class="gt_row gt_right">2.245614</td>
+      <td class="gt_row gt_right">1.868421</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">93.66667</td>
+      <td class="gt_row gt_right">2.464912</td>
+      <td class="gt_row gt_right">2.105263</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">93.66667</td>
+      <td class="gt_row gt_right">2.464912</td>
+      <td class="gt_row gt_right">2.789474</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">93.66667</td>
+      <td class="gt_row gt_right">2.464912</td>
+      <td class="gt_row gt_right">2.500000</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
 
   To gain more insight into Manchester City's total goals under Pellegrini and Guardiola, we calculated a few averages: the average goals scored under each manager, average goals scored per game (GPG) under each manager, and the average GPG for each season. 
 
@@ -333,11 +1934,427 @@ The bar chart above displays the total points earned by Manchester City in their
 
   The graph above displays the total shots on target by season under the different managers. In this graph, we see a similar pattern to the total shots by season. Under Pellegrini's management, the total shots on target gradually declined over the years: from 238 in the 2013-14 season to 210 in the 2015-16 season. During Guardiola's tenure, the club managed to significantly increase the total shots on target in his first two seasons with a small decline in the 2018-19 season: from 217 to 261 and finally to 260. To further examine the impact of the total shots on target under the two managers across different seasons, we will evaluate a few averages: shot accuracy (AKA shot on target percentage: total shots on target / total shots) under each manager, shot accuracy at home/away under each manager, shot accuracy by season,  and shot accuracy at home/away by season. 
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageSOTManager"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTManager"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTManager"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["AverageSOTSeason"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["AverageHomeSOTSeason"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AverageAwaySOTSeason"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"0.3461342","4":"0.3502304","5":"0.3410138","6":"0.3536404","7":"0.3607427","8":"0.3445946"},{"1":"2014-15","2":"Pellegrini","3":"0.3461342","4":"0.3502304","5":"0.3410138","6":"0.3413174","7":"0.3573407","8":"0.3224756"},{"1":"2015-16","2":"Pellegrini","3":"0.3461342","4":"0.3502304","5":"0.3410138","6":"0.3431373","7":"0.3314121","8":"0.3584906"},{"1":"2016-17","2":"Guardiola","3":"0.3727273","4":"0.3872778","5":"0.3556531","6":"0.3428120","7":"0.3422619","8":"0.3434343"},{"1":"2017-18","2":"Guardiola","3":"0.3727273","4":"0.3872778","5":"0.3556531","6":"0.3930723","7":"0.4351585","8":"0.3470032"},{"1":"2018-19","2":"Guardiola","3":"0.3727273","4":"0.3872778","5":"0.3556531","6":"0.3806735","7":"0.3834197","8":"0.3771044"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#gqxxhmlwvy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gqxxhmlwvy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gqxxhmlwvy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gqxxhmlwvy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gqxxhmlwvy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gqxxhmlwvy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gqxxhmlwvy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gqxxhmlwvy .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gqxxhmlwvy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gqxxhmlwvy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gqxxhmlwvy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gqxxhmlwvy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gqxxhmlwvy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#gqxxhmlwvy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gqxxhmlwvy .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gqxxhmlwvy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gqxxhmlwvy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#gqxxhmlwvy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gqxxhmlwvy .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#gqxxhmlwvy .gt_left {
+  text-align: left;
+}
+
+#gqxxhmlwvy .gt_center {
+  text-align: center;
+}
+
+#gqxxhmlwvy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gqxxhmlwvy .gt_font_normal {
+  font-weight: normal;
+}
+
+#gqxxhmlwvy .gt_font_bold {
+  font-weight: bold;
+}
+
+#gqxxhmlwvy .gt_font_italic {
+  font-style: italic;
+}
+
+#gqxxhmlwvy .gt_super {
+  font-size: 65%;
+}
+
+#gqxxhmlwvy .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="gqxxhmlwvy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="7" class="gt_heading gt_title gt_font_normal" style><strong>Average Shots on Target Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SOTManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">HomeSOTManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AwaySOTManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SOTSeason</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">HomeSOTSeason</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AwaySOTSeason</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="7" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">0.3461342</td>
+      <td class="gt_row gt_right">0.3502304</td>
+      <td class="gt_row gt_right">0.3410138</td>
+      <td class="gt_row gt_right">0.3536404</td>
+      <td class="gt_row gt_right">0.3607427</td>
+      <td class="gt_row gt_right">0.3445946</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">0.3461342</td>
+      <td class="gt_row gt_right">0.3502304</td>
+      <td class="gt_row gt_right">0.3410138</td>
+      <td class="gt_row gt_right">0.3413174</td>
+      <td class="gt_row gt_right">0.3573407</td>
+      <td class="gt_row gt_right">0.3224756</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">0.3461342</td>
+      <td class="gt_row gt_right">0.3502304</td>
+      <td class="gt_row gt_right">0.3410138</td>
+      <td class="gt_row gt_right">0.3431373</td>
+      <td class="gt_row gt_right">0.3314121</td>
+      <td class="gt_row gt_right">0.3584906</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="7" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">0.3727273</td>
+      <td class="gt_row gt_right">0.3872778</td>
+      <td class="gt_row gt_right">0.3556531</td>
+      <td class="gt_row gt_right">0.3428120</td>
+      <td class="gt_row gt_right">0.3422619</td>
+      <td class="gt_row gt_right">0.3434343</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">0.3727273</td>
+      <td class="gt_row gt_right">0.3872778</td>
+      <td class="gt_row gt_right">0.3556531</td>
+      <td class="gt_row gt_right">0.3930723</td>
+      <td class="gt_row gt_right">0.4351585</td>
+      <td class="gt_row gt_right">0.3470032</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">0.3727273</td>
+      <td class="gt_row gt_right">0.3872778</td>
+      <td class="gt_row gt_right">0.3556531</td>
+      <td class="gt_row gt_right">0.3806735</td>
+      <td class="gt_row gt_right">0.3834197</td>
+      <td class="gt_row gt_right">0.3771044</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
 
   Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25). It is therefore important to recognize how small changes can increase a team's performance and the final outcome of a game. 
 
@@ -369,31 +2386,11 @@ The bar chart above displays the total points earned by Manchester City in their
 
   The bar chart above displays the total goals against Manchester City throughout the six seasons included in this analysis. If we look at this graph over all six seasons, it is evident that Guardiola more successfully managed his defensive players than Pellegrini did. In the seasons under Pellegrini, Manchester City's total goals against increased steadily: from 37 to 38 and finally to 41. In their first three seasons under Guardiola, City's total goals against decreased rapidly: from 39 to 27 and then to 23. We therefore observe opposite trends in terms of goals against in Pellegrini's and Guardiola's tenures as managers.
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["season"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manager"],"name":[2],"type":["chr"],"align":["left"]},{"label":["AverageManagerGoalsAgainst"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AverageManagerGAPG"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AverageSeasonGAPG"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2013-14","2":"Pellegrini","3":"38.66667","4":"1.0175439","5":"0.9736842"},{"1":"2014-15","2":"Pellegrini","3":"38.66667","4":"1.0175439","5":"1.0000000"},{"1":"2015-16","2":"Pellegrini","3":"38.66667","4":"1.0175439","5":"1.0789474"},{"1":"2016-17","2":"Guardiola","3":"29.66667","4":"0.7807018","5":"1.0263158"},{"1":"2017-18","2":"Guardiola","3":"29.66667","4":"0.7807018","5":"0.7105263"},{"1":"2018-19","2":"Guardiola","3":"29.66667","4":"0.7807018","5":"0.6052632"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-
-  To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, the average goals against per game (GAPG) for each manager, and the average GAPG for each season.
-
-  In the final three seasons under Pellegrini's management, Manchester City's opponents scored an average of 38.7 goals throughout the season. In the first three seasons under Guardiola's management, City's opponents scored an average of 29.7 goals. The lower average of goals scored against Manchester City with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organization is the cornerstone of everything else I want to achieve in my football". 
-
-  Manchester City's average GAPG under Pelligrini was 1.02, while under Guardiola, their average GPG was 0.78. 
-
-  A further evaluation shows that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of total points earned during these three seasons. 
-
-  Next, we will evaluate Manchester City's tackles and interceptions under the different managers to take a closer look at their performance defensively. 
-
-![](Guardiola_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
-
-  The bar chart above displays the total number of tackles and interceptions made by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the total number of interceptions in a season. At first glance, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third years as manager. On the other hand, Manchester City had a generally high number of tackles under Pellegrini's management but saw a gradual decrease during his final three seasons: from 756 to 751 and finally to 729. On the contrary, Pellegrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
-
 <!--html_preserve--><style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ivggzkntdu .gt_table {
+#szenxniyjj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -418,7 +2415,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_heading {
+#szenxniyjj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -430,7 +2427,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_title {
+#szenxniyjj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -440,7 +2437,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#ivggzkntdu .gt_subtitle {
+#szenxniyjj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -450,13 +2447,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#ivggzkntdu .gt_bottom_border {
+#szenxniyjj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_col_headings {
+#szenxniyjj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -471,7 +2468,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_col_heading {
+#szenxniyjj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -491,7 +2488,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#ivggzkntdu .gt_column_spanner_outer {
+#szenxniyjj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -503,15 +2500,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#ivggzkntdu .gt_column_spanner_outer:first-child {
+#szenxniyjj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ivggzkntdu .gt_column_spanner_outer:last-child {
+#szenxniyjj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ivggzkntdu .gt_column_spanner {
+#szenxniyjj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -523,7 +2520,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#ivggzkntdu .gt_group_heading {
+#szenxniyjj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -545,7 +2542,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#ivggzkntdu .gt_empty_group_heading {
+#szenxniyjj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -560,15 +2557,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#ivggzkntdu .gt_from_md > :first-child {
+#szenxniyjj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ivggzkntdu .gt_from_md > :last-child {
+#szenxniyjj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ivggzkntdu .gt_row {
+#szenxniyjj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -587,7 +2584,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#ivggzkntdu .gt_stub {
+#szenxniyjj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -599,7 +2596,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#ivggzkntdu .gt_summary_row {
+#szenxniyjj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -609,7 +2606,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#ivggzkntdu .gt_first_summary_row {
+#szenxniyjj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -619,7 +2616,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_grand_summary_row {
+#szenxniyjj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -629,7 +2626,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#ivggzkntdu .gt_first_grand_summary_row {
+#szenxniyjj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -639,11 +2636,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_striped {
+#szenxniyjj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ivggzkntdu .gt_table_body {
+#szenxniyjj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -652,7 +2649,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_footnotes {
+#szenxniyjj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -666,13 +2663,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_footnote {
+#szenxniyjj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ivggzkntdu .gt_sourcenotes {
+#szenxniyjj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -686,49 +2683,464 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ivggzkntdu .gt_sourcenote {
+#szenxniyjj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ivggzkntdu .gt_left {
+#szenxniyjj .gt_left {
   text-align: left;
 }
 
-#ivggzkntdu .gt_center {
+#szenxniyjj .gt_center {
   text-align: center;
 }
 
-#ivggzkntdu .gt_right {
+#szenxniyjj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ivggzkntdu .gt_font_normal {
+#szenxniyjj .gt_font_normal {
   font-weight: normal;
 }
 
-#ivggzkntdu .gt_font_bold {
+#szenxniyjj .gt_font_bold {
   font-weight: bold;
 }
 
-#ivggzkntdu .gt_font_italic {
+#szenxniyjj .gt_font_italic {
   font-style: italic;
 }
 
-#ivggzkntdu .gt_super {
+#szenxniyjj .gt_super {
   font-size: 65%;
 }
 
-#ivggzkntdu .gt_footnote_marks {
+#szenxniyjj .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ivggzkntdu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="szenxniyjj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
-      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><strong>Defensive Statistics</strong></th>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Goals Against Statistics Under Each Manager</strong></th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerGoalsAgainst</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ManagerGAPG</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonGAPG</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Pellegrini</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2013-14</td>
+      <td class="gt_row gt_right">38.66667</td>
+      <td class="gt_row gt_right">1.0175439</td>
+      <td class="gt_row gt_right">0.9736842</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2014-15</td>
+      <td class="gt_row gt_right">38.66667</td>
+      <td class="gt_row gt_right">1.0175439</td>
+      <td class="gt_row gt_right">1.0000000</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2015-16</td>
+      <td class="gt_row gt_right">38.66667</td>
+      <td class="gt_row gt_right">1.0175439</td>
+      <td class="gt_row gt_right">1.0789474</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Guardiola</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2016-17</td>
+      <td class="gt_row gt_right">29.66667</td>
+      <td class="gt_row gt_right">0.7807018</td>
+      <td class="gt_row gt_right">1.0263158</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2017-18</td>
+      <td class="gt_row gt_right">29.66667</td>
+      <td class="gt_row gt_right">0.7807018</td>
+      <td class="gt_row gt_right">0.7105263</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">2018-19</td>
+      <td class="gt_row gt_right">29.66667</td>
+      <td class="gt_row gt_right">0.7807018</td>
+      <td class="gt_row gt_right">0.6052632</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div><!--/html_preserve-->
+
+  To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, the average goals against per game (GAPG) for each manager, and the average GAPG for each season.
+
+  In the final three seasons under Pellegrini's management, Manchester City's opponents scored an average of 38.7 goals throughout the season. In the first three seasons under Guardiola's management, City's opponents scored an average of 29.7 goals. The lower average of goals scored against Manchester City with Guardiola as a manager can be explained by one of his most famous quotes: "Defensive organization is the cornerstone of everything else I want to achieve in my football". 
+
+  Manchester City's average GAPG under Pelligrini was 1.02, while under Guardiola, their average GPG was 0.78. 
+
+  A further evaluation shows that Manchester City had their highest GAPG in the 2015-16 season (1.08; Pellegrini), their second highest GAPG in the 2016-17 season (1.03; Guardiola), and their third highest GAPG in the 2014-15 season (1.00; Pellegrini). As discussed earlier, due to the high number of goals scored against Manchester City in these seasons, they consequently had the lowest number of total points earned during these three seasons. 
+
+  Next, we will evaluate Manchester City's tackles and interceptions under the different managers to take a closer look at their performance defensively. 
+
+![](Guardiola_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
+
+  The bar chart above displays the total number of tackles and interceptions made by Manchester City under Pellegrini and Guardiola. The bars represent the total number of tackles in a season while the red line represents the total number of interceptions in a season. At first glance, it is evident that the number of tackles sharply declined under Guardiola's management: from 643 to 563 and finally to 518. Furthermore, the number of interceptions also saw a sharp decline in the 2016-17 season and then stabilized during Guardiola's second and third years as manager. On the other hand, Manchester City had a generally high number of tackles under Pellegrini's management but saw a gradual decrease during his final three seasons: from 756 to 751 and finally to 729. On the contrary, Pellegrini saw a rapid increase in the number of interceptions during his tenure: from 496 to 569 and finally 630. 
+
+<!--html_preserve--><style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#bdhwssoahs .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bdhwssoahs .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bdhwssoahs .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bdhwssoahs .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bdhwssoahs .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bdhwssoahs .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bdhwssoahs .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bdhwssoahs .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bdhwssoahs .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bdhwssoahs .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bdhwssoahs .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bdhwssoahs .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bdhwssoahs .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#bdhwssoahs .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdhwssoahs .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdhwssoahs .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bdhwssoahs .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#bdhwssoahs .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bdhwssoahs .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#bdhwssoahs .gt_left {
+  text-align: left;
+}
+
+#bdhwssoahs .gt_center {
+  text-align: center;
+}
+
+#bdhwssoahs .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bdhwssoahs .gt_font_normal {
+  font-weight: normal;
+}
+
+#bdhwssoahs .gt_font_bold {
+  font-weight: bold;
+}
+
+#bdhwssoahs .gt_font_italic {
+  font-style: italic;
+}
+
+#bdhwssoahs .gt_super {
+  font-size: 65%;
+}
+
+#bdhwssoahs .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="bdhwssoahs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><strong>Average Defensive Statistics Under Each Manager</strong></th>
     </tr>
     <tr>
       <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
@@ -736,11 +3148,11 @@ The bar chart above displays the total points earned by Manchester City in their
   </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Season</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AverageSeasonTacklesManager</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AverageGameTacklesManager</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AverageSeasonInterceptionsManager</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">AverageGameInterceptionsManager</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonTackles</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">GameTackles</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SeasonInterceptions</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">GameInterceptions</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
