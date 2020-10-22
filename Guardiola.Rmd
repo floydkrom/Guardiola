@@ -328,13 +328,17 @@ The bar chart above displays the total points earned by Manchester City in their
 #Average Points Earned in a Season by Manager, Average PPG by Manager, Average Points per Game (PPG) by Season
 PointsTable %>% 
   group_by(Manager) %>% 
-  mutate(AverageManagerPoints = mean(TotalPoints), AverageManagerPPG = sum(TotalPoints)/ (38*3)) %>% 
+  mutate(ManagerPoints = mean(TotalPoints), ManagerPPG = sum(TotalPoints)/ (38*3)) %>% 
   ungroup(Manager) %>% 
   group_by(season) %>% 
-  mutate(AverageSeasonPPG = TotalPoints/38) %>% 
-  select(season, Manager, AverageManagerPoints, AverageManagerPPG, AverageSeasonPPG) -> AveragePointsTable
+  mutate(SeasonPPG = TotalPoints/38) %>% 
+  select(season, Manager, ManagerPoints, ManagerPPG, SeasonPPG) -> AveragePointsTable
 
-AveragePointsTable
+
+AveragePointsTable %>%
+  gt(rowname_col = "season",
+     groupname_col = "Manager") %>%
+  tab_header(title = md("**Average Points Statistics Under Each Manager**"))
 ```
 
   To gain more insight into City's total points under the two managers, we calculated a few averages: the average points earned by each manager, Manchester City's average points per game (PPG) by season, and the average PPG for each manager.
@@ -382,20 +386,20 @@ TotalPointsTable %>%
 TotalPointsTable %>% 
   filter(Location == "TotalHomePoints") %>% 
   group_by(Manager) %>% 
-  mutate(AverageManagerHomePoints = mean(Points), AverageManagerHomePPG = sum(Points)/(19 * 3)) %>% 
+  mutate(ManagerHomePoints = mean(Points), ManagerHomePPG = sum(Points)/(19 * 3)) %>% 
   ungroup() %>% 
   group_by(season) %>% 
-  mutate(AverageSeasonHomePPG = Points/19) -> AverageHomePointsTable
+  mutate(SeasonHomePPG = Points/19) -> AverageHomePointsTable
 
 
 #Average Points Earned Away by Manager, Average Away PPG by Manager, Average Away PPG by Season
 TotalPointsTable %>% 
   filter(Location == "TotalAwayPoints") %>% 
   group_by(Manager) %>% 
-  mutate(AverageManagerAwayPoints = mean(Points), AverageManagerAwayPPG = sum(Points)/(19 * 3)) %>% 
+  mutate(ManagerAwayPoints = mean(Points), ManagerAwayPPG = sum(Points)/(19 * 3)) %>% 
   ungroup() %>% 
   group_by(season) %>% 
-  mutate(AverageSeasonAwayPPG = Points/19) ->AverageAwayPointsTable
+  mutate(SeasonAwayPPG = Points/19) ->AverageAwayPointsTable
 
 
 AverageHomePointsTable %>% 
@@ -403,9 +407,13 @@ AverageHomePointsTable %>%
 
 
 AverageHomeAwayPointsTable %>% 
-  select(season, Manager, AverageManagerHomePoints, AverageManagerAwayPoints, AverageSeasonHomePPG, AverageSeasonAwayPPG, AverageManagerHomePPG, AverageManagerAwayPPG) -> FinalHomeAwayPointsTable
+  select(season, Manager, ManagerHomePoints, ManagerAwayPoints, SeasonHomePPG, SeasonAwayPPG, ManagerHomePPG, ManagerAwayPPG) -> FinalHomeAwayPointsTable
 
-FinalHomeAwayPointsTable
+
+FinalHomeAwayPointsTable %>%
+  gt(rowname_col = "season",
+     groupname_col = "Manager") %>%
+  tab_header(title = md("**Average Home/Away Points Statistics Under Each Manager**"))
 ```
 
   To compare City's points earned at home and away under each manager in more depth, we calculated a few averages: the average points earned at home/away by each manager, the average home/away PPG by season, and the average home/away PPG by manager.
@@ -450,10 +458,12 @@ Man_City_Stats_PL_Website %>%
 #Average Passes per Season under each Manager, Average Passes per Match under each Manager, Average Pass Accuracy under each Manager
 Man_City_Stats_PL_Website %>%
   group_by(Manager) %>%
-  mutate(AverageSeasonPassesManager = mean(Passes), AverageMatchPassesManager = mean(`Passes per match`),               AveragePassAccuracyManager = mean(`Pass accuracy (%)`)) %>% 
-  select(Season, Manager, AverageSeasonPassesManager, AverageMatchPassesManager, AveragePassAccuracyManager) -> AveragePassingTable
+  mutate(SeasonPassesManager = mean(Passes), MatchPassesManager = mean(`Passes per match`), PassAccuracyManager = mean(`Pass accuracy (%)`)) %>% 
+  select(Season, Manager, SeasonPassesManager, MatchPassesManager, PassAccuracyManager) -> AveragePassingTable
 
-AveragePassingTable
+AveragePassingTable %>%
+  gt(rowname_col = "Season") %>%
+  tab_header(title = md("**Average Passing Statistics Under Each Manager**"))
 ```
 
   To examine the differences in Manchester City's passing statistics during Pelligrini's and Guardiola's tenures in more depth, we calculated three more average passing statistics: average passes per season under each manager, average passes per match under each manager, and average pass accuracy under each manager.
@@ -506,13 +516,17 @@ GoalsForTable %>%
 #Average Goals Scored in a Season by Manager, Average Goals Scored per Game (GPG) by Manager, Average GPG by Season
 GoalsForTable %>% 
   group_by(Manager) %>% 
-  mutate(AverageManagerGoals = mean(TotalGoalsFor), AverageManagerGPG = sum(TotalGoalsFor)/ (38*3)) %>% 
+  mutate(TotalGoals = mean(TotalGoalsFor), ManagerGPG = sum(TotalGoalsFor)/ (38*3)) %>% 
   ungroup() %>% 
   group_by(season) %>% 
-  mutate(AverageSeasonGPG = TotalGoalsFor/38) %>% 
-  select(season, Manager, AverageManagerGoals, AverageManagerGPG, AverageSeasonGPG) -> AverageGoalsForTable
+  mutate(SeasonGPG = TotalGoalsFor/38) %>% 
+  select(season, Manager, TotalGoals, ManagerGPG, SeasonGPG) -> AverageGoalsForTable
 
-AverageGoalsForTable
+
+AverageGoalsForTable %>%
+  gt(rowname_col = "season",
+     groupname_col = "Manager") %>%
+  tab_header(title = md("**Average Goals For Statistics Under Each Manager**"))
 ```
 
   To gain more insight into Manchester City's total goals under Pellegrini and Guardiola, we calculated a few averages: the average goals scored under each manager, average goals scored per game (GPG) under each manager, and the average GPG for each season. 
@@ -599,13 +613,17 @@ ShotAccuracyTable %>%
 #Average Shots on Target Proportion by Manager, Average Home/Away Shots on Target Proportion by Manager, Average Shots on Target Proportion by Season, and Average Home/Away Shots on Target Proportion by Season
 ShotAccuracyTable %>% 
   group_by(Manager) %>% 
-  mutate(AverageSOTManager = sum(TotalShotsTarget) / sum(TotalShots), AverageHomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome), AverageAwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway)) %>% 
+  mutate(SOTManager = sum(TotalShotsTarget) / sum(TotalShots), HomeSOTManager = sum(ShotsTargetHome) / sum(ShotsHome), AwaySOTManager = sum(ShotsTargetAway) / sum(ShotsAway)) %>% 
   ungroup(Manager) %>% 
   group_by(season) %>% 
-  mutate(AverageSOTSeason = TotalShotsTarget / TotalShots, AverageHomeSOTSeason = ShotsTargetHome / ShotsHome, AverageAwaySOTSeason = ShotsTargetAway / ShotsAway) %>% 
-  select(season, Manager, AverageSOTManager, AverageHomeSOTManager, AverageAwaySOTManager, AverageSOTSeason, AverageHomeSOTSeason, AverageAwaySOTSeason) -> AverageSOTTable
+  mutate(SOTSeason = TotalShotsTarget / TotalShots, HomeSOTSeason = ShotsTargetHome / ShotsHome, AwaySOTSeason = ShotsTargetAway / ShotsAway) %>% 
+  select(season, Manager, SOTManager, HomeSOTManager, AwaySOTManager, SOTSeason, HomeSOTSeason, AwaySOTSeason) -> AverageSOTTable
 
-AverageSOTTable
+
+AverageSOTTable %>%
+  gt(rowname_col = "season",
+     groupname_col = "Manager") %>%
+  tab_header(title = md("**Average Shots on Target Statistics Under Each Manager**"))
 ```
 
   Under Pelligrini, Manchester City averaged a shot accuracy of 34.6%. Under Guardiola, this percentage increased to an average shot accuracy of 37.2%, a difference of 2.6%. While this may be considered as a small difference, the increase in average shot accuracy resulted in a higher GPG under Guardiola (2.46) than under Pelligrini (2.25). It is therefore important to recognize how small changes can increase a team's performance and the final outcome of a game. 
@@ -681,13 +699,17 @@ GoalsAgainstTable %>%
 #Average Goals Against in a Season by Manager, Average Goals Against per Game (GAPG) by Manager, Average GAPG by Season
 GoalsAgainstTable %>% 
   group_by(Manager) %>% 
-  mutate(AverageManagerGoalsAgainst = mean(TotalGoalsAgainst), AverageManagerGAPG = sum(TotalGoalsAgainst)/ (38*3)) %>% 
+  mutate(ManagerGoalsAgainst = mean(TotalGoalsAgainst), ManagerGAPG = sum(TotalGoalsAgainst)/ (38*3)) %>% 
   ungroup() %>% 
   group_by(season) %>% 
-  mutate(AverageSeasonGAPG = TotalGoalsAgainst/38) %>% 
-  select(season, Manager, AverageManagerGoalsAgainst, AverageManagerGAPG, AverageSeasonGAPG) -> AverageGoalsAgainstTable
+  mutate(SeasonGAPG = TotalGoalsAgainst/38) %>% 
+  select(season, Manager, ManagerGoalsAgainst, ManagerGAPG, SeasonGAPG) -> AverageGoalsAgainstTable
 
-AverageGoalsAgainstTable
+s
+AverageGoalsAgainstTable %>%
+  gt(rowname_col = "season",
+     groupname_col = "Manager") %>%
+  tab_header(title = md("**Average Goals Against Statistics Under Each Manager**"))
 ```
 
   To gain more insight into City's total goals against under the two managers, we calculated a few averages: the average goals against by each manager, the average goals against per game (GAPG) for each manager, and the average GAPG for each season.
@@ -721,13 +743,12 @@ Man_City_Stats_PL_Website %>%
 #Average Tackles per Season under each Manager, Average Tackles per Game under each Manager, Average Interceptions per Season under each Manager, Average Interceptions per Game under each Manager
 Man_City_Stats_PL_Website %>%
   group_by(Manager) %>%
-  mutate(AverageSeasonTacklesManager = mean(Tackles), AverageGameTacklesManager = mean(Tackles)/38, AverageSeasonInterceptionsManager = mean(Interceptions), AverageGameInterceptionsManager = mean(Interceptions)/38) %>% 
-  select(Season, Manager, AverageSeasonTacklesManager, AverageGameTacklesManager, AverageSeasonInterceptionsManager, AverageGameInterceptionsManager) -> AverageDefenseTable
+  mutate(SeasonTackles = mean(Tackles), GameTackles = mean(Tackles)/38, SeasonInterceptions = mean(Interceptions), GameInterceptions = mean(Interceptions)/38) %>% 
+  select(Season, Manager, SeasonTackles, GameTackles, SeasonInterceptions, GameInterceptions) -> AverageDefenseTable
 
 AverageDefenseTable %>%
   gt(rowname_col = "Season") %>%
-  tab_stubhead("Season") %>%
-  tab_header(title = md("**Defensive Statistics**"))
+  tab_header(title = md("**Average Defensive Statistics Under Each Manager**"))
 ```
 
   To compare Manchester City's tackles and interceptions under each manager in more depth, we have calculated a few averages: average tackles per season under each manager, average tackles per game under each manager, average interceptions per season under each manager, and the average interceptions per game under each manager. 
