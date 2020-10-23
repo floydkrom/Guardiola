@@ -233,7 +233,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dtocnrdfmq .gt_table {
+#hwodrdlkxt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -258,7 +258,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_heading {
+#hwodrdlkxt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -270,7 +270,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_title {
+#hwodrdlkxt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -280,7 +280,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#dtocnrdfmq .gt_subtitle {
+#hwodrdlkxt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -290,13 +290,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#dtocnrdfmq .gt_bottom_border {
+#hwodrdlkxt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_col_headings {
+#hwodrdlkxt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -311,7 +311,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_col_heading {
+#hwodrdlkxt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -331,7 +331,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#dtocnrdfmq .gt_column_spanner_outer {
+#hwodrdlkxt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -343,15 +343,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#dtocnrdfmq .gt_column_spanner_outer:first-child {
+#hwodrdlkxt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dtocnrdfmq .gt_column_spanner_outer:last-child {
+#hwodrdlkxt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dtocnrdfmq .gt_column_spanner {
+#hwodrdlkxt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -363,7 +363,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#dtocnrdfmq .gt_group_heading {
+#hwodrdlkxt .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -385,7 +385,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#dtocnrdfmq .gt_empty_group_heading {
+#hwodrdlkxt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -400,15 +400,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#dtocnrdfmq .gt_from_md > :first-child {
+#hwodrdlkxt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dtocnrdfmq .gt_from_md > :last-child {
+#hwodrdlkxt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dtocnrdfmq .gt_row {
+#hwodrdlkxt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -427,7 +427,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#dtocnrdfmq .gt_stub {
+#hwodrdlkxt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -439,7 +439,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#dtocnrdfmq .gt_summary_row {
+#hwodrdlkxt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -449,7 +449,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#dtocnrdfmq .gt_first_summary_row {
+#hwodrdlkxt .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -459,7 +459,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_grand_summary_row {
+#hwodrdlkxt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -469,7 +469,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#dtocnrdfmq .gt_first_grand_summary_row {
+#hwodrdlkxt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,11 +479,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_striped {
+#hwodrdlkxt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dtocnrdfmq .gt_table_body {
+#hwodrdlkxt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -492,7 +492,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_footnotes {
+#hwodrdlkxt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -506,13 +506,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_footnote {
+#hwodrdlkxt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dtocnrdfmq .gt_sourcenotes {
+#hwodrdlkxt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -526,46 +526,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#dtocnrdfmq .gt_sourcenote {
+#hwodrdlkxt .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dtocnrdfmq .gt_left {
+#hwodrdlkxt .gt_left {
   text-align: left;
 }
 
-#dtocnrdfmq .gt_center {
+#hwodrdlkxt .gt_center {
   text-align: center;
 }
 
-#dtocnrdfmq .gt_right {
+#hwodrdlkxt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dtocnrdfmq .gt_font_normal {
+#hwodrdlkxt .gt_font_normal {
   font-weight: normal;
 }
 
-#dtocnrdfmq .gt_font_bold {
+#hwodrdlkxt .gt_font_bold {
   font-weight: bold;
 }
 
-#dtocnrdfmq .gt_font_italic {
+#hwodrdlkxt .gt_font_italic {
   font-style: italic;
 }
 
-#dtocnrdfmq .gt_super {
+#hwodrdlkxt .gt_super {
   font-size: 65%;
 }
 
-#dtocnrdfmq .gt_footnote_marks {
+#hwodrdlkxt .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="dtocnrdfmq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="hwodrdlkxt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Points Statistics Under Each Manager</strong></th>
@@ -652,7 +652,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ejndiqefwy .gt_table {
+#eibhbskykh .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -677,7 +677,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_heading {
+#eibhbskykh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -689,7 +689,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_title {
+#eibhbskykh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -699,7 +699,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#ejndiqefwy .gt_subtitle {
+#eibhbskykh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -709,13 +709,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#ejndiqefwy .gt_bottom_border {
+#eibhbskykh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_col_headings {
+#eibhbskykh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -730,7 +730,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_col_heading {
+#eibhbskykh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -750,7 +750,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#ejndiqefwy .gt_column_spanner_outer {
+#eibhbskykh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -762,15 +762,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#ejndiqefwy .gt_column_spanner_outer:first-child {
+#eibhbskykh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ejndiqefwy .gt_column_spanner_outer:last-child {
+#eibhbskykh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ejndiqefwy .gt_column_spanner {
+#eibhbskykh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -782,7 +782,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#ejndiqefwy .gt_group_heading {
+#eibhbskykh .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -804,7 +804,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#ejndiqefwy .gt_empty_group_heading {
+#eibhbskykh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -819,15 +819,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#ejndiqefwy .gt_from_md > :first-child {
+#eibhbskykh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ejndiqefwy .gt_from_md > :last-child {
+#eibhbskykh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ejndiqefwy .gt_row {
+#eibhbskykh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +846,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#ejndiqefwy .gt_stub {
+#eibhbskykh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -858,7 +858,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#ejndiqefwy .gt_summary_row {
+#eibhbskykh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -868,7 +868,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#ejndiqefwy .gt_first_summary_row {
+#eibhbskykh .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -878,7 +878,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_grand_summary_row {
+#eibhbskykh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -888,7 +888,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#ejndiqefwy .gt_first_grand_summary_row {
+#eibhbskykh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,11 +898,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_striped {
+#eibhbskykh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ejndiqefwy .gt_table_body {
+#eibhbskykh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -911,7 +911,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_footnotes {
+#eibhbskykh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -925,13 +925,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_footnote {
+#eibhbskykh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ejndiqefwy .gt_sourcenotes {
+#eibhbskykh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -945,46 +945,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#ejndiqefwy .gt_sourcenote {
+#eibhbskykh .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ejndiqefwy .gt_left {
+#eibhbskykh .gt_left {
   text-align: left;
 }
 
-#ejndiqefwy .gt_center {
+#eibhbskykh .gt_center {
   text-align: center;
 }
 
-#ejndiqefwy .gt_right {
+#eibhbskykh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ejndiqefwy .gt_font_normal {
+#eibhbskykh .gt_font_normal {
   font-weight: normal;
 }
 
-#ejndiqefwy .gt_font_bold {
+#eibhbskykh .gt_font_bold {
   font-weight: bold;
 }
 
-#ejndiqefwy .gt_font_italic {
+#eibhbskykh .gt_font_italic {
   font-style: italic;
 }
 
-#ejndiqefwy .gt_super {
+#eibhbskykh .gt_super {
   font-size: 65%;
 }
 
-#ejndiqefwy .gt_footnote_marks {
+#eibhbskykh .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ejndiqefwy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="eibhbskykh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="7" class="gt_heading gt_title gt_font_normal" style><strong>Average Home/Away Points Statistics Under Each Manager</strong></th>
@@ -1092,7 +1092,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#cymovulffk .gt_table {
+#rloupajebl .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1117,7 +1117,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#cymovulffk .gt_heading {
+#rloupajebl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1129,7 +1129,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#cymovulffk .gt_title {
+#rloupajebl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1139,7 +1139,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#cymovulffk .gt_subtitle {
+#rloupajebl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1149,13 +1149,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#cymovulffk .gt_bottom_border {
+#rloupajebl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cymovulffk .gt_col_headings {
+#rloupajebl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1170,7 +1170,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#cymovulffk .gt_col_heading {
+#rloupajebl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1190,7 +1190,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#cymovulffk .gt_column_spanner_outer {
+#rloupajebl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1202,15 +1202,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#cymovulffk .gt_column_spanner_outer:first-child {
+#rloupajebl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cymovulffk .gt_column_spanner_outer:last-child {
+#rloupajebl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cymovulffk .gt_column_spanner {
+#rloupajebl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1222,7 +1222,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#cymovulffk .gt_group_heading {
+#rloupajebl .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1244,7 +1244,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#cymovulffk .gt_empty_group_heading {
+#rloupajebl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1259,15 +1259,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#cymovulffk .gt_from_md > :first-child {
+#rloupajebl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cymovulffk .gt_from_md > :last-child {
+#rloupajebl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cymovulffk .gt_row {
+#rloupajebl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1286,7 +1286,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#cymovulffk .gt_stub {
+#rloupajebl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1298,7 +1298,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#cymovulffk .gt_summary_row {
+#rloupajebl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1308,7 +1308,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#cymovulffk .gt_first_summary_row {
+#rloupajebl .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1318,7 +1318,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#cymovulffk .gt_grand_summary_row {
+#rloupajebl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1328,7 +1328,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#cymovulffk .gt_first_grand_summary_row {
+#rloupajebl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1338,11 +1338,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#cymovulffk .gt_striped {
+#rloupajebl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cymovulffk .gt_table_body {
+#rloupajebl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1351,7 +1351,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#cymovulffk .gt_footnotes {
+#rloupajebl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1365,13 +1365,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#cymovulffk .gt_footnote {
+#rloupajebl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#cymovulffk .gt_sourcenotes {
+#rloupajebl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1385,46 +1385,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#cymovulffk .gt_sourcenote {
+#rloupajebl .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#cymovulffk .gt_left {
+#rloupajebl .gt_left {
   text-align: left;
 }
 
-#cymovulffk .gt_center {
+#rloupajebl .gt_center {
   text-align: center;
 }
 
-#cymovulffk .gt_right {
+#rloupajebl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cymovulffk .gt_font_normal {
+#rloupajebl .gt_font_normal {
   font-weight: normal;
 }
 
-#cymovulffk .gt_font_bold {
+#rloupajebl .gt_font_bold {
   font-weight: bold;
 }
 
-#cymovulffk .gt_font_italic {
+#rloupajebl .gt_font_italic {
   font-style: italic;
 }
 
-#cymovulffk .gt_super {
+#rloupajebl .gt_super {
   font-size: 65%;
 }
 
-#cymovulffk .gt_footnote_marks {
+#rloupajebl .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="cymovulffk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="rloupajebl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Passing Statistics Under Each Manager</strong></th>
@@ -1513,7 +1513,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xcoixmsool .gt_table {
+#mlyvohoipo .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1538,7 +1538,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_heading {
+#mlyvohoipo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1550,7 +1550,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_title {
+#mlyvohoipo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1560,7 +1560,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#xcoixmsool .gt_subtitle {
+#mlyvohoipo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1570,13 +1570,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#xcoixmsool .gt_bottom_border {
+#mlyvohoipo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_col_headings {
+#mlyvohoipo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1591,7 +1591,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_col_heading {
+#mlyvohoipo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1611,7 +1611,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#xcoixmsool .gt_column_spanner_outer {
+#mlyvohoipo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1623,15 +1623,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#xcoixmsool .gt_column_spanner_outer:first-child {
+#mlyvohoipo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xcoixmsool .gt_column_spanner_outer:last-child {
+#mlyvohoipo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xcoixmsool .gt_column_spanner {
+#mlyvohoipo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1643,7 +1643,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#xcoixmsool .gt_group_heading {
+#mlyvohoipo .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1665,7 +1665,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#xcoixmsool .gt_empty_group_heading {
+#mlyvohoipo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1680,15 +1680,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#xcoixmsool .gt_from_md > :first-child {
+#mlyvohoipo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xcoixmsool .gt_from_md > :last-child {
+#mlyvohoipo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xcoixmsool .gt_row {
+#mlyvohoipo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1707,7 +1707,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#xcoixmsool .gt_stub {
+#mlyvohoipo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1719,7 +1719,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#xcoixmsool .gt_summary_row {
+#mlyvohoipo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1729,7 +1729,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#xcoixmsool .gt_first_summary_row {
+#mlyvohoipo .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1739,7 +1739,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_grand_summary_row {
+#mlyvohoipo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1749,7 +1749,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#xcoixmsool .gt_first_grand_summary_row {
+#mlyvohoipo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1759,11 +1759,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_striped {
+#mlyvohoipo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xcoixmsool .gt_table_body {
+#mlyvohoipo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1772,7 +1772,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_footnotes {
+#mlyvohoipo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1786,13 +1786,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_footnote {
+#mlyvohoipo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xcoixmsool .gt_sourcenotes {
+#mlyvohoipo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1806,46 +1806,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#xcoixmsool .gt_sourcenote {
+#mlyvohoipo .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xcoixmsool .gt_left {
+#mlyvohoipo .gt_left {
   text-align: left;
 }
 
-#xcoixmsool .gt_center {
+#mlyvohoipo .gt_center {
   text-align: center;
 }
 
-#xcoixmsool .gt_right {
+#mlyvohoipo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xcoixmsool .gt_font_normal {
+#mlyvohoipo .gt_font_normal {
   font-weight: normal;
 }
 
-#xcoixmsool .gt_font_bold {
+#mlyvohoipo .gt_font_bold {
   font-weight: bold;
 }
 
-#xcoixmsool .gt_font_italic {
+#mlyvohoipo .gt_font_italic {
   font-style: italic;
 }
 
-#xcoixmsool .gt_super {
+#mlyvohoipo .gt_super {
   font-size: 65%;
 }
 
-#xcoixmsool .gt_footnote_marks {
+#mlyvohoipo .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="xcoixmsool" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="mlyvohoipo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Goals For Statistics Under Each Manager</strong></th>
@@ -1938,7 +1938,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#gqxxhmlwvy .gt_table {
+#bczvubdcgc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1963,7 +1963,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_heading {
+#bczvubdcgc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1975,7 +1975,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_title {
+#bczvubdcgc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1985,7 +1985,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#gqxxhmlwvy .gt_subtitle {
+#bczvubdcgc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1995,13 +1995,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#gqxxhmlwvy .gt_bottom_border {
+#bczvubdcgc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_col_headings {
+#bczvubdcgc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2016,7 +2016,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_col_heading {
+#bczvubdcgc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2036,7 +2036,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#gqxxhmlwvy .gt_column_spanner_outer {
+#bczvubdcgc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2048,15 +2048,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#gqxxhmlwvy .gt_column_spanner_outer:first-child {
+#bczvubdcgc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gqxxhmlwvy .gt_column_spanner_outer:last-child {
+#bczvubdcgc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gqxxhmlwvy .gt_column_spanner {
+#bczvubdcgc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2068,7 +2068,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#gqxxhmlwvy .gt_group_heading {
+#bczvubdcgc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2090,7 +2090,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#gqxxhmlwvy .gt_empty_group_heading {
+#bczvubdcgc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2105,15 +2105,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#gqxxhmlwvy .gt_from_md > :first-child {
+#bczvubdcgc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gqxxhmlwvy .gt_from_md > :last-child {
+#bczvubdcgc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gqxxhmlwvy .gt_row {
+#bczvubdcgc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2132,7 +2132,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#gqxxhmlwvy .gt_stub {
+#bczvubdcgc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2144,7 +2144,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#gqxxhmlwvy .gt_summary_row {
+#bczvubdcgc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2154,7 +2154,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#gqxxhmlwvy .gt_first_summary_row {
+#bczvubdcgc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2164,7 +2164,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_grand_summary_row {
+#bczvubdcgc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2174,7 +2174,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#gqxxhmlwvy .gt_first_grand_summary_row {
+#bczvubdcgc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2184,11 +2184,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_striped {
+#bczvubdcgc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gqxxhmlwvy .gt_table_body {
+#bczvubdcgc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2197,7 +2197,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_footnotes {
+#bczvubdcgc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2211,13 +2211,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_footnote {
+#bczvubdcgc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#gqxxhmlwvy .gt_sourcenotes {
+#bczvubdcgc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2231,46 +2231,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#gqxxhmlwvy .gt_sourcenote {
+#bczvubdcgc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#gqxxhmlwvy .gt_left {
+#bczvubdcgc .gt_left {
   text-align: left;
 }
 
-#gqxxhmlwvy .gt_center {
+#bczvubdcgc .gt_center {
   text-align: center;
 }
 
-#gqxxhmlwvy .gt_right {
+#bczvubdcgc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gqxxhmlwvy .gt_font_normal {
+#bczvubdcgc .gt_font_normal {
   font-weight: normal;
 }
 
-#gqxxhmlwvy .gt_font_bold {
+#bczvubdcgc .gt_font_bold {
   font-weight: bold;
 }
 
-#gqxxhmlwvy .gt_font_italic {
+#bczvubdcgc .gt_font_italic {
   font-style: italic;
 }
 
-#gqxxhmlwvy .gt_super {
+#bczvubdcgc .gt_super {
   font-size: 65%;
 }
 
-#gqxxhmlwvy .gt_footnote_marks {
+#bczvubdcgc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="gqxxhmlwvy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="bczvubdcgc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="7" class="gt_heading gt_title gt_font_normal" style><strong>Average Shots on Target Statistics Under Each Manager</strong></th>
@@ -2390,7 +2390,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#szenxniyjj .gt_table {
+#rcwfdadekt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2415,7 +2415,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_heading {
+#rcwfdadekt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2427,7 +2427,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_title {
+#rcwfdadekt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2437,7 +2437,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#szenxniyjj .gt_subtitle {
+#rcwfdadekt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2447,13 +2447,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#szenxniyjj .gt_bottom_border {
+#rcwfdadekt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_col_headings {
+#rcwfdadekt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2468,7 +2468,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_col_heading {
+#rcwfdadekt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2488,7 +2488,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#szenxniyjj .gt_column_spanner_outer {
+#rcwfdadekt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2500,15 +2500,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#szenxniyjj .gt_column_spanner_outer:first-child {
+#rcwfdadekt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#szenxniyjj .gt_column_spanner_outer:last-child {
+#rcwfdadekt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#szenxniyjj .gt_column_spanner {
+#rcwfdadekt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2520,7 +2520,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#szenxniyjj .gt_group_heading {
+#rcwfdadekt .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2542,7 +2542,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#szenxniyjj .gt_empty_group_heading {
+#rcwfdadekt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2557,15 +2557,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#szenxniyjj .gt_from_md > :first-child {
+#rcwfdadekt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#szenxniyjj .gt_from_md > :last-child {
+#rcwfdadekt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#szenxniyjj .gt_row {
+#rcwfdadekt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2584,7 +2584,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#szenxniyjj .gt_stub {
+#rcwfdadekt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2596,7 +2596,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#szenxniyjj .gt_summary_row {
+#rcwfdadekt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2606,7 +2606,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#szenxniyjj .gt_first_summary_row {
+#rcwfdadekt .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2616,7 +2616,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_grand_summary_row {
+#rcwfdadekt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2626,7 +2626,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#szenxniyjj .gt_first_grand_summary_row {
+#rcwfdadekt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2636,11 +2636,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_striped {
+#rcwfdadekt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#szenxniyjj .gt_table_body {
+#rcwfdadekt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2649,7 +2649,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_footnotes {
+#rcwfdadekt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2663,13 +2663,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_footnote {
+#rcwfdadekt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#szenxniyjj .gt_sourcenotes {
+#rcwfdadekt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2683,46 +2683,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#szenxniyjj .gt_sourcenote {
+#rcwfdadekt .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#szenxniyjj .gt_left {
+#rcwfdadekt .gt_left {
   text-align: left;
 }
 
-#szenxniyjj .gt_center {
+#rcwfdadekt .gt_center {
   text-align: center;
 }
 
-#szenxniyjj .gt_right {
+#rcwfdadekt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#szenxniyjj .gt_font_normal {
+#rcwfdadekt .gt_font_normal {
   font-weight: normal;
 }
 
-#szenxniyjj .gt_font_bold {
+#rcwfdadekt .gt_font_bold {
   font-weight: bold;
 }
 
-#szenxniyjj .gt_font_italic {
+#rcwfdadekt .gt_font_italic {
   font-style: italic;
 }
 
-#szenxniyjj .gt_super {
+#rcwfdadekt .gt_super {
   font-size: 65%;
 }
 
-#szenxniyjj .gt_footnote_marks {
+#rcwfdadekt .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="szenxniyjj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="rcwfdadekt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="4" class="gt_heading gt_title gt_font_normal" style><strong>Average Goals Against Statistics Under Each Manager</strong></th>
@@ -2805,7 +2805,7 @@ The bar chart above displays the total points earned by Manchester City in their
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bdhwssoahs .gt_table {
+#lbewezkxbc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2830,7 +2830,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-left-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_heading {
+#lbewezkxbc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2842,7 +2842,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_title {
+#lbewezkxbc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2852,7 +2852,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-width: 0;
 }
 
-#bdhwssoahs .gt_subtitle {
+#lbewezkxbc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2862,13 +2862,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-width: 0;
 }
 
-#bdhwssoahs .gt_bottom_border {
+#lbewezkxbc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_col_headings {
+#lbewezkxbc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2883,7 +2883,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_col_heading {
+#lbewezkxbc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2903,7 +2903,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#bdhwssoahs .gt_column_spanner_outer {
+#lbewezkxbc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2915,15 +2915,15 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 4px;
 }
 
-#bdhwssoahs .gt_column_spanner_outer:first-child {
+#lbewezkxbc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bdhwssoahs .gt_column_spanner_outer:last-child {
+#lbewezkxbc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bdhwssoahs .gt_column_spanner {
+#lbewezkxbc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2935,7 +2935,7 @@ The bar chart above displays the total points earned by Manchester City in their
   width: 100%;
 }
 
-#bdhwssoahs .gt_group_heading {
+#lbewezkxbc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2957,7 +2957,7 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#bdhwssoahs .gt_empty_group_heading {
+#lbewezkxbc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2972,15 +2972,15 @@ The bar chart above displays the total points earned by Manchester City in their
   vertical-align: middle;
 }
 
-#bdhwssoahs .gt_from_md > :first-child {
+#lbewezkxbc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bdhwssoahs .gt_from_md > :last-child {
+#lbewezkxbc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bdhwssoahs .gt_row {
+#lbewezkxbc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2999,7 +2999,7 @@ The bar chart above displays the total points earned by Manchester City in their
   overflow-x: hidden;
 }
 
-#bdhwssoahs .gt_stub {
+#lbewezkxbc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3011,7 +3011,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-left: 12px;
 }
 
-#bdhwssoahs .gt_summary_row {
+#lbewezkxbc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3021,7 +3021,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#bdhwssoahs .gt_first_summary_row {
+#lbewezkxbc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3031,7 +3031,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_grand_summary_row {
+#lbewezkxbc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3041,7 +3041,7 @@ The bar chart above displays the total points earned by Manchester City in their
   padding-right: 5px;
 }
 
-#bdhwssoahs .gt_first_grand_summary_row {
+#lbewezkxbc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3051,11 +3051,11 @@ The bar chart above displays the total points earned by Manchester City in their
   border-top-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_striped {
+#lbewezkxbc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bdhwssoahs .gt_table_body {
+#lbewezkxbc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3064,7 +3064,7 @@ The bar chart above displays the total points earned by Manchester City in their
   border-bottom-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_footnotes {
+#lbewezkxbc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3078,13 +3078,13 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_footnote {
+#lbewezkxbc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bdhwssoahs .gt_sourcenotes {
+#lbewezkxbc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3098,46 +3098,46 @@ The bar chart above displays the total points earned by Manchester City in their
   border-right-color: #D3D3D3;
 }
 
-#bdhwssoahs .gt_sourcenote {
+#lbewezkxbc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bdhwssoahs .gt_left {
+#lbewezkxbc .gt_left {
   text-align: left;
 }
 
-#bdhwssoahs .gt_center {
+#lbewezkxbc .gt_center {
   text-align: center;
 }
 
-#bdhwssoahs .gt_right {
+#lbewezkxbc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bdhwssoahs .gt_font_normal {
+#lbewezkxbc .gt_font_normal {
   font-weight: normal;
 }
 
-#bdhwssoahs .gt_font_bold {
+#lbewezkxbc .gt_font_bold {
   font-weight: bold;
 }
 
-#bdhwssoahs .gt_font_italic {
+#lbewezkxbc .gt_font_italic {
   font-style: italic;
 }
 
-#bdhwssoahs .gt_super {
+#lbewezkxbc .gt_super {
   font-size: 65%;
 }
 
-#bdhwssoahs .gt_footnote_marks {
+#lbewezkxbc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bdhwssoahs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="lbewezkxbc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="5" class="gt_heading gt_title gt_font_normal" style><strong>Average Defensive Statistics Under Each Manager</strong></th>
